@@ -1,5 +1,5 @@
 # CS 4320 Final Project
-### Holt Skinner, et all
+### Holt Skinner, Ali Raza, et all
 ### 10-16-2016
 
 ## Requirements
