@@ -11,18 +11,20 @@ Insert Requirements Here!!!
 
 #### Software
 - Database Backend
-  - Mongo or SQL
+  <!--- - Mongo or SQL --->
 - Web Server
-  - Python or PHP
+  <!---  - Python or PHP --->
 - Front-End Framework
-  - HTML, CSS, & JavaScript
-  - Bootstrap
+  <!-- - HTML, CSS, & JavaScript -->
+  <!--- - Bootstrap--->
 
 #### Hardware
 - Web Server
 - Database Backend
 - Storage Array
 
+##### System Constraints
 
 ### Functional (User) Requirements
-- See Original Repository
+
+#### User Constraints
