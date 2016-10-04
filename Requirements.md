@@ -1,5 +1,5 @@
 # CS 4320 Final Project
-### Holt Skinner, Ali Raza, et all
+### Holt Skinner, Ali Raza, Justin Hofer, et all
 ### 10-16-2016
 
 ## Requirements
@@ -7,24 +7,18 @@
 <!---
 Insert Requirements Here!!!
 -->
-### System Requirements
-
-#### Software
+### Functional Requirements
 - Database Backend
-  <!--- - Mongo or SQL --->
-- Web Server
-  <!---  - Python or PHP --->
+  - Efficent search by keyword implementation
+  - Ability to upload and update manifests
+- Buisness Logic
+  - Process search, upload, and update requests, both into and out of Database Layer
 - Front-End Framework
-  <!-- - HTML, CSS, & JavaScript -->
-  <!--- - Bootstrap--->
+  - Accept and serve search, upload, and update requests
 
-#### Hardware
+### Technical Requirements
 - Web Server
 - Database Backend
 - Storage Array
+  - Intermediate backups and update logging to revert to earlier states if needed
 
-##### System Constraints
-
-### Functional (User) Requirements
-
-#### User Constraints
