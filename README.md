@@ -1,3 +1,3 @@
 # CS4320-FinalProject
 Software Engineering Final Project
-Hofer, Skinner
+Hofer, Skinner, Raza, Zhang, Rogers, Pudotha
