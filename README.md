@@ -1,3 +1,3 @@
 # CS4320-FinalProject
-Software Engineering Final Project
+## Software Engineering Team 4
 Hofer, Skinner, Raza, Zhang, Rogers, Pudotha
