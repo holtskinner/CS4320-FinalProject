@@ -15,8 +15,9 @@
 
 ## Functional Requirements
 - Database Backend
-  - Efficient search by keyword implementation
-  - Ability to upload and update manifests
+  - The system will be able to perform efficient searches, using keywords.
+  - The system should be able to upload and update manifests.
+
 - Business Logic
   - Process search, upload, and update requests, both into and out of Database Layer
 - Front-End Framework
@@ -26,7 +27,7 @@
 -
 
 ## User Requirements
-- 
+-
 
 ## System Requirements
 - Web Server
