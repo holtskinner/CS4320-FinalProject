@@ -25,12 +25,12 @@
   - Accept and serve search, upload, and update requests
 
 ## Non-Functional Requirements
-- **Space Requirments**
+- **Space Requirements**
 	- The system must have enough physical space to handle extremly large data-sets.
 	- We may need to implement a distributed system using clusters for efficiency.
-- **Realiability Requirments**
+- **Reliability Requirements**
 	- If the system crashes, the data and any manipulations/analytics must be preserved.
-- **Privacy Requirments**
+- **Privacy Requirements**
 	- The data access must be limited to authorized users only.
 	- The system must enable secure data transfer over the internet
 
@@ -38,7 +38,7 @@
 - User will be able to upload Manifest.
 - Manifest can be reviewed by others.
 - User can edit or delete their Manifest.
-- User can search for Manifest they are interested in. 
+- User can search for Manifest they are interested in.
 
 ## System Requirements
 - **Web Server**
