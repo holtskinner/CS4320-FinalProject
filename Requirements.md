@@ -14,13 +14,13 @@
 - Upload Data Set
 
 ## Functional Requirements
-- Database Backend
+- **Database Backend**
   - The system will be able to perform efficient searches, using keywords.
   - The system should be able to upload and update manifests.
-- Business Logic
-  - Process search, upload, and update requests, both into and out of Database Layer
-- Front-End Framework
-  - Accept and serve search, upload, and update requests
+- **Business Logic**
+	- The system will have the ability to search, upload, and update requests to the database layer.
+- **Front-End Framework**
+  - There should be an intuitive UI that makes uploading, retreiving, and searching data easy.
 
 ## Non-Functional Requirements
 - 
