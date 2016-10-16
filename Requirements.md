@@ -44,7 +44,7 @@ Team 4
 - User will be able to upload Manifest.
 - Manifest can be reviewed by others.
 - User can edit or delete their Manifest.
-- User can search for Manifest they are interested in.
+- User can search for Manifest they wish to view or test.
 
 ## System Requirements
 - **Web Server**
