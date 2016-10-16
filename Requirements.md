@@ -32,7 +32,7 @@
 - **Web Server**
 - **Database Backend**
 - **Storage Array**
-  - Intermediate backups and update logging to revert to earlier states if needed
+  - System must create intermediate backups and update logging to revert to earlier states if needed
 
 # Software Design
 -
