@@ -1,8 +1,11 @@
-# CS 4320 Final Project Requirements Analysis
+# CS 4320 Final Project Requirements Analysis & Software Design
 
-### Skinner, Hofer, Raza, Zhang, Rogers, Pudotha
+Team 4
+### Team 4: Skinner, Hofer, Raza, Zhang, Rogers, Pudotha
 
 ### 10-18-2016
+
+# Requirements Analysis
 
 ## User Descriptions
 
