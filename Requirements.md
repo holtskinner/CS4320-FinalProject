@@ -5,16 +5,16 @@
 ### 10-18-2016
 
 ## Use Cases
-- Browse Manifest
-- Contribute to Existing Dataset
-- Download Info
-- Generate or Upload Manifest
-- Save
-- Search on Manifest
-- Upload Data Set
+- User can Browse by keyword for Manifest
+- User can Contribute to Existing Dataset
+- User can Download Info
+- User can Generate or Upload Manifest
+- User can Save
+- User can Search on Manifest
+- User can Upload Data Set
 
 ## Functional Requirements
-- The system requires a Database Backend
+- Database Backend
   - Efficient search by keyword implementation
   - Ability to upload and update manifests
 - Business Logic
@@ -23,10 +23,10 @@
   - Accept and serve search, upload, and update requests
 
 ## Non-Functional Requirements
-- 
+-
 
 ## User Requirements
--
+- 
 
 ## System Requirements
 - Web Server
