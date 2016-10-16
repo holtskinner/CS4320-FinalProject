@@ -28,7 +28,7 @@
 
 ## User Requirements
 - User will be able to upload Manifest.
-- Their Manifest can be reviewed by others.
+- Manifest can be reviewed by others.
 - User can edit or delete their Manifest.
 - User can search for Manifest they are interested in. 
 
