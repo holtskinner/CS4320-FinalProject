@@ -32,6 +32,7 @@
 	- If the system crashes, the data and any manipulations/analytics must be preserved.
 - **Privacy Requirments**
 	- Limit data access to authorized users only.
+	- Secure data transfer over the internet
 
 ## User Requirements
 -
