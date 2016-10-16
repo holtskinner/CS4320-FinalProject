@@ -37,8 +37,11 @@
 
 ## Reviewer
 
+- User Requirements
 # Pramod
 
 ## Author
+- User Descriptions
 
 ## Reviewer
+- Non-Functional Requirements
