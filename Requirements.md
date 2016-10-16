@@ -31,8 +31,8 @@
 - **Realiability Requirments**
 	- If the system crashes, the data and any manipulations/analytics must be preserved.
 - **Privacy Requirments**
-	- Limit data access to authorized users only.
-	- Secure data transfer over the internet
+	- The data access must be limited to authorized users only.
+	- The system must enable secure data transfer over the internet
 
 ## User Requirements
 -
