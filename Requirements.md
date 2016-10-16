@@ -23,15 +23,16 @@
   - Accept and serve search, upload, and update requests
 
 ## Non-Functional Requirements
--
+- 
 
 ## User Requirements
 -
 
 ## System Requirements
-- Web Server
-- Database Backend
-- Storage Array
+- **Web Server**
+- **Database Backend**
+- **Storage Array**
   - Intermediate backups and update logging to revert to earlier states if needed
 
 # Software Design
+-
