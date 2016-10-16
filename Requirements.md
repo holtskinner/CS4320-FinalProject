@@ -23,7 +23,13 @@
   - Accept and serve search, upload, and update requests
 
 ## Non-Functional Requirements
--
+- **Space Requirments**
+	- The system must have enough physical space to handle extremly large data-sets.
+	- We may need to implement a distributed system using clusters for efficiency.
+- **Realiability Requirments**
+	- If the system crashes, the data and any manipulations/analytics must be preserved.
+- **Privacy Requirments**
+	- Limit data access to authorized users only.
 
 ## User Requirements
 -
