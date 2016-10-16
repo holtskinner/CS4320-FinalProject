@@ -35,11 +35,16 @@
 	- The system must enable secure data transfer over the internet
 
 ## User Requirements
--
+- User will be able to upload Manifest.
+- Manifest can be reviewed by others.
+- User can edit or delete their Manifest.
+- User can search for Manifest they are interested in. 
 
 ## System Requirements
 - **Web Server**
+  - Web Server must provide reliable service for the appropriate amount of traffic that will be sent and received from the system.
 - **Database Backend**
+  - Database must be able to convert data into easily storable format, and return in original format.
 - **Storage Array**
   - System must create intermediate backups and update logging to revert to earlier states if needed
 
