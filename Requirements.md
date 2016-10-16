@@ -6,6 +6,9 @@
 
 ## User Descriptions
 
+
+- e.g. <http://www.seangoggins.net/>
+
 ## Use Cases
 - User can Browse by keyword for Manifest
 - User can Contribute to Existing Dataset
