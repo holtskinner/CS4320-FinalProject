@@ -42,7 +42,9 @@
 
 ## System Requirements
 - **Web Server**
+  - Web Server must provide reliable service for the appropriate amount of traffic that will be sent and received from the system.
 - **Database Backend**
+  - Database must be able to convert data into easily storable format, and return in original format.
 - **Storage Array**
   - System must create intermediate backups and update logging to revert to earlier states if needed
 
