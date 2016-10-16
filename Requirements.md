@@ -5,25 +5,25 @@
 ### 10-18-2016
 
 ## Use Cases
-- Browse Manifest
-- Contribute to Existing Dataset
-- Download Info
-- Generate or Upload Manifest
-- Save
-- Search on Manifest
-- Upload Data Set
+- User can Browse by keyword for Manifest
+- User can Contribute to Existing Dataset
+- User can Download Info
+- User can Generate or Upload Manifest
+- User can Save
+- User can Search on Manifest
+- User can Upload Data Set
 
 ## Functional Requirements
 - **Database Backend**
   - The system will be able to perform efficient searches, using keywords.
   - The system should be able to upload and update manifests.
 - **Business Logic**
-	- The system will have the ability to search, upload, and update requests to the database layer.
+  - Process search, upload, and update requests, both into and out of Database Layer
 - **Front-End Framework**
-  - There should be an intuitive UI that makes uploading, retreiving, and searching data easy.
+  - Accept and serve search, upload, and update requests
 
 ## Non-Functional Requirements
-- 
+-
 
 ## User Requirements
 -
