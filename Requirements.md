@@ -4,6 +4,8 @@
 
 ### 10-18-2016
 
+## User Descriptions
+
 ## Use Cases
 - User can Browse by keyword for Manifest
 - User can Contribute to Existing Dataset
@@ -40,5 +42,6 @@
 - **Storage Array**
   - System must create intermediate backups and update logging to revert to earlier states if needed
 
+<!-- Different Section-->
 # Software Design
 -
