@@ -23,7 +23,7 @@
   - Accept and serve search, upload, and update requests
 
 ## Non-Functional Requirements
-- 
+-
 
 ## User Requirements
 -
