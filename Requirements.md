@@ -88,27 +88,27 @@
 ## Data
 
 - **Members**
-- ID
-- name
+    - ID
+    - name
 
 - **OCDX_manifest**
-- author
-- date
-- size
-- category
-- version
-- modify_request
+    - author
+    - date
+    - size
+    - category
+    - version
+    - modify_request
 
 - **Users**
-- ID
-- name
-- email
-- phone
+    - ID
+    - name
+    - email
+    - phone
 
 - **Login_attempts**
-- userID
-- date
-- attempts
+    - userID
+    - date
+    - attempts
 
 ## Functions
 
