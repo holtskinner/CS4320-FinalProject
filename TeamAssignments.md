@@ -25,7 +25,7 @@
 - **Reviewer:** Use Cases
 
 #### Software Design
-- **Author:**
+- **Author:** Class List
 - **Reviewer**
 
 # Bo

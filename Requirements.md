@@ -1,22 +1,23 @@
 ## CS 4320: Final Project Requirements Analysis & Software Design
-###Team Members:
+
+### Team Members:
   - Holt Skinner
-  - Justin Hofer 
-  - Ali Raza 
-  - Bo Zhang 
-  - Bradley Rogers 
-  - Pudotha
+  - Justin Hofer
+  - Ali Raza
+  - Bo Zhang
+  - Bradley Rogers
+  - Pramod Pudotha
 
 ---
 
-#Table of Content
-- **Requirments Analysis**
-  - User Description
+# Table of Contents
+- Requirements Analysis
+  - User Descriptions
   - Use Cases
-  - Functional Requirments
-  - Non-functional Requirments
-  - User Requirments
-  - System Requirments
+  - Functional Requirements
+  - Non-functional Requirements
+  - User Requirements
+  - System Requirements
 - Software Design
 
 ---
