@@ -70,4 +70,18 @@
 
 <!-- Different Section-->
 # Software Design
--
+
+## Sketches
+- User can Browse by keyword for Manifest
+- User can Contribute to Existing Dataset
+- User can Download Info
+- User can Generate or Upload Manifest
+- User can Save
+- User can Search on Manifest
+- User can Upload Data Set
+
+## Data
+
+## Functions
+
+## Database Structure

@@ -7,8 +7,8 @@
 - **Reviewer** System Requirements
 
 #### Software Design
-- **Author:**
-- **Reviewer**
+- **Author:** Sketches/UI
+- **Reviewer** Functions
 
 # Ali
 #### Requirements
@@ -16,8 +16,8 @@
 - **Reviewer:** Functional Requirements
 
 #### Software Design
-- **Author:**
-- **Reviewer**
+- **Author:** Database Design
+- **Reviewer** Sketches / UI
 
 # Justin
 #### Requirements
@@ -25,8 +25,8 @@
 - **Reviewer:** Use Cases
 
 #### Software Design
-- **Author:** Class List
-- **Reviewer**
+- **Author:** Database Design
+- **Reviewer** Data
 
 # Bo
 #### Requirements
@@ -34,8 +34,8 @@
 - **Reviewer:** User Descriptions
 
 #### Software Design
-- **Author:**
-- **Reviewer**
+- **Author:** Data
+- **Reviewer** Sketches
 
 # Brad
 #### Requirements
@@ -43,8 +43,8 @@
 - **Reviewer:** User Requirements
 
 #### Software Design
-- **Author:**
-- **Reviewer**
+- **Author:** Sketches
+- **Reviewer** Database Design
 
 # Pramod
 #### Requirements
@@ -52,5 +52,5 @@
 - **Reviewer:** Non-Functional Requirements
 
 #### Software Design
-- **Author:**
-- **Reviewer**
+- **Author:** Functions
+- **Reviewer** Database Design
