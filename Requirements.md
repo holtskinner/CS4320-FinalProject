@@ -1,4 +1,4 @@
-## CS 4320: Final Project Requirements Analysis & Software Design
+# CS 4320: Final Project Requirements Analysis & Software Design
 
 ### Team Members:
   - Holt Skinner
