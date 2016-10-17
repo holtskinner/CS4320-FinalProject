@@ -6,8 +6,7 @@
   - Bo Zhang 
   - Bradley Rogers 
   - Pudotha
-#### 10-18-2016
-
+---
 #Table of Content
 - Requirment Analysis
   - User Description
@@ -17,9 +16,7 @@
   - User Requirments
   - System Requirments
 - Software Design
-
 ---
-
 # Requirements Analysis
 ## User Descriptions
 - e.g. <http://www.seangoggins.net/>
