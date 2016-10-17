@@ -10,7 +10,7 @@
 ---
 
 #Table of Content
-- Requirment Analysis
+- **Requirments Analysis**
   - User Description
   - Use Cases
   - Functional Requirments
