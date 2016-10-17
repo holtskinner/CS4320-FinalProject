@@ -1,47 +1,25 @@
 # Team Assignments
-
 # Holt
-
-## Primary Author
-- Compile Everything Together
-- Use Cases
-
-## Reviewer
-- System Requirements
+#### Project Manager
+- **Author:** Compile Everything Together, Use Cases
+- **Reviewer** System Requirements
 
 # Ali
 - **Author:** Non-Functional Requirements
 - **Reviewer:** Functional Requirements
 
 # Justin
+- **Author:** Functional Requirements
+- **Reviewer:** Use Cases
 
-## Author
-- Functional Requirements
+# Bo
+- **Author:** User Requirements
+- **Reviewer:** User Descriptions
 
-## Reviewer
+# Brad
+- **Author:** System Requirements
+- **Reviewer:** User Requirements
 
-- Use Cases
-
-#Bo
-
-## Author
-- User Requirements
-
-## Reviewer
-
-# B-rad
-
-## Author
-
-- System Requirements
-
-## Reviewer
-
-- User Requirements
 # Pramod
-
-## Author
-- User Descriptions
-
-## Reviewer
-- Non-Functional Requirements
+- **Author:** User Descriptions
+- **Reviewer:** Non-Functional Requirements
