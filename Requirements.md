@@ -67,8 +67,8 @@
   - Database must be able to convert data into easily storable format, and return in original format.
 - **Storage Array**
   - System must create intermediate backups and update logging to revert to earlier states if needed
+---
 
-<!-- Different Section-->
 # Software Design
 
 ## Sketches
@@ -85,3 +85,11 @@
 ## Functions
 
 ## Database Structure
+
+---
+
+# Change Log
+
+- Version 1.0: Pre-Implementation Design
+---
+# Glossary
