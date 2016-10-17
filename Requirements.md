@@ -92,5 +92,7 @@
 # Change Log
 
 - Version 1.0: Pre-Implementation Design
+
 ---
+
 # Glossary
