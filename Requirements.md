@@ -61,6 +61,8 @@
 - Manifest can be reviewed by others.
 - User can edit or delete their Manifest.
 - User can search for Manifest they wish to view or test.
+- user will be able to include special comments or suggestions on manifest
+- user should be able to notify the changes or suggestions that improves manifest to other users
 
 ## System Requirements
 - **Web Server**
