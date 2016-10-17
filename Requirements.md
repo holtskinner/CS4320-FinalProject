@@ -1,15 +1,19 @@
-# CS 4320 Final Project Requirements Analysis & Software Design
-
-Team 4
-### Team 4: Skinner, Hofer, Raza, Zhang, Rogers, Pudotha
-
+# CS 4320: Final Project Requirements Analysis & Software Design
+## Team 4: Skinner, Hofer, Raza, Zhang, Rogers, Pudotha
 ### 10-18-2016
 
+#Table of Content
+- Requirment Analysis
+  - User Description
+  - Use Cases
+  - Functional Requirments
+  - Non-functional Requirments
+  - User Requirments
+  - System Requirments
+- Software Design
+
 # Requirements Analysis
-
 ## User Descriptions
-
-
 - e.g. <http://www.seangoggins.net/>
 
 ## Use Cases
