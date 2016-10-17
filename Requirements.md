@@ -1,5 +1,11 @@
 ## CS 4320: Final Project Requirements Analysis & Software Design
-### Team 4: Skinner, Hofer, Raza, Zhang, Rogers, Pudotha
+###Team Members:
+  - Holt Skinner
+  - Justin Hofer 
+  - Ali Raza 
+  - Bo Zhang 
+  - Bradley Rogers 
+  - Pudotha
 #### 10-18-2016
 
 #Table of Content
