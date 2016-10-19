@@ -24,9 +24,9 @@
 
 ---
 
-# Requirements Analysis
+<!-- # Requirements Analysis
 ## User Descriptions
-- e.g. <http://www.seangoggins.net/>
+- e.g. <http://www.seangoggins.net/> -->
 
 ## Use Cases
 - User can Browse by keyword for Manifest
@@ -110,9 +110,9 @@
     - date
     - attempts
 
-## Functions
+<!-- ## Functions
 
-## Database Structure
+## Database Structure -->
 
 ---
 
