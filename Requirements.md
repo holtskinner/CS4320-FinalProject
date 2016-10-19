@@ -24,9 +24,11 @@
 
 ---
 
-<!-- # Requirements Analysis
+# Requirements Analysis
 ## User Descriptions
-- e.g. <http://www.seangoggins.net/> -->
+- **Data Scientist**
+  - Conducts sophisticated and systematic analyses of data
+  - Extracts insights from large data sets
 
 ## Use Cases
 - User can Browse by keyword for Manifest
