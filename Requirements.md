@@ -27,8 +27,12 @@
 # Requirements Analysis
 ## User Descriptions
 - **Data Scientist**
+  - Uploads and downloads data
   - Conducts sophisticated and systematic analyses of data
   - Extracts insights from large data sets
+- **System Admin**
+  - Review the uploaded data
+  - Manage users
 
 ## Use Cases
 - User can Browse by keyword for Manifest
