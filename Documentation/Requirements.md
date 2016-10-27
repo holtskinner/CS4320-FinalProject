@@ -59,6 +59,8 @@ _Pudotha/Skinner_
 
 ## Non-Functional Requirements
 *Hofer/Raza*
+
+### User Non-functional
 - Be able to perform efficient searches based on keywords. Users should not wait more than about two seconds for a query to resolve.
 - Be able to upload and update manifests.
 - Process search, upload, and update requests, both into and out of Database Layer
@@ -69,7 +71,7 @@ _Pudotha/Skinner_
 *Raza/Pudotha/Hofer*
 - **Space Requirements**
 	- The system must have enough physical space to handle extremely large data-sets.
-	- We may need to implement a distributed system using clusters for efficiency.
+	- The system may need to be a distributed system using clusters for efficiency.
 - **Reliability Requirements**
 	- If the system crashes, the data and any manipulations/analytics must be preserved.
 - **Privacy Requirements**
