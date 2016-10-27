@@ -52,15 +52,13 @@
 - A Data Scientist can Save
 - A Data Scientist can Upload Data Set
 
-## Functional Requirements
+## Non-Functional Requirements
 *Hofer/Raza*
-- **Database Backend**
-  - The system will be able to perform efficient searches, using keywords.
-  - The system should be able to upload and update manifests.
-- **Business Logic**
-  - Process search, upload, and update requests, both into and out of Database Layer
-- **Front-End Framework**
-  - The user interface can accept and serve search, upload, and update requests.
+- Be able to perform efficient searches based on keywords. Users should not wait more than about two seconds for a query to resolve.
+- Be able to upload and update manifests.
+- Process search, upload, and update requests, both into and out of Database Layer
+- The user interface can accept and serve search, upload, and update requests.
+- Be able to upload and download data files, storing them effiencty. These may be very large, so we cannot have wasted space. 
 
 ## Non-Functional Requirements
 *Raza/Pudotha*
