@@ -2,6 +2,8 @@
 
 ## OCDX Engine
 
+[GitHub Repo](https://github.com/holtwashere/CS4320-FinalProject)
+
 ### Team 4 Members:
   - Holt Skinner *Project Manager*
   - Justin Hofer
@@ -42,13 +44,13 @@
 
 ## Use Cases
 *Skinner/Hofer*
-- User can Browse by keyword for Manifest
-- User can Contribute to Existing Dataset
-- User can Download Info
-- User can Generate or Upload Manifest
-- User can Save
-- User can Search on Manifest
-- User can Upload Data Set
+- A Data Scientist can Browse by keyword for Manifest
+- A Data Scientist can Search on Manifest
+- A Data Scientist can Contribute to Existing Dataset
+- A Data Scientist can Download Info
+- A Data Scientist can Generate or Upload Manifest
+- A Data Scientist can Save
+- A Data Scientist can Upload Data Set
 
 ## Functional Requirements
 *Hofer/Raza*
