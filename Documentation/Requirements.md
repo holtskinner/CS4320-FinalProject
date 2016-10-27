@@ -82,12 +82,14 @@
 
 ## User Requirements
 *Zhang/Rogers*
-- User will be able to upload Manifest.
-- Manifest can be reviewed by others.
-- User can edit or delete their Manifest.
-- User can search for Manifest they wish to view or test.
-- User will be able to include special comments or suggestions on manifest
-- User should be able to notify the changes or suggestions that improves manifest to other users
+- Data scientists will be able to upload Manifest.
+- Manifest can be reviewed by other data scientists.
+- Data scientists can edit or delete their Manifest.
+- Data scientists can search for Manifest they wish to view or test.
+- Data scientists will be able to include special comments or suggestions on manifest
+- Data scientists should be able to notify the changes or suggestions that improves manifest to other users
+- System admins can ban an illegal data scientist
+- System admins can delete an illegal manifest
 
 ---
 
