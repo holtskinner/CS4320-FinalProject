@@ -53,7 +53,9 @@
 - A Data Scientist can Upload Data Set
 
 ## Functional Requirements
-
+_Pudotha/Skinner_
+- The system will take a inputted manifest and place it into storage.
+- The system will retrieve a manifest from storage and present it to a Data Scientist.
 
 ## Non-Functional Requirements
 *Hofer/Raza*
