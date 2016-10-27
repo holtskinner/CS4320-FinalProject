@@ -1,4 +1,4 @@
-# Causes
+## Causes
 1. Physical Distance
 2. Resource Constraints ```$$$```
 3. No Structured Methodology
@@ -14,7 +14,7 @@
 4. No Central Location
 5. Legal/Policy Concerns
 
-# Effects
+## Effects
 1. Difficulty Sharing Data
 2. Hard to Verify Published Results
   - Repeatability

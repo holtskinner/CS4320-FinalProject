@@ -2,7 +2,7 @@
 
 ## OCDX Engine
 
-[GitHub Repo](https://github.com/holtwashere/CS4320-FinalProject)
+### [GitHub Repository](https://github.com/holtwashere/CS4320-FinalProject)
 
 ### Team 4 Members:
   - Holt Skinner *Project Manager*
@@ -38,7 +38,7 @@
   - Uploads and downloads data
   - Conducts sophisticated and systematic analyses of data
   - Extracts insights from large data sets
-- **System Admin**
+- **System Administrator**
   - Review the uploaded data
   - Manage users
 
@@ -60,7 +60,7 @@
 - **Business Logic**
   - Process search, upload, and update requests, both into and out of Database Layer
 - **Front-End Framework**
-  - Accept and serve search, upload, and update requests
+  - The user interface can accept and serve search, upload, and update requests.
 
 ## Non-Functional Requirements
 *Raza/Pudotha*
@@ -79,8 +79,8 @@
 - Manifest can be reviewed by others.
 - User can edit or delete their Manifest.
 - User can search for Manifest they wish to view or test.
-- user will be able to include special comments or suggestions on manifest
-- user should be able to notify the changes or suggestions that improves manifest to other users
+- User will be able to include special comments or suggestions on manifest
+- User should be able to notify the changes or suggestions that improves manifest to other users
 
 ## System Requirements
 *Hofer/Rogers/Skinner*
@@ -147,6 +147,7 @@
 # Change Log
 
 - Version 1.0: Pre-Implementation Design *10-16-2016*
+- Version 1.1: Sprint 1 *10-31-2016*
 
 <!-- ---
 
