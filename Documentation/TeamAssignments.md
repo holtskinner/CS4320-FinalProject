@@ -11,6 +11,9 @@
 - **Author:** Sketches/UI
 - **Reviewer** Functions
 
+#### Sprint 1
+- Beginning UI Implement
+
 # Ali
 #### Requirements
 - **Author:** Non-Functional Requirements
@@ -19,6 +22,10 @@
 #### Software Design
 - **Author:** Database Design
 - **Reviewer** Sketches / UI
+
+#### Sprint 1
+- Deployed Server
+- Sample Data
 
 # Justin
 #### Requirements
@@ -29,6 +36,11 @@
 - **Author:** Database Design
 - **Reviewer** Data
 
+#### Sprint 1
+- ERD
+- Setting up internals of DB
+- testing?
+
 # Bo
 #### Requirements
 - **Author:** User Requirements
@@ -37,6 +49,9 @@
 #### Software Design
 - **Author:** Data
 - **Reviewer** Sketches
+
+#### Sprint 1
+- Business logic/ PHP connect to mongo?
 
 # Brad
 #### Requirements
@@ -47,6 +62,9 @@
 - **Author:** Sketches
 - **Reviewer** Database Design
 
+#### Sprint 1
+- UI Implementation
+
 # Pramod
 #### Requirements
 - **Author:** User Descriptions
@@ -55,3 +73,7 @@
 #### Software Design
 - **Author:** Functions
 - **Reviewer** Database Design
+
+#### Sprint 1
+- Testing with Justin
+- 
