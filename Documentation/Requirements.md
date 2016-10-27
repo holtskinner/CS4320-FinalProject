@@ -52,16 +52,19 @@
 - A Data Scientist can Save
 - A Data Scientist can Upload Data Set
 
+## Functional Requirements
+
+
 ## Non-Functional Requirements
 *Hofer/Raza*
 - Be able to perform efficient searches based on keywords. Users should not wait more than about two seconds for a query to resolve.
 - Be able to upload and update manifests.
 - Process search, upload, and update requests, both into and out of Database Layer
 - The user interface can accept and serve search, upload, and update requests.
-- Be able to upload and download data files, storing them effiencty. These may be very large, so we cannot have wasted space. 
+- Be able to upload and download data files, storing them effiencty. These may be very large, so we cannot have wasted space.
 
-## Non-Functional Requirements
-*Raza/Pudotha*
+## System Requirements
+*Raza/Pudotha/Hofer*
 - **Space Requirements**
 	- The system must have enough physical space to handle extremely large data-sets.
 	- We may need to implement a distributed system using clusters for efficiency.
@@ -70,6 +73,12 @@
 - **Privacy Requirements**
 	- The data access must be limited to authorized users only.
 	- The system must enable secure data transfer over the internet
+- **Web Server**
+  - Web Server must provide reliable service for the appropriate amount of traffic that will be sent and received from the system.
+- **Database Backend**
+  - Database must be able to convert data into easily storable format, and return in original format.
+- **Storage Array**
+  - System must create intermediate backups and update logging to revert to earlier states if needed
 
 ## User Requirements
 *Zhang/Rogers*
@@ -79,15 +88,6 @@
 - User can search for Manifest they wish to view or test.
 - User will be able to include special comments or suggestions on manifest
 - User should be able to notify the changes or suggestions that improves manifest to other users
-
-## System Requirements
-*Hofer/Rogers/Skinner*
-- **Web Server**
-  - Web Server must provide reliable service for the appropriate amount of traffic that will be sent and received from the system.
-- **Database Backend**
-  - Database must be able to convert data into easily storable format, and return in original format.
-- **Storage Array**
-  - System must create intermediate backups and update logging to revert to earlier states if needed
 
 ---
 
