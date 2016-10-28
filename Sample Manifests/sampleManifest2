@@ -1,0 +1,72 @@
+{
+	"manifests": {
+		"manifest": {
+			"standardVersions": "ocdxManifest schema v.1",
+			"id": "https: //datahub.io/dataset/sociallyCompute",
+			"creator": "Sean Goggins",
+			"dateCreated": "2016 - 08 - 13",
+			"comment": "Second test manifest",
+			"researchObject": {
+				"title": "Socially Compute Manifest",
+				"abstract": "Data mined from socail networks for the purpose of consumer trend analytics.",
+				"dates": {
+					"date": {
+						"date": "1992 - 03 - 11",
+						"label": "start"
+					}
+				}
+			},
+			"privacyEthics": {
+				"oversight": {
+					"label": "assertion"
+				}
+			},
+			"informedConsent": "no assertion",
+			"anonymizedData": {
+				"label": "assertion"
+			},
+			"privacyConsiderations": "assertion"
+		},
+		"provenance": {
+			"narrative": "Socially Compute is an ongoing project aiming to analyze trends of everyday people to make meaningful connections."
+		},
+		"publications": {
+			"publication": "No assertion"
+		},
+		"locations": {
+			"location": {
+				"url": "",
+				"comment": ""
+			}
+		},
+		"files": {
+			"file": {
+				"name": "Socially Compute - sc.csv"
+			},
+			"format": ".csv",
+			"abstract": "Metadata for 15000 records collected over two decades",
+			"size": "No assertion",
+			"url": "No assertion",
+			"checksum": "No assertion"
+		},
+		"permissions": "No assertion"
+	},
+	"dates": {
+		"date": {
+			"date": "2016 - 10 - 28"
+		},
+		"label": "Created"
+	},
+	"creators": {
+		"creator": {
+			"name": "Sean Goggins",
+			"role": {
+				"label": "Other"
+			}
+		},
+		"type": {
+			"label": "No assertion"
+		},
+		"contact": "sg@wikimedia.org"
+	}
+}
