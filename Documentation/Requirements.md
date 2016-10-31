@@ -3,6 +3,7 @@
 ## OCDX Engine
 
 ### [GitHub Repository](https://github.com/holtwashere/CS4320-FinalProject)
+### [Deployment Environment](http://ec2-35-161-12-137.us-west-2.compute.amazonaws.com/)
 
 ### Team 4 Members:
   - Holt Skinner *Project Manager*
@@ -54,18 +55,18 @@
 
 ## Functional Requirements
 _Pudotha/Skinner_
-- The system will take a inputted manifest and place it into storage.
+- The system will take an inputted manifest and place it into storage.
 - The system will retrieve a manifest from storage and present it to a Data Scientist.
+- The user interface can accept and serve search, upload, and update requests to and from Data Scientists.
+- The system will process search, upload, and update requests, both into and out of Database Layer.
 
 ## Non-Functional Requirements
 *Hofer/Raza*
 
 ### User Non-functional
-- Be able to perform efficient searches based on keywords. Users should not wait more than about two seconds for a query to resolve.
-- Be able to upload and update manifests.
-- Process search, upload, and update requests, both into and out of Database Layer
-- The user interface can accept and serve search, upload, and update requests.
-- Be able to upload and download data files, storing them effiencty. These may be very large, so we cannot have wasted space.
+- Data Scientists will be able to perform efficient searches based on keywords. Users should not wait more than about two seconds for a query to resolve.
+- Data Scientists will be  able to upload and update manifests.
+- Data Scientists will be able to upload and download data files.
 
 ## System Requirements
 *Raza/Pudotha/Hofer*
