@@ -26,7 +26,7 @@
 				<li><a href="#">Browse</a></li>
 				<li><a href="#">Upload</a></li>
 				<li><a href="#">Profile</a></li>
-				<li><a href="#">Logout</a></li>
+				<li><a href="#loginModal">Login</a></li>
 			</ul>
 
 			<ul id="nav-mobile" class="side-nav">
@@ -57,19 +57,50 @@
 								<label for="search" class="active"><i class="material-icons">search</i></label>
 								<i class="material-icons">close</i>
 							</div>
-							<input name="titleSearch" type="radio">
-      				<label for="titleSearch">Title</label>
-							<input name="AuthorSearch" type="radio">
-      				<label for="AuthorSearch">Author</label>
-							<input name="DateSearch" type="radio">
-      				<label for="DateSearch">Date</label>
-							<input name="descriptionSearch" type="radio">
-      				<label for="descriptionSearch">Description</label>
+
+							<input name="searchCategory" type="radio" id="titleSearch">
+      				<label class="searchLabel" for="titleSearch">Title</label>
+
+							<input name="searchCategory" type="radio" id="authorSearch">
+      				<label class="searchLabel" for="authorSearch">Author</label>
+
+							<input name="searchCategory" type="radio" id="dateSearch">
+      				<label class="searchLabel" for="dateSearch">Date</label>
+
+							<input name="searchCategory" type="radio" id="descriptionSearch">
+      				<label class="searchLabel" for="descriptionSearch">Description</label>
+
 						</form>
 					</div>
 				</nav>
-				<br>
-				<br>
+
+				<div id="loginModal" class="modal">
+						 <div class="row">
+							<h3 class="center-align">Account Login</h3>
+								<button class="btn login-with">Login with Google</button>
+								<button class="btn login-with">Login with GitHub</button>
+								<button class="btn login-with">Login with Twitter</button>
+							</div>
+
+			<form class="col s3">
+						<div class="row">
+        <div class="input-field col s3">
+          <input id="first_name" type="text" class="validate">
+          <label for="first_name">Username</label>
+        </div>
+        <div class="input-field col s3">
+          <input id="last_name" type="text" class="validate">
+          <label for="last_name">Password</label>
+        </div>
+      </div>
+						</form>
+						<div class="modal-footer">
+							<a href="#" class="btn close">Login</a>
+								<a href="#" class="btn close">Cancel</a>
+						</div>
+						</div>
+				</div>
+
 			</div>
 		</div>
 	</div>
