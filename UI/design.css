@@ -1,0 +1,170 @@
+html, body {
+    font-family: 'Segoe UI',Tahoma,Arial,Helvetica,sans-serif;
+    margin: 0;
+    height: 100%;
+}
+input, button, label {
+    box-sizing: border-box;
+}
+a {
+    cursor: pointer;
+    color: inherit;
+    text-decoration: none;
+}
+.body {height: 80%;}
+.color-body {
+    background-color: #b0e5ff;
+    border-top: 1px solid black; 
+}
+.footer {
+    background-color: #eee;
+    border-top: 1px solid #bbb;
+    height: 20%;
+}
+.wrapper {
+    margin: 0 auto;
+    width: 600px;
+    background-color: #f8f8f8;
+    border: 1px solid black;
+    margin-top: 20px;
+    padding: 5px 20px 10px;
+}
+.divider {
+    width: 100%;
+    height: 1px;
+    background: -moz-linear-gradient(0deg, rgba(248,248,248,1) 0%, rgba(51,51,51,1) 35%, rgba(0,0,0,1) 50%, rgba(51,51,51,1) 65%, rgba(248,248,248,1) 100%); /* ff3.6+ */
+    background: -webkit-gradient(linear, left top, right top, color-stop(0%, rgba(248,248,248,1)), color-stop(35%, rgba(51,51,51,1)), color-stop(50%, rgba(0,0,0,1)), color-stop(65%, rgba(51,51,51,1)), color-stop(100%, rgba(248,248,248,1))); /* safari4+,chrome */
+    background: -webkit-linear-gradient(0deg, rgba(248,248,248,1) 0%, rgba(51,51,51,1) 35%, rgba(0,0,0,1) 50%, rgba(51,51,51,1) 65%, rgba(248,248,248,1) 100%); /* safari5.1+,chrome10+ */
+    background: -o-linear-gradient(0deg, rgba(248,248,248,1) 0%, rgba(51,51,51,1) 35%, rgba(0,0,0,1) 50%, rgba(51,51,51,1) 65%, rgba(248,248,248,1) 100%); /* opera 11.10+ */
+    background: -ms-linear-gradient(0deg, rgba(248,248,248,1) 0%, rgba(51,51,51,1) 35%, rgba(0,0,0,1) 50%, rgba(51,51,51,1) 65%, rgba(248,248,248,1) 100%); /* ie10+ */
+    background: linear-gradient(90deg, rgba(248,248,248,1) 0%, rgba(51,51,51,1) 35%, rgba(0,0,0,1) 50%, rgba(51,51,51,1) 65%, rgba(248,248,248,1) 100%); /* w3c */
+    margin: 15px 0;
+}
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    height: 50px;
+    background-color: #0099CC;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #333;
+    border-top: 1px solid #333;
+    box-shadow: 0 0 8px 3px #888;
+    padding: 0px 15px 5px;
+    margin-bottom: 18px;
+}
+.navbar-box {
+    display: flex;
+    align-items: flex-end;
+}
+
+.navbar .home-text {
+    font-size: 42px;
+    margin-bottom: -4px;
+}
+.navbar span{
+    font-size: 24px;
+    margin: 0 10px;
+}
+.search-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    position: absolute;
+    left: 50%;
+    top: 30%;
+    margin-left: -250px;
+}
+.search-box {
+    display: flex;
+    font-size: 1em;
+    font-family: sans-serif;
+    border-width: 0;
+}
+
+.search-box label, .search-box input, .search-box button {
+    font-size: inherit;
+    padding: 0.3em 0.4em;
+    margin: 0.1em 0.2em;
+    -moz-box-sizing: content-box;
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
+    border: 1px solid #bbb;
+    background-color: #fff;
+}
+
+.search-box input {
+    margin-right: 0;
+    flex-grow: 1;
+}
+.search-box input:focus {
+    outline: none;
+    background-color: #ffa;
+    background-color: rgba(255,255,210,0.5);
+}
+.search-box button {
+    border-left: 0;
+    margin-left: 0;
+    background-color: #f8f8f8;
+}
+.search-box button:active,
+.search-box button:focus {
+    background-color: #acf;
+    outline: none;
+}
+.search-options {
+    margin-top: 5px;
+}
+.search-options input{
+    margin-left: 10px;
+}
+form {
+    display: flex;
+}
+.left-half {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+.right-half {
+    flex-grow: 1;
+    font-size: 0;
+}
+.right-half input {
+    width: 100%;
+    margin-left: 6px;
+}
+.right-half input, .left-half label {
+    height: 26px;
+    margin-bottom: 5px;
+}
+.right-half .add-contributor{
+    width: 50px;
+    margin-bottom: 12px;
+}  
+.add-files {
+    margin: 0 auto;
+    width: 95%;
+    height: 80px;
+    border: 1px dotted black;
+    text-align: center;
+}
+.add-files p {
+    text-align: center;
+    margin: 4px 0;
+}
+.wrapper .title  {
+    width: 100%;
+    display: block;
+    text-align: center;
+    font-size: 26px;
+    margin: 8px 0 0;
+}
+.wrapper-footer {
+    margin: 20px 0 5px;
+    display: flex;
+    justify-content: space-between;
+}
+.wrapper-footer button{
+    border-radius: 0;
+    font-size: 18px;
+}
