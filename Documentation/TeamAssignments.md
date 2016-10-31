@@ -12,7 +12,8 @@
 - **Reviewer** Functions
 
 #### Sprint 1
-- Beginning UI Implement
+- Technical Sprint Documentation
+- Beginning UI Implementation
 
 # Ali
 #### Requirements
@@ -39,7 +40,7 @@
 #### Sprint 1
 - ERD
 - Setting up internals of DB
-- testing?
+- Testing
 
 # Bo
 #### Requirements
@@ -51,7 +52,9 @@
 - **Reviewer** Sketches
 
 #### Sprint 1
-- Business logic/ PHP connect to mongo?
+- Business logic
+- PHP Connection to MongoDB
+- Testing Scenarios
 
 # Brad
 #### Requirements
@@ -75,5 +78,5 @@
 - **Reviewer** Database Design
 
 #### Sprint 1
-- Testing with Justin
-- 
+- Testing
+- Functional Requirements
