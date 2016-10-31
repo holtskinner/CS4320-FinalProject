@@ -11,10 +11,36 @@
                 <span><a href="new.html">Upload New</a></span>
             </div>
             <div class="navbar-right navbar-box">
-                <span><a>Login</a></span>
+                <span><a id="myBtn">Login</a></span>
             </div>
         </div>
         <div class="body">
+            <div id="myModal" class="modal">
+                <div class="modal-content">
+                    <div><span class="title">Account Login</span></div>
+                <div class="divider"></div>
+                <div class="button-wrapper">
+                    <button class="login-with">Login with Google</button>
+                    <button class="login-with">Login with GitHub</button>
+                    <button class="login-with last">Login with Twitter</button>
+                </div>
+                <form>
+                    <div class="left-half">
+                        <label>Username:</label>
+                        <label>Password:</label>
+                    </div>
+                    <div class="right-half">
+                        <input>
+                        <input type="password">
+                    </div>
+                </form>
+                <div class="divider"></div>
+                <div class="wrapper-footer">
+                    <button class="close">Cancel</button>
+                    <button>Login</button>
+                </div>
+                </div>
+            </div>
             <div class="search-wrapper">
                 <div class="search-box">
                     <input class="search-bar" type="text" name="Search" placeholder="Search Manifest..."/>
@@ -31,3 +57,20 @@
         </div>
     </body>
 </html>
+
+<script>
+    var modal = document.getElementById('myModal');
+    var openModal = document.getElementById("myBtn");
+    var span = document.getElementsByClassName("close")[0];
+    openModal.onclick = function() {
+        modal.style.display = "block";
+    }
+    span.onclick = function() {
+        modal.style.display = "none";
+    }
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+</script>
