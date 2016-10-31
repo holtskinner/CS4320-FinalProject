@@ -148,6 +148,17 @@ _Pudotha/Skinner_
 
 ---
 
+# Deployment Enviornment
+*Raza*
+
+- Hosting Platform: [Amazon Web Services](https://aws.amazon.com/)
+- Operating System: [Ubuntu 16.04.1](http://releases.ubuntu.com/16.04/)
+- Web Server: [Apache HTTP Server 2.4](http://httpd.apache.org/docs/current/)
+- Database: [MongoDB](https://www.mongodb.com/)
+
+
+---
+
 # Change Log
 
 - Version 1.0: Pre-Implementation Design *10-16-2016*
