@@ -143,10 +143,12 @@ _Pudotha/Skinner_
     - date
     - attempts
 
-<!-- ## Functions
+---
+<!-- ## Functions -->
 
-## Database Structure -->
+# Database Structure
 
+![Database Diagram](./DatabaseRelations.jpg)
 ---
 
 # Deployment Enviornment
@@ -156,7 +158,6 @@ _Pudotha/Skinner_
 - Operating System: [Ubuntu 16.04.1](http://releases.ubuntu.com/16.04/)
 - Web Server: [Apache HTTP Server 2.4](http://httpd.apache.org/docs/current/)
 - Database: [MongoDB](https://www.mongodb.com/)
-
 
 ---
 
@@ -228,6 +229,7 @@ _Pudotha/Skinner_
 # Summary:
  - The unit testing, integration testing and regression testing are for verification, the user acceptance test is for validation.
 
+---
 
 # Change Log
 
