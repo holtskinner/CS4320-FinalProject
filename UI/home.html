@@ -3,6 +3,7 @@
     <head>
         <title>Page Title</title>
         <link rel="stylesheet" type="text/css" href="design.css" media="screen" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     </head>
     <body>
         <div class="navbar">
@@ -41,15 +42,45 @@
                 </div>
                 </div>
             </div>
-            <div class="search-wrapper">
+            <div id="searchWrap" class="search-wrapper">
                 <div class="search-box">
                     <input class="search-bar" type="text" name="Search" placeholder="Search Manifest..."/>
-                    <button class="search-button">Search</button>
+                    <button id="search-button" class="search-button">Search</button>
                 </div>
                 <div class="search-options">
                     <input name="search-options" type="radio">Title
                     <input name="search-options" type="radio">Author
                     <input name="search-options" type="radio">Date Created
+                </div>
+            </div>
+            <div id="results">
+                <div class="dataset-labels">
+                    <label class="med">Title</label>
+                    <label class="med">Author</label>
+                    <label class="small">Date Created</label>
+                    <label class="small">Date Modified</label>
+                    <label class="large">Comments</label>
+                </div> 
+                <div class="dataset">
+                    <input class="med" value="dataset1" readonly>
+                    <input class="med" value="First Last" readonly>
+                    <input class="small" value="12-10-2015" readonly>
+                    <input class="small" value="3-1-2016" readonly>
+                    <input class="large" value="lorem ipsum" readonly>
+                </div>
+                <div class="dataset">
+                    <input class="med" value="dataset2" readonly>
+                    <input class="med" readonly>
+                    <input class="small" readonly>
+                    <input class="small" readonly>
+                    <input class="large" readonly>
+                </div>
+                <div class="dataset">
+                    <input class="med" value="dataset3" readonly>
+                    <input class="med" readonly>
+                    <input class="small" readonly>
+                    <input class="small" readonly>
+                    <input class="large" readonly>
                 </div>
             </div>
         </div>
@@ -73,4 +104,19 @@
             modal.style.display = "none";
         }
     }
+    $('#search-button').on('click', function(){
+        if($('.search-wrapper').css('position') == 'absolute'){
+            console.log("hit");
+            $('.search-wrapper').css('position', 'relative');
+            $('.search-wrapper').css('top', '10px');
+            $('#results').css('display', 'flex');
+        }
+        else{
+            $('.search-wrapper').css('position', '');
+            $('.search-wrapper').css('top', '');
+            $('#results').css('display', '');
+        }
+        console.log("test");
+    });
+    
 </script>

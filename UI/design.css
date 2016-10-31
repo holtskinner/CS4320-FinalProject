@@ -80,7 +80,40 @@ a {
     font-family: sans-serif;
     border-width: 0;
 }
-
+#results {
+    position: relative;
+    top: 30px;
+    width: 800px;
+    font-size: 0;
+    display: none;
+    margin: 0 auto;
+    flex-direction: column;
+}
+.dataset, .dataset-labels {
+    display: flex;
+}
+.dataset-labels {
+    text-align: center;
+    border-bottom: 1px solid black;
+}
+.dataset-labels label {
+    font-size: 16px;
+    border-right: 1px solid #444;
+}
+.dataset-labels label:last-child {
+    border-right: none;
+}
+.small {width: 14%;}
+.med {width: 20%;}
+.large {width: 42%;}
+#results input {
+    border: none;
+    border-right: 1px solid #444;
+    font-size: 14px;
+}
+#results .dataset input:last-child {
+    border-right: none;
+}
 .search-box label, .search-box input, .search-box button {
     font-size: inherit;
     padding: 0.3em 0.4em;
