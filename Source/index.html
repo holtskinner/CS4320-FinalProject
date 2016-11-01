@@ -14,6 +14,7 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 	<script src="js/materialize.min.js"></script>
 	<script src="js/init.js"></script>
+	<script src="https://use.fontawesome.com/8172e32e19.js"></script>
 
 </head>
 
@@ -32,11 +33,20 @@
 				<li><a href="#">Browse</a></li>
 				<li><a href="#">Upload</a></li>
 				<li><a href="#">Profile</a></li>
-				<li><a href="#">Logout</a></li>
+				<li><a href="#loginModal">Login</a></li>
 			</ul>
 			<a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
 		</div>
 	</nav>
+
+	<div id="loginModal" class="modal center-align">
+		<div class="modal-content">
+			<h3>Account Login</h3>
+			<a class="waves-effect waves-light btn-large"><i class="fa fa-github left" aria-hidden="true"></i>GitHub</a>
+			<a class="waves-effect waves-light btn-large"><i class="fa fa-google left" aria-hidden="true"></i>Google</a>
+			<a class="waves-effect waves-light btn-large"><i class="fa fa-twitter left" aria-hidden="true"></i>Twitter</a>
+		</div>
+	</div> <!-- End Modal-->
 
 	<div id="index-banner">
 		<div class="section">
@@ -70,21 +80,16 @@
 						</form>
 					</div>
 				</nav>
+				<div id="searchResults" class="container">
+					<table>
+					</table>
 
-
+				</div>
 			</div>
 		</div>
 	</div>
 
-	<div id="loginModal" class="modal center-align">
 
-		<div class="modal-content">
-			<h3>Account Login</h3>
-			<a class="btn">Login with Google</a>
-			<a class="btn login-with">Login with GitHub</a>
-			<a class="btn login-with">Login with Twitter</a>
-		</div>
-	</div> <!-- End Modal-->
 
 </body>
 
