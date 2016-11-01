@@ -51,7 +51,7 @@
 
 				<nav>
 					<div class="nav-wrapper">
-						<form method="get">
+						<form action="#" method="get">
 							<div class="input-field">
 								<input id="search" type="search" required placeholder="Search Manifests">
 								<label for="search" class="active"><i class="material-icons">search</i></label>
@@ -59,47 +59,44 @@
 							</div>
 
 							<input name="searchCategory" type="radio" id="titleSearch">
-      				<label class="searchLabel" for="titleSearch">Title</label>
+							<label class="searchLabel" for="titleSearch">Title</label>
 
 							<input name="searchCategory" type="radio" id="authorSearch">
-      				<label class="searchLabel" for="authorSearch">Author</label>
+							<label class="searchLabel" for="authorSearch">Author</label>
 
 							<input name="searchCategory" type="radio" id="dateSearch">
-      				<label class="searchLabel" for="dateSearch">Date</label>
+							<label class="searchLabel" for="dateSearch">Date</label>
 
 							<input name="searchCategory" type="radio" id="descriptionSearch">
-      				<label class="searchLabel" for="descriptionSearch">Description</label>
+							<label class="searchLabel" for="descriptionSearch">Description</label>
 
 						</form>
 					</div>
 				</nav>
 
-				<div id="loginModal" class="modal">
-						 <div class="row">
-							<h3 class="center-align">Account Login</h3>
-								<button class="btn login-with">Login with Google</button>
-								<button class="btn login-with">Login with GitHub</button>
-								<button class="btn login-with">Login with Twitter</button>
-							</div>
+				<div id="loginModal" class="modal center-align">
+					<h3>Account Login</h3>
+					<div class="row">
+						<button class="btn login-with">Login with Google</button>
+						<button class="btn login-with">Login with GitHub</button>
+						<button class="btn login-with">Login with Twitter</button>
+					</div>
 
-			<form class="col s3">
-						<div class="row">
-        <div class="input-field col s3">
-          <input id="first_name" type="text" class="validate">
-          <label for="first_name">Username</label>
-        </div>
-        <div class="input-field col s3">
-          <input id="last_name" type="text" class="validate">
-          <label for="last_name">Password</label>
-        </div>
-      </div>
-						</form>
+					<form class="col s3">
+						<div class="input-field">
+							<input id="username" type="text">
+							<label for="username">Username</label>
+						</div>
+						<div class="input-field">
+							<input id="password" type="password">
+							<label for="password">Password</label>
+						</div>
 						<div class="modal-footer">
-							<a href="#" class="btn close">Login</a>
-								<a href="#" class="btn close">Cancel</a>
+							<a href="#" class="btn">Login</a>
+							<a href="#" class="btn">Cancel</a>
 						</div>
-						</div>
-				</div>
+					</form>
+				</div> <!-- End Modal-->
 
 			</div>
 		</div>
