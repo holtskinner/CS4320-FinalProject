@@ -2,95 +2,92 @@
 <html lang="en">
 
 <head>
-
-	<!-- Template by materialzecss.com -->
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no" />
-	<title>SWE Project Team 4</title>
-
-	<link href="css/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection" />
-	<link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
-
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-	<script src="js/materialize.min.js"></script>
-	<script src="js/init.js"></script>
-	<script src="https://use.fontawesome.com/8172e32e19.js"></script>
-
+    <!-- Template by materialzecss.com -->
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no" />
+    <title>SWE Project Team 4</title>
+    <link href="css/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection" />
+    <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="js/materialize.min.js"></script>
+    <script src="js/init.js"></script>
+    <script src="https://use.fontawesome.com/8172e32e19.js"></script>
 </head>
 
 <body>
-	<nav class="white" role="navigation">
-		<div class="nav-wrapper container">
-			<a href="index.html" class="brand-logo">OCDX</a>
-			<ul class="right hide-on-med-and-down">
-				<li><a href="#">Browse</a></li>
-				<li><a href="#">Upload</a></li>
-				<li><a href="#">Profile</a></li>
-				<li><a href="#loginModal">Login</a></li>
-			</ul>
+    <nav class="white" role="navigation">
+        <div class="nav-wrapper container"> <a href="index.html" class="brand-logo">OCDX</a>
+            <ul class="right hide-on-med-and-down">
+                <li><a href="#">Browse</a></li>
+                <li><a href="#">Upload</a></li>
+                <li><a href="#">Profile</a></li>
+                <li><a href="#loginModal">Login</a></li>
+            </ul>
+            <ul id="nav-mobile" class="side-nav">
+                <li><a href="#">Browse</a></li>
+                <li><a href="#">Upload</a></li>
+                <li><a href="#">Profile</a></li>
+                <li><a href="#loginModal">Login</a></li>
+            </ul> <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a> </div>
+    </nav>
+    <div id="loginModal" class="modal center-align">
+        <div class="modal-content">
+            <h3>Account Login</h3> <a class="waves-effect waves-light btn-large"><i class="fa fa-github left" aria-hidden="true"></i>GitHub</a> <a class="waves-effect waves-light btn-large"><i class="fa fa-google left" aria-hidden="true"></i>Google</a> <a class="waves-effect waves-light btn-large"><i class="fa fa-twitter left" aria-hidden="true"></i>Twitter</a> </div>
+    </div>
+    <!-- End Modal-->
+    <div id="index-banner">
+        <div class="section">
+            <div class="container">
+                <h2 class="header center teal-text text-lighten-2">Open Community Data Exchange</h2>
+                <div class="row center">
+                    <h6 class="header col s12 light">The OCDX community supports an open standard for describing data about online communities, as well as the support tools and workflow patterns for researchers and data providers to share their datasets with the wider community. The OCDX community aims to provide the lowest barriers to contributing/sharing data. We welcome your input, suggesting fields information for inclusion in the OCDX specification.</h6> </div>
+                <nav>
+                    <div class="nav-wrapper">
+                        <form action="#" method="get">
+                            <div class="input-field">
+                                <input id="search" type="search" required placeholder="Search Manifests">
+                                <label for="search" class="active"><i class="material-icons">search</i></label> <i class="material-icons">close</i> </div>
+                            <input name="searchCategory" type="radio" id="titleSearch">
+                            <label class="searchLabel" for="titleSearch">Title</label>
+                            <input name="searchCategory" type="radio" id="authorSearch">
+                            <label class="searchLabel" for="authorSearch">Author</label>
+                            <input name="searchCategory" type="radio" id="dateSearch">
+                            <label class="searchLabel" for="dateSearch">Date</label>
+                            <input name="searchCategory" type="radio" id="descriptionSearch">
+                            <label class="searchLabel" for="descriptionSearch">Description</label>
+                        </form>
+                    </div>
+                </nav>
 
-			<ul id="nav-mobile" class="side-nav">
-				<li><a href="#">Browse</a></li>
-				<li><a href="#">Upload</a></li>
-				<li><a href="#">Profile</a></li>
-				<li><a href="#loginModal">Login</a></li>
-			</ul>
-			<a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
-		</div>
-	</nav>
+								<br>
+								<br>
+								<br>
 
-	<div id="loginModal" class="modal center-align">
-		<div class="modal-content">
-			<h3>Account Login</h3>
-			<a class="waves-effect waves-light btn-large"><i class="fa fa-github left" aria-hidden="true"></i>GitHub</a>
-			<a class="waves-effect waves-light btn-large"><i class="fa fa-google left" aria-hidden="true"></i>Google</a>
-			<a class="waves-effect waves-light btn-large"><i class="fa fa-twitter left" aria-hidden="true"></i>Twitter</a>
-		</div>
-	</div> <!-- End Modal-->
-
-	<div id="index-banner">
-		<div class="section">
-			<div class="container">
-				<h2 class="header center teal-text text-lighten-2">Open Community Data Exchange</h2>
-				<div class="row center">
-					<h6 class="header col s12 light">The OCDX community supports an open standard for describing data about online communities, as well as the support tools and workflow patterns for researchers and data providers to share their datasets with the wider community. The OCDX community aims to provide the lowest barriers to contributing/sharing data. We welcome your input, suggesting fields information for inclusion in the OCDX specification.</h6>
-				</div>
-
-				<nav>
-					<div class="nav-wrapper">
-						<form action="#" method="get">
-							<div class="input-field">
-								<input id="search" type="search" required placeholder="Search Manifests">
-								<label for="search" class="active"><i class="material-icons">search</i></label>
-								<i class="material-icons">close</i>
-							</div>
-
-							<input name="searchCategory" type="radio" id="titleSearch">
-							<label class="searchLabel" for="titleSearch">Title</label>
-
-							<input name="searchCategory" type="radio" id="authorSearch">
-							<label class="searchLabel" for="authorSearch">Author</label>
-
-							<input name="searchCategory" type="radio" id="dateSearch">
-							<label class="searchLabel" for="dateSearch">Date</label>
-
-							<input name="searchCategory" type="radio" id="descriptionSearch">
-							<label class="searchLabel" for="descriptionSearch">Description</label>
-
-						</form>
-					</div>
-				</nav>
-				<div id="searchResults" class="container">
-					<table>
-					</table>
-
-				</div>
-			</div>
-		</div>
-	</div>
-
-
-
+                <div id="searchResults">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th data-field="title">Title</th>
+                                <th data-field="author">Author</th>
+                                <th data-field="dateCreated">Date Created</th>
+                                <th data-field="dateModified">Date Modified</th>
+                                <th data-field="comments">Comments</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>dataset1</td>
+                                <td>First Last</td>
+                                <td>12-10-2015</td>
+                                <td>3-1-2016</td>
+                                <td>lorem ipsum</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>
