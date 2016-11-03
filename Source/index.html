@@ -12,6 +12,8 @@
     <script src="js/materialize.min.js"></script>
     <script src="js/init.js"></script>
     <script src="https://use.fontawesome.com/8172e32e19.js"></script>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <meta name="google-signin-client_id" content="975332133771-b3j764j7oo8ikir7kiocd9uoush78mv2.apps.googleusercontent.com">
 </head>
 
 <body>
@@ -32,7 +34,11 @@
     </nav>
     <div id="loginModal" class="modal center-align">
         <div class="modal-content">
-            <h3>Account Login</h3> <a class="waves-effect waves-light btn-large"><i class="fa fa-github left" aria-hidden="true"></i>GitHub</a> <a class="waves-effect waves-light btn-large"><i class="fa fa-google left" aria-hidden="true"></i>Google</a> <a class="waves-effect waves-light btn-large"><i class="fa fa-twitter left" aria-hidden="true"></i>Twitter</a> </div>
+            <h3>Account Login</h3>
+            <div class="waves-effect waves-light btn-large"><i class="fa fa-github left" aria-hidden="true"></i>GitHub</div>
+             <div class="g-signin2 waves-effect waves-light btn-large" data-onsuccess="onSignIn"><i class="fa fa-google left" aria-hidden="true"></i>Google</div>
+              <div class="waves-effect waves-light btn-large"><i class="fa fa-twitter left" aria-hidden="true"></i>Twitter</div>
+        </div>
     </div>
     <!-- End Modal-->
     <div id="index-banner">
@@ -44,15 +50,20 @@
                 <nav>
                     <div class="nav-wrapper">
                         <form action="#" method="get">
-                            <div class="input-field">
-                                <input id="search" type="search" required placeholder="Search Manifests">
-                                <label for="search" class="active"><i class="material-icons">search</i></label> <i class="material-icons">close</i> </div>
+                          <div class="input-field">
+                            <input id="search" type="search" required placeholder="Search Manifests">
+                            <label for="search" class="active"><i class="material-icons">search</i></label> <i class="material-icons">close</i>
+                          </div>
+
                             <input name="searchCategory" type="radio" id="titleSearch">
                             <label class="searchLabel" for="titleSearch">Title</label>
+
                             <input name="searchCategory" type="radio" id="authorSearch">
                             <label class="searchLabel" for="authorSearch">Author</label>
+
                             <input name="searchCategory" type="radio" id="dateSearch">
                             <label class="searchLabel" for="dateSearch">Date</label>
+
                             <input name="searchCategory" type="radio" id="descriptionSearch">
                             <label class="searchLabel" for="descriptionSearch">Description</label>
                         </form>
