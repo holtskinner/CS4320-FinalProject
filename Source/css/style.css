@@ -38,9 +38,9 @@ nav {
   background-color: #444;
 }
 
-p {
-  line-height: 2rem;
-}
+p {line-height: 2rem;}
+td, th {padding: 2px 5px;}
+
 
 .searchLabel {
   margin-right: 1rem;
