@@ -6,13 +6,14 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no" />
     <title>SWE Project Team 4</title>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
     <link href="css/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection" />
     <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="js/materialize.min.js"></script>
     <script src="js/init.js"></script>
     <script src="https://use.fontawesome.com/8172e32e19.js"></script>
-    <script src="https://apis.google.com/js/platform.js" async defer></script>
+
     <meta name="google-signin-client_id" content="975332133771-b3j764j7oo8ikir7kiocd9uoush78mv2.apps.googleusercontent.com">
 </head>
 
@@ -36,11 +37,12 @@
         <div class="modal-content">
             <h3>Account Login</h3>
             <div class="waves-effect waves-light btn-large"><i class="fa fa-github left" aria-hidden="true"></i>GitHub</div>
-             <div class="g-signin2 waves-effect waves-light btn-large" data-onsuccess="onSignIn"><i class="fa fa-google left" aria-hidden="true"></i>Google</div>
+             <div class="waves-effect waves-light btn-large g-signin2" data-onsuccess="onSignIn"><i class="fa fa-google left" aria-hidden="true"></i>Google</div>
               <div class="waves-effect waves-light btn-large"><i class="fa fa-twitter left" aria-hidden="true"></i>Twitter</div>
         </div>
     </div>
     <!-- End Modal-->
+
     <div id="index-banner">
         <div class="section">
             <div class="container">
@@ -52,7 +54,7 @@
                         <form action="#" method="get">
                           <div class="input-field">
                             <input id="search" type="search" required placeholder="Search Manifests">
-                            <label for="search" class="active"><i class="material-icons">search</i></label> <i class="material-icons">close</i>
+                            <label for="search" class="active"><i class="fa fa-search" aria-hidden="true"></i></label> <i class="fa fa-times-circle" aria-hidden="true"></i>
                           </div>
 
                             <input name="searchCategory" type="radio" id="titleSearch">
