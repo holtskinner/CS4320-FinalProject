@@ -2,29 +2,12 @@
 <html lang="en">
 
 <head>
-    <!-- Template by materialzecss.com -->
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no" />
-    <title>SWE Project Team 4</title>
-    <script src="https://apis.google.com/js/platform.js" async defer></script>
-    <link href="css/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection" />
-    <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="js/materialize.min.js"></script>
-    <script src="js/init.js"></script>
-    <script src="https://use.fontawesome.com/8172e32e19.js"></script>
-    <meta name="google-signin-client_id" content="975332133771-b3j764j7oo8ikir7kiocd9uoush78mv2.apps.googleusercontent.com">
+    <?php require_once 'materialize.php'; ?>
 </head>
 
 <body>
-    <?php include "nav.php" ?>
-    <div id="loginModal" class="modal center-align">
-        <div class="modal-content">
-            <h3>Account Login</h3>
-            <div class="g-signin2" data-onsuccess="onSignIn"></div>
-            <!-- <div class="waves-effect waves-light btn-large"><i class="fa fa-github left" aria-hidden="true"></i>GitHub</div>
-              <div class="waves-effect waves-light btn-large"><i class="fa fa-twitter left" aria-hidden="true"></i>Twitter</div> --></div>
-    </div>
+    <?php include "nav.php"; ?>
+
     <!-- End Modal-->
     <div id="index-banner">
         <div class="section">
