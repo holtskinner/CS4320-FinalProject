@@ -3,7 +3,8 @@
         <form action="#" method="get">
             <div class="input-field">
                 <input id="search" type="search" required placeholder="Search Manifests">
-                <label for="search" class="active"><i class="fa fa-search" aria-hidden="true"></i></label> <i class="fa fa-times-circle" aria-hidden="true"></i> </div>
+                <label for="search" class="active"><i class="fa fa-search" aria-hidden="true"></i></label>
+            </div>
             <input name="searchCategory" type="radio" id="titleSearch">
             <label class="searchLabel" for="titleSearch">Title</label>
             <input name="searchCategory" type="radio" id="authorSearch">
