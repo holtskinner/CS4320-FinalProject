@@ -1,10 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <?php require_once 'materialize.php'; ?>
-</head>
-
+<?php require_once 'header.php'; ?>
 <body>
     <?php include "nav.php"; ?>
     <div id="index-banner">
@@ -37,7 +33,7 @@
                                     <td>12-10-2015</td>
                                     <td>3-1-2016</td>
                                     <td>lorem ipsum</td>
-                                    <td><a>Edit</a></td>
+                                    <td><a href="#">Edit</a></td>
                                     <td><a>View</a></td>
                                 </tr>
                                 <tr>
