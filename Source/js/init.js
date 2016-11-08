@@ -2,16 +2,19 @@
     $(function() {
     $('.button-collapse').sideNav();
     $('.modal').modal();
+
     function onSignIn(googleUser) {
         var profile = googleUser.getBasicProfile();
         var id_token = googleUser.getAuthResponse().id_token;
         // TODO Send id_token to PHP Backend (This is in place of their user id for authentication)
     }
+
     $('#search').on('click', function(){
       $("#table-header").animate({ opacity: 0 }, 400);
       $("#table-header").animate({ height: 10 }, 400);
-      var i = 0;
-      for(i = 0 ; i < 1 ; i++){
+
+        $('#manifest-table').empty();//Remove table before creating new one
+
         $('#manifest-table').append(
           '<thead>' +
               '<tr>' +
@@ -28,7 +31,6 @@
 
           '</tbody>'
         );
-      }
       for (var j = 0 ; j < 5 ; j++){
         $('#test').append(
           '<tr>' +
