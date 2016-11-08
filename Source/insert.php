@@ -15,8 +15,8 @@
     $Manifest = '{"name": "Justin"}';
     insert_manifest($Manifest);
     
-    function remove_manifest($objects_id){
-    $collection.remove(array('ObjectsId'=>$objects_id));
+    function remove_manifest($object_id){
+    $collection.remove(array('ObjectId'=>$object_id));
 }
 ?>
 
