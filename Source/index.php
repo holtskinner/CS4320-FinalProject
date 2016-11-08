@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-<?php require_once 'header.php'; ?>
+  <head>
+      <title>OCDX</title>
+  <?php require_once 'header.php'; ?>
+  </head>
 <body>
     <?php include "nav.php"; ?>
     <div id="index-banner">

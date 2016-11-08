@@ -89,3 +89,4 @@ ENV/
 .ropeproject
 .ftpconfig
 *.DS_Store
+*.conf
