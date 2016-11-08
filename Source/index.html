@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Template by materialzecss.com -->
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no" />
+    <title>SWE Project Team 4</title>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <link href="css/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection" />
+    <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="js/materialize.min.js"></script>
+    <script src="js/init.js"></script>
+    <script src="https://use.fontawesome.com/8172e32e19.js"></script>
+
+    <meta name="google-signin-client_id" content="975332133771-b3j764j7oo8ikir7kiocd9uoush78mv2.apps.googleusercontent.com">
+</head>
+
+<body>
+    <nav class="white" role="navigation">
+        <div class="nav-wrapper container"> <a href="index.html" class="brand-logo">OCDX</a>
+            <ul class="right hide-on-med-and-down">
+                <li><a href="#">Browse</a></li>
+                <li><a href="#">Upload</a></li>
+                <li><a href="#">Profile</a></li>
+                <li><a href="#loginModal">Login</a></li>
+            </ul>
+            <ul id="nav-mobile" class="side-nav">
+                <li><a href="#">Browse</a></li>
+                <li><a href="#">Upload</a></li>
+                <li><a href="#">Profile</a></li>
+                <li><a href="#loginModal">Login</a></li>
+            </ul> <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a> </div>
+    </nav>
+    <div id="loginModal" class="modal center-align">
+        <div class="modal-content">
+            <h3>Account Login</h3>
+             <div class="g-signin2" data-onsuccess="onSignIn"></div>
+             <!-- <div class="waves-effect waves-light btn-large"><i class="fa fa-github left" aria-hidden="true"></i>GitHub</div> -->
+              <!-- <div class="waves-effect waves-light btn-large"><i class="fa fa-twitter left" aria-hidden="true"></i>Twitter</div> -->
+        </div>
+    </div>
+    <!-- End Modal-->
+    <main>
+    <div id="index-banner">
+        <div class="section">
+            <div class="container">
+                <div id="table-header">
+                    <h2 class="header center teal-text text-lighten-2">Open Community Data Exchange</h2>
+                    <div class="row center">
+                        <h6 class="header col s12 light">The OCDX community supports an open standard for describing data about online communities, as well as the support tools and workflow patterns for researchers and data providers to share their datasets with the wider community. The OCDX community aims to provide the lowest barriers to contributing/sharing data. We welcome your input, suggesting fields information for inclusion in the OCDX specification.</h6> </div>
+                </div>
+                <nav>
+                    <div class="nav-wrapper">
+                        <form action="#" method="get">
+                          <div class="input-field">
+                            <input id="search" type="search" required placeholder="Search Manifests">
+                            <label for="search" class="active"><i class="fa fa-search" aria-hidden="true"></i></label> <i class="fa fa-times-circle" aria-hidden="true"></i>
+                          </div>
+
+                            <input name="searchCategory" type="radio" id="titleSearch">
+                            <label class="searchLabel" for="titleSearch">Title</label>
+
+                            <input name="searchCategory" type="radio" id="authorSearch">
+                            <label class="searchLabel" for="authorSearch">Author</label>
+
+                            <input name="searchCategory" type="radio" id="dateSearch">
+                            <label class="searchLabel" for="dateSearch">Date</label>
+
+                            <input name="searchCategory" type="radio" id="descriptionSearch">
+                            <label class="searchLabel" for="descriptionSearch">Description</label>
+                        </form>
+                    </div>
+                </nav>
+
+								<br>
+								<br>
+								<br>
+
+                <div id="searchResults">
+                    <table id="manifest-table" class="highlight">
+                    
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    </main>
+    <footer class="page-footer">
+          <div class="container top">
+            <div class="row">
+              <div class="col l6 s12">
+                <h5 class="grey-text text-darken-4">Footer Content</h5>
+                <p class="grey-text text-darken-4">You can use rows and columns here to organize your footer content.</p>
+              </div>
+              <div class="col l4 offset-l2 s12">
+                <h5 class="grey-text text-darken-4">Links</h5>
+                <ul>
+                  <li><a class="grey-text text-darken-4" href="#!">Link 1</a></li>
+                  <li><a class="grey-text text-darken-4" href="#!">Link 2</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="footer-copyright">
+            <div class="container">
+            © 2014 Copyright Text
+            <a class="grey-text text-darken-4 right" href="#!">More Links</a>
+            </div>
+          </div>
+        </footer>
+</body>
+
+</html>

@@ -6,6 +6,15 @@
  * Made By MaterializeCSS.com
  */
  /* fallback */
+  body {
+     display: flex;
+     min-height: 100vh;
+     flex-direction: column;
+ }
+ main {
+     flex: 1 0 auto;
+ }
+
 @font-face {
    font-family: 'Material Icons';
    font-style: normal;
@@ -40,7 +49,7 @@ nav {
 
 p {line-height: 2rem;}
 td, th {padding: 2px 5px;}
-
+td {cursor: default;}
 
 .searchLabel {
   margin-right: 1rem;
@@ -49,7 +58,7 @@ td, th {padding: 2px 5px;}
 .button-collapse {
   color: #26a69a;
 }
-
+a {cursor: pointer;}
 
 @media only screen and (max-width : 992px) {
   .parallax-container .section {
@@ -76,8 +85,14 @@ td, th {padding: 2px 5px;}
 
 footer.page-footer {
   margin: 0;
+  padding-top: 0;
+  background-color: #80cbc4;
 }
-
+.page-footer .top {display: none;}
+.footer-copyright .container {color: black;}
+#table-header {
+  overflow: hidden;
+}
 .g-signin2 {
   display: inline-flex;
   height: 54px;
