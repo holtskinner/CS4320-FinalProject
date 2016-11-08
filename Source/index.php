@@ -9,7 +9,7 @@
     <div id="index-banner">
         <div class="section">
             <div class="container">
-                <h2 class="header center teal-text text-lighten-2">Open Community Data Exchange</h2>
+                <h2 id="ocdx-title" class="header center teal-text text-lighten-2">Open Community Data Exchange</h2>
                 <div class="row center">
                   <?php include "searchBox.php" ?>
                     <br>

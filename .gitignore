@@ -90,3 +90,5 @@ ENV/
 .ftpconfig
 *.DS_Store
 *.conf
+
+Source/ftpignore
