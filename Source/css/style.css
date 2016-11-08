@@ -94,5 +94,7 @@ footer.page-footer {
   overflow: hidden;
 }
 .g-signin2 {
-  
+  display: inline-flex;
+  height: 54px;
+  width: auto;
 }
