@@ -2,9 +2,9 @@
 
 ## OCDX Engine
 
-- [GitHub Repository](https://github.com/holtwashere/CS4320-FinalProject)
+### [GitHub Repository](https://github.com/holtwashere/CS4320-FinalProject)
 
-- [Deployment Environment](http://ec2-35-161-12-137.us-west-2.compute.amazonaws.com/index.php)
+### [Deployment Environment](http://ec2-35-161-12-137.us-west-2.compute.amazonaws.com/index.php)
 
 ### Team 4 Members:
   - Holt Skinner *Project Manager*
@@ -149,11 +149,11 @@ _Pudotha/Skinner_
 
 - Browse Screen
 
-https://github.com/holtwashere/CS4320-FinalProject/blob/master/Documentation/Scan4.jpg
+
 
 - Dataset Information
 
-https://github.com/holtwashere/CS4320-FinalProject/blob/master/Documentation/Scan5.jpg
+
 
 - A Data Scientist can Generate or Upload Manifests.
 - A Data Scientist can Save Manifests.
@@ -161,7 +161,6 @@ https://github.com/holtwashere/CS4320-FinalProject/blob/master/Documentation/Sca
 
 - Upload Screen
 
-https://github.com/holtwashere/CS4320-FinalProject/blob/master/Documentation/Scan3.jpeg
 
 ## Data
 *Zhang/Hofer*
@@ -201,7 +200,7 @@ https://github.com/holtwashere/CS4320-FinalProject/blob/master/Documentation/Sca
 
 # Database Structure
 
-- https://github.com/holtwashere/CS4320-FinalProject/blob/master/Documentation/DatabaseRelations.jpg
+- Image Link
 
 ---
 
@@ -329,9 +328,8 @@ https://github.com/holtwashere/CS4320-FinalProject/blob/master/Documentation/Sca
 
 ## Business logic
 
+---
 
-
-## Update
 # Change Log
 
 - Version 1.0: Pre-Implementation Design *10-16-2016*
