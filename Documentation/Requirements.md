@@ -146,15 +146,15 @@ _Pudotha/Skinner_
 - User can Download Info
 - User can Search on Manifest
 
-![Browse Screen](./Scan4.jpg)
+![Browse Screen](https://github.com/holtwashere/CS4320-FinalProject/blob/master/Documentation/Scan4.jpg)
 
-![Dataset Information](./Scan5.jpg)
+![Dataset Information](https://github.com/holtwashere/CS4320-FinalProject/blob/master/Documentation/Scan5.jpg)
 
 - User can Generate or Upload Manifest
 - User can Save
 - User can Upload Data Set
 
-![Upload Screen](./Scan3.jpeg)
+![Upload Screen](https://github.com/holtwashere/CS4320-FinalProject/blob/master/Documentation/Scan3.jpeg)
 
 ## Data
 *Zhang/Hofer*
@@ -194,7 +194,7 @@ _Pudotha/Skinner_
 
 # Database Structure
 
-![Database Diagram](./DatabaseRelations.jpg)
+![Database Diagram](https://github.com/holtwashere/CS4320-FinalProject/blob/master/Documentation/DatabaseRelations.jpg)
 ---
 
 # Deployment Enviornment
@@ -307,7 +307,7 @@ _Pudotha/Skinner_
 ## Database
 
 ## User Interface
-  - ![Link](http://ec2-35-161-12-137.us-west-2.compute.amazonaws.com/index.php)
+  - [Link](http://ec2-35-161-12-137.us-west-2.compute.amazonaws.com/index.php)
   - The Homepage UI is functional.
   - A Data Scientist will be able to search for manifests from the homepage and view details for the desired manifest through a link for each search result.
   - Currently, the search results are dummy datasets until the database can be linked with the View.
@@ -317,7 +317,7 @@ _Pudotha/Skinner_
 
 ## User Accounts
   - Implemented via Google's OAuth 2.0 API
-  - ![Documentation](https://developers.google.com/identity/sign-in/web/)
+  - [Documentation](https://developers.google.com/identity/sign-in/web/)
 
 ## Business logic
 
