@@ -1,5 +1,5 @@
 <nav class="white" role="navigation">
-    <div class="nav-wrapper container"> <a href="index.html" class="brand-logo">OCDX</a>
+    <div class="nav-wrapper container"> <a href="index.php" class="brand-logo">OCDX</a>
         <ul class="right hide-on-med-and-down">
             <li><a href="#">Browse</a></li>
             <li><a href="upload.php">Upload</a></li>

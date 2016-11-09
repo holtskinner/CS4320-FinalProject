@@ -6,6 +6,7 @@
   </head>
 <body>
     <?php include "nav.php"; ?>
+    <main>
     <div id="index-banner">
         <div class="section">
             <div class="container">
@@ -24,6 +25,7 @@
                 </div>
             </div>
         </div>
+      </main>
         <?php include 'footer.php'; ?>
 </body>
 
