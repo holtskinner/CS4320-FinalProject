@@ -6,8 +6,7 @@
   </head>
 <body>
     <?php include "nav.php"; ?>
-    <main>
-    <div id="index-banner">
+    <main id="index-banner">
         <div class="section">
             <div class="container">
                 <h2 id="ocdx-title" class="header center teal-text text-lighten-2">Open Community Data Exchange</h2>
