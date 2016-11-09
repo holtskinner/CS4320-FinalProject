@@ -169,6 +169,13 @@ _Pudotha/Skinner_
 ---
 <!-- ## Functions -->
 
+# Sprint 1 ---
+
+## updates:
+ - The User Acceptance Tests are explained based on use cases.
+ - Added unit tests failure cases, the functions to be tested are clarified.
+ - Explained integration testing. 
+
 # Database Structure
 
 ![Database Diagram](./DatabaseRelations.jpg)
@@ -194,37 +201,6 @@ _Pudotha/Skinner_
 5.  Describe which tests are for verification and which tests are for validation
 
 # User Acceptance Test (UAT) Scenarios
- - The data scientists can search for manifests with keywords, the app returns the results or shows the reasons why no result is found. The data scientists can upload or download manifests, if it fails the reasons are also reported.
- - The system administrator can ban a data scientist when improper behaviors are frequently observed. The system admin will also leave the reason for this action, and the comment will be sent to the user. The system admin can also make change to a manifest when it is necessary, the reason is also given to the author.
-
-# Unit Test Scenarios
-## Login
- - If the user exists, the action continues.
- - If the user does not exist, further action is denied and the error message is shown.
-
-## Verify File
- - If the file size and type is an acceptable format, the action is allowed.
- - If the file size is too big or the type is illegal, the action is denied.
-
-## Search for Manifest
- - The system finds the record from database by matching the keywords.
- - The system returns an error message if no record is found.
-
-## Upload
- - The file is stored in the database.
-
-## Download
- - The required file is pulled from database and presented to the user.
-
-## Edit/Delete Manifest
- - The manifest is changed and database is updated.
-
-# Regression Testing
- - Regression testing is a type of software testing that verifies that software previously developed and tested still performs correctly even after it was changed or interfaced with other software.
- - In this system, a set of unit tests are prepared to cover all the functions of the software. The tests are run after every update or bug fixing.
-
-# Integration Testing
- - At the end of each sprint, we will perform integration testing
 
 ## Data Scientist Uploads Manifest
  - If the user has not signed in, the action fails and the message "login first" shows on screen.
@@ -248,6 +224,62 @@ _Pudotha/Skinner_
 
 ## System Admin Deletes an Illegal Manifest
  - The manifest is deleted (moved to "trash" group), and a notification and reason are sent to its author.
+
+## Stable and Quick
+ - The stability of the system is acceptable.
+ - The reaction time is short for the server.
+
+# Unit Test Scenarios
+## Login Function
+ - If the user exists, the action continues.
+ - If the user does not exist, further action is denied and the error message is shown.
+
+## Verify File Function
+ - If the file size and type is an acceptable format, the action is allowed.
+ - If the file size is too big or the type is illegal, the action is denied.
+
+## Search for Manifest Function
+ - The system finds the record from database by matching the keywords.
+ - The system returns an error message if no record is found.
+
+## Upload Function
+ - The file is stored in the database.
+
+## Download Function
+ - The required file is pulled from database and presented to the user.
+
+## Edit/Delete Manifest Function
+ - The manifest is changed and database is updated.
+
+## Failure: Page not Found
+ - The required page is not found and it switches to an error page.
+
+## Failure: Server is Down 
+ - The server is not operating properly and it switches to an error page.
+
+# Regression Testing
+ - Regression testing is a type of software testing that verifies that software previously developed and tested still performs correctly even after it was changed or interfaced with other software.
+ - In this system, a set of unit tests are prepared to cover all the functions of the software. The tests are run after every update or bug fixing.
+
+# Integration Testing
+ - Integration testing is the phase in software testing in which individual software modules are combined and tested as a group. 
+ - We will perform integration testing after unit tests.
+
+## User Uploads Manifest
+ - The user can sign in, and choose the file to be uploaded, after the system check the file, the file is uploaded and the success message shows.
+
+## User Reviews Manifest
+ - The manifest is searched on the server. If it is still valid, it is extracted from database and shows to the user.
+
+## System Admin Bans an Illegal Data Scientist
+ - The data scientist account is transferred to the "banned" group. A notification is sent to the user as well as the reason for the ban.
+
+## System Admin Deletes an Illegal Manifest
+ - The manifest is deleted (moved to "trash" group), and a notification and reason are sent to its author.
+
+## Failure Case
+ - The system returns an error page when the required page is not found, or the server is down.
+
 
 # Summary:
  - The unit testing, integration testing and regression testing are for verification, the user acceptance test is for validation.
