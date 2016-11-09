@@ -2,8 +2,8 @@
 
 ## OCDX Engine
 
-### [GitHub Repository](https://github.com/holtwashere/CS4320-FinalProject)
-### [Deployment Environment](http://ec2-35-161-12-137.us-west-2.compute.amazonaws.com/index.php)
+[GitHub Repository](https://github.com/holtwashere/CS4320-FinalProject)
+[Deployment Environment](http://ec2-35-161-12-137.us-west-2.compute.amazonaws.com/index.php)
 
 ### Team 4 Members:
   - Holt Skinner *Project Manager*
@@ -147,17 +147,17 @@ _Pudotha/Skinner_
 - User can Search on Manifest
 
 - Browse Screen
-(https://github.com/holtwashere/CS4320-FinalProject/blob/master/Documentation/Scan4.jpg)
+- (https://github.com/holtwashere/CS4320-FinalProject/blob/master/Documentation/Scan4.jpg)
 
 - Dataset Information
-(https://github.com/holtwashere/CS4320-FinalProject/blob/master/Documentation/Scan5.jpg)
+- (https://github.com/holtwashere/CS4320-FinalProject/blob/master/Documentation/Scan5.jpg)
 
 - User can Generate or Upload Manifest
 - User can Save
 - User can Upload Data Set
 
 - Upload Screen
-(https://github.com/holtwashere/CS4320-FinalProject/blob/master/Documentation/Scan3.jpeg)
+- (https://github.com/holtwashere/CS4320-FinalProject/blob/master/Documentation/Scan3.jpeg)
 
 ## Data
 *Zhang/Hofer*
@@ -197,7 +197,7 @@ _Pudotha/Skinner_
 
 # Database Structure
 
-(https://github.com/holtwashere/CS4320-FinalProject/blob/master/Documentation/DatabaseRelations.jpg)
+- (https://github.com/holtwashere/CS4320-FinalProject/blob/master/Documentation/DatabaseRelations.jpg)
 ---
 
 # Deployment Enviornment
