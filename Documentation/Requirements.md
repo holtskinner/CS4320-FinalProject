@@ -149,19 +149,19 @@ _Pudotha/Skinner_
 
 - Browse Screen
 
-(https://github.com/holtwashere/CS4320-FinalProject/blob/master/Documentation/Scan4.jpg)
+https://github.com/holtwashere/CS4320-FinalProject/blob/master/Documentation/Scan4.jpg
 
 - Dataset Information
 
-(https://github.com/holtwashere/CS4320-FinalProject/blob/master/Documentation/Scan5.jpg)
+https://github.com/holtwashere/CS4320-FinalProject/blob/master/Documentation/Scan5.jpg
 
-- User can Generate or Upload Manifest
-- User can Save
-- User can Upload Data Set
+- A Data Scientist can Generate or Upload Manifests.
+- A Data Scientist can Save Manifests.
+- A Data Scientist can Upload Data Sets.
 
 - Upload Screen
 
-(https://github.com/holtwashere/CS4320-FinalProject/blob/master/Documentation/Scan3.jpeg)
+https://github.com/holtwashere/CS4320-FinalProject/blob/master/Documentation/Scan3.jpeg
 
 ## Data
 *Zhang/Hofer*
@@ -201,7 +201,7 @@ _Pudotha/Skinner_
 
 # Database Structure
 
-- (https://github.com/holtwashere/CS4320-FinalProject/blob/master/Documentation/DatabaseRelations.jpg)
+- https://github.com/holtwashere/CS4320-FinalProject/blob/master/Documentation/DatabaseRelations.jpg
 
 ---
 
