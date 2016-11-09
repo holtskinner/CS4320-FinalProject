@@ -3,7 +3,7 @@
 ## OCDX Engine
 
 ### [GitHub Repository](https://github.com/holtwashere/CS4320-FinalProject)
-### [Deployment Environment](http://ec2-35-161-12-137.us-west-2.compute.amazonaws.com/)
+### [Deployment Environment](http://ec2-35-161-12-137.us-west-2.compute.amazonaws.com/index.php)
 
 ### Team 4 Members:
   - Holt Skinner *Project Manager*
@@ -16,17 +16,40 @@
 ---
 
 # Table of Contents
-- Requirements Analysis
-  - User Descriptions
-  - Use Cases
-  - Functional Requirements
-  - Non-functional Requirements
-  - User Requirements
-  - System Requirements
-- Software Design
-  - Sketches
-  - Data
-  - Change Log
+
+- [Requirements Analysis](#requirements-analysis)
+	- [User Descriptions](#user-descriptions)
+	- [Use Cases](#use-cases)
+	- [Functional Requirements](#functional-requirements)
+	- [Non-Functional Requirements](#non-functional-requirements)
+	- [System Requirements](#system-requirements)
+	- [User Requirements](#user-requirements)
+- [Software Design](#software-design)
+	- [Sketches](#sketches)
+	- [Data](#data)
+- [Database Structure](#database-structure)
+- [Deployment Enviornment](#deployment-enviornment)
+- [Testing](#testing)
+- [User Acceptance Test (UAT) Scenarios](#user-acceptance-test-uat-scenarios)
+- [Unit Test Scenarios](#unit-test-scenarios)
+	- [Login](#login)
+	- [Verify File](#verify-file)
+	- [Search for Manifest](#search-for-manifest)
+	- [Upload](#upload)
+	- [Download](#download)
+	- [Edit/Delete Manifest](#editdelete-manifest)
+- [Regression Testing](#regression-testing)
+- [Integration Testing](#integration-testing)
+	- [Data Scientist Uploads Manifest](#data-scientist-uploads-manifest)
+	- [Data Scientists Review Manifest](#data-scientists-review-manifest)
+	- [Data Scientists Search for Manifest](#data-scientists-search-for-manifest)
+	- [Data Scientists Notify Changes to Other Users](#data-scientists-notify-changes-to-other-users)
+	- [System Admin Bans an Illegal Data Scientist](#system-admin-bans-an-illegal-data-scientist)
+	- [System Admin Deletes an Illegal Manifest](#system-admin-deletes-an-illegal-manifest)
+- [Summary:](#summary)
+- [Change Log](#change-log)
+
+<!-- /TOC -->
 
 ---
 
@@ -234,7 +257,9 @@ _Pudotha/Skinner_
 # Change Log
 
 - Version 1.0: Pre-Implementation Design *10-16-2016*
+  - Requirements Analysis
 - Version 1.1: Sprint 1 *10-31-2016*
+- Version 1.2: Sprint 2 *11-11-2016*
 
 <!-- ---
 
