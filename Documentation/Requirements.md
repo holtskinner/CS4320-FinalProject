@@ -169,12 +169,12 @@ _Pudotha/Skinner_
 ---
 <!-- ## Functions -->
 
-# Sprint 1 ---
+# Sprint 1
 
-## updates:
+## Updates
  - The User Acceptance Tests are explained based on use cases.
  - Added unit tests failure cases, the functions to be tested are clarified.
- - Explained integration testing. 
+ - Explained integration testing.
 
 # Database Structure
 
@@ -254,7 +254,7 @@ _Pudotha/Skinner_
 ## Failure: Page not Found
  - The required page is not found and it switches to an error page.
 
-## Failure: Server is Down 
+## Failure: Server is Down
  - The server is not operating properly and it switches to an error page.
 
 # Regression Testing
@@ -262,7 +262,7 @@ _Pudotha/Skinner_
  - In this system, a set of unit tests are prepared to cover all the functions of the software. The tests are run after every update or bug fixing.
 
 # Integration Testing
- - Integration testing is the phase in software testing in which individual software modules are combined and tested as a group. 
+ - Integration testing is the phase in software testing in which individual software modules are combined and tested as a group.
  - We will perform integration testing after unit tests.
 
 ## User Uploads Manifest
@@ -286,10 +286,31 @@ _Pudotha/Skinner_
 
 ---
 
+# Sprint 2 Updates
+
+## Database
+
+## User Interface
+  - ![Link](http://ec2-35-161-12-137.us-west-2.compute.amazonaws.com/index.php)
+  - The Homepage UI is functional.
+  - A Data Scientist will be able to search for manifests from the homepage and view details for the desired manifest through a link for each search result.
+  - Currently, the search results are dummy datasets until the database can be linked with the View.
+  - The GUI is developed using the Materialize framework for styling and JavaScript/jQuery for the front-end business logic.
+  - The navigation bar at the top of the page provides easy access to all main functions of the application.
+  - The "Login" button opens a Modal box that allows a Data Scientist to log in with a Google Account.
+
+## User Accounts
+  - Implemented via Google's OAuth 2.0 API
+  - ![Documentation](https://developers.google.com/identity/sign-in/web/)
+
+## Business logic
+
+
+
+## Update
 # Change Log
 
 - Version 1.0: Pre-Implementation Design *10-16-2016*
-  - Requirements Analysis
 - Version 1.1: Sprint 1 *10-31-2016*
 - Version 1.2: Sprint 2 *11-11-2016*
 
