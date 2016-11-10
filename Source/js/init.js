@@ -7,6 +7,14 @@
         var profile = googleUser.getBasicProfile();
         var id_token = googleUser.getAuthResponse().id_token;
         // TODO Send id_token to PHP Backend (This is in place of their user id for authentication)
+        // $.ajax({
+        //   type: "POST",
+        //   url: 'insert.php',
+        //   data:{
+        //     userID: id_token
+        //   }
+        // });
+        //Need url for insert
     }
 
     $('#search').on('click', function(){

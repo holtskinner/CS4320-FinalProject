@@ -15,7 +15,7 @@
 </nav>
 <div id="loginModal" class="modal center-align">
     <div class="modal-content">
-        <h3>Account Login</h3>
+        <h3 class="teal-text text-lighten-2">Account Login</h3>
         <div class="g-signin2" data-onsuccess="onSignIn"></div>
         <!-- <div class="waves-effect waves-light btn-large"><i class="fa fa-github left" aria-hidden="true"></i>GitHub</div>
           <div class="waves-effect waves-light btn-large"><i class="fa fa-twitter left" aria-hidden="true"></i>Twitter</div> --></div>
