@@ -202,6 +202,14 @@ _Pudotha/Skinner_
 # Database Structure
 ## Use these commands in the mongo shell to initalize database collections
 
+This first collection creation implements document validation to ensure that the manifest
+is in line with the specifications provided. 
+A more in depth check is preformed in the buisness logic, and a barebones check is
+implemented in the view. This is a last line of defense that should never error out, 
+as that would mean that the buisness logic is not checking the manifests appropriately,
+or there is a data corruption in the chain. 
+
+
 	db.createCollection("Manifests", 
 		{validator: {$and: 
 			[
@@ -244,7 +252,7 @@ _Pudotha/Skinner_
  - db.createCollection("Users")
 
 ## Data Seeding
-Test data is entered into the database as follows (Except with fully filled out json)
+Two example manifest inserts are provided. Any sample data can be seeded in by copy-pasting it into db.Manifests.insert()
 
 	db.Manifests.insert(
 		{
@@ -392,6 +400,31 @@ Test data is entered into the database as follows (Except with fully filled out 
 		}
 	})
 
+## Information Architecture
+There exist 4 discreate information layers in the system. The first is the user facing
+web application that allows a user to specify if they want to browse or add a manifest.
+This layer is also responsible for barebones data validation (Field filled out, etc.).
+
+The next layer handles communication to the web application. It will accept user 
+decisions and process the data. This layer is responsible for in depth checks of 
+any data going into or out of the database. 
+
+There is also a layer of abstraction between the buisness logic and the database itself.
+This layer ensures that all data going into and out of the database exists, and that 
+certain database conditions are fufilled (existence of indexes, etc.)
+
+The final layer is the database itself. Document validation is a last line of defense
+to ensure that the manifests are properly formatted, and that key fields that may
+be searched on (and that are required for the standard) are present.
+
+Whenever a manifest is displayed to the user, database metadata is stripped out, but
+kept in the line of communication all the way up to the web application itself. 
+This allows a manifest, and vital information about it, to be accessable when needed.
+For example, each manifest is assigned a unique identifier within the database. 
+When a user descides to update or delete a manifest, this unique identifier allows 
+simple statements to reference that exact manifest. Rather than searching again for 
+a manifest that we want to delete, we can use this unique identifier to specify which
+manifest to delete.
 
 - Image Link
 
