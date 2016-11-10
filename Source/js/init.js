@@ -19,7 +19,7 @@
 
     $('#search').on('click', function(){
 
-      $("#ocdx-title").animate({ opacity: 0}, 400).animate({ height: 10 }, 400);
+      $("#table-header").animate({ opacity: 0}, 400).animate({ height: 10 }, 400);
       $('#manifest-table').empty().load("table.html").hide().fadeIn(800);
     })
   }); // end of document ready
