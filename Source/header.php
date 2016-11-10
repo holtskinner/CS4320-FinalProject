@@ -11,6 +11,7 @@
   function onSignIn(googleUser) {
       var profile = googleUser.getBasicProfile();
       console.log(profile);
+      $("#ocdx-title").html("Hello, " + profile.getGivenName());
       var id_token = googleUser.getAuthResponse().id_token;
       // TODO Send id_token to PHP Backend (This is in place of their user id for authentication)
   }
