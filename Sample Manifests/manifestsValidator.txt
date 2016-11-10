@@ -1,0 +1,37 @@
+db.createCollection("Manifests", 
+    {validator: {$and: 
+        [
+            {"manifests.manifest.standardVersions" : { $type: "string" } },
+            {"manifests.manifest.id" : { $type: "string" } },
+            {"manifests.manifest.creator" : { $type: "string" } },
+            {"manifests.manifest.dateCreated" : { $type: "string" } },
+            {"manifests.manifest.researchObject.title" : { $type: "string" } },
+            {"manifests.manifest.researchObject.abstract" : { $type: "string" } },
+            {"manifests.manifest.researchObject.dates.date.date" : { $type: "string" } },
+            {"manifests.manifest.researchObject.dates.date.label" : { $in: ["start","end", "retrieved", "created", "No Assertion"] } },
+            {"manifests.manifest.privacyEthics.oversight.label" : { $in: ["IRB", "REB", "REC", "Not required", "Other", "No Assertion", "No assertion"] } },
+            {"manifests.manifest.informedConsent" : { $type: "string" } },
+            {"manifests.manifest.anonymizedData.label" : { $in: 
+                ["names anonymized", "names excluded", "date of birth anonymized", "date of death anonymized", 
+                    "identifying numbers anonymized", "race and ethcnitiy categories anonymized", 
+                    "religious affiliation anonymized", "health and wellness data anonymized", 
+                    "location or GPS coordinates anonymized", "other", "No Assertion", "No assertion"] } },
+            {"manifests.manifest.privacyConsiderations" : { $type: "string" } },
+            {"manifests.provenance.narrative" : { $type: "string" } },
+            {"manifests.publications.publication" : { $type: "string" } },
+            {"manifests.files.file.name" : { $type: "string" } },
+            {"manifests.files.format" : { $type: "string" } },
+            {"manifests.files.size" : { $type: "string" } },
+            {"manifests.files.url" : { $type: "string" } },
+            {"manifests.files.checksum" : { $type: "string" } },
+            {"creators.creator.name" : { $type: "string" } },
+            {"creators.type.label" : { $in: 
+                ["Educational institutions", "Government", "NGO", "Individual", 
+                    "Private for profit entity", "No Assertion", "No assertion"] } },
+            {"creators.contact" : { $type: "string" } }
+            
+
+        ]
+
+    }, 
+validationLevel: "strict"})

@@ -18,14 +18,14 @@
 			},
 			"privacyEthics": {
 				"oversight": {
-					"label": "assertion"
+					"label": "No assertion"
 				}
 			},
 			"informedConsent": "no assertion",
 			"anonymizedData": {
-				"label": "assertion"
+				"label": "No assertion"
 			},
-			"privacyConsiderations": "assertion"
+			"privacyConsiderations": "No assertion"
 		},
 		"provenance": {
 			"narrative": "Socially Compute is an ongoing project aiming to analyze trends of everyday people to make meaningful connections."

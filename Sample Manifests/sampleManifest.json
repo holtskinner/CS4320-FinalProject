@@ -18,14 +18,14 @@
 			},
 			"privacyEthics": {
 				"oversight": {
-					"label": "assertion"
+					"label": "No assertion"
 				}
 			},
-			"informedConsent": "assertion",
+			"informedConsent": "No assertion",
 			"anonymizedData": {
-				"label": "assertion"
+				"label": "No assertion"
 			},
-			"privacyConsiderations": "assertion"
+			"privacyConsiderations": "No assertion"
 		},
 		"provenance": {
 			"narrative": "The Interdisciplinary Data Analytics and Search (iDAS) lab is one of the many research labs operating out of The University of Missouri, Columbia. As the name implies, iDAS combines researcher across departments to achieve  solutions to problems in academia. Founded in 2005 by Dr. Chi-Ren Shyu, iDAS researchers are primarily Computer Scientist, but the lab also works with Medical Doctors, Biologist, and Statisticans."

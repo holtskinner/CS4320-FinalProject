@@ -197,8 +197,234 @@ _Pudotha/Skinner_
  - The User Acceptance Tests are explained based on use cases.
  - Added unit tests failure cases, the functions to be tested are clarified.
  - Explained integration testing.
+ - Database Seeding Information Update 
 
 # Database Structure
+## Use these commands in the mongo shell to initalize database collections
+
+This first collection creation implements document validation to ensure that the manifest
+is in line with the specifications provided. 
+A more in depth check is preformed in the buisness logic, and a barebones check is
+implemented in the view. This is a last line of defense that should never error out, 
+as that would mean that the buisness logic is not checking the manifests appropriately,
+or there is a data corruption in the chain. 
+
+
+	db.createCollection("Manifests", 
+		{validator: {$and: 
+			[
+            	{"manifests.manifest.standardVersions" : { $type: "string" } },
+            	{"manifests.manifest.id" : { $type: "string" } },
+            	{"manifests.manifest.creator" : { $type: "string" } },
+            	{"manifests.manifest.dateCreated" : { $type: "string" } },
+            	{"manifests.manifest.researchObject.title" : { $type: "string" } },
+            	{"manifests.manifest.researchObject.abstract" : { $type: "string" } },
+            	{"manifests.manifest.researchObject.dates.date.date" : { $type: "string" } },
+            	{"manifests.manifest.researchObject.dates.date.label" : { $in: ["start","end", "retrieved", "created", "No Assertion"] } },
+            	{"manifests.manifest.privacyEthics.oversight.label" : { $in: ["IRB", "REB", "REC", "Not required", "Other", "No Assertion", "No assertion"] } },
+            	{"manifests.manifest.informedConsent" : { $type: "string" } },
+            	{"manifests.manifest.anonymizedData.label" : { $in: 
+                	["names anonymized", "names excluded", "date of birth anonymized", "date of death anonymized", 
+                    	"identifying numbers anonymized", "race and ethcnitiy categories anonymized", 
+                    	"religious affiliation anonymized", "health and wellness data anonymized", 
+                    	"location or GPS coordinates anonymized", "other", "No Assertion", "No assertion"] } },
+            	{"manifests.manifest.privacyConsiderations" : { $type: "string" } },
+            	{"manifests.provenance.narrative" : { $type: "string" } },
+            	{"manifests.publications.publication" : { $type: "string" } },
+            	{"manifests.files.file.name" : { $type: "string" } },
+            	{"manifests.files.format" : { $type: "string" } },
+            	{"manifests.files.size" : { $type: "string" } },
+            	{"manifests.files.url" : { $type: "string" } },
+            	{"manifests.files.checksum" : { $type: "string" } },
+            	{"creators.creator.name" : { $type: "string" } },
+            	{"creators.type.label" : { $in: 
+                	["Educational institutions", "Government", "NGO", "Individual", 
+                    	"Private for profit entity", "No Assertion", "No assertion"] } },
+            	{"creators.contact" : { $type: "string" } }
+            
+
+        	]
+
+    	}, 
+	validationLevel: "strict"})
+ - db.createCollection("Fs.files")
+ - db.createCollection("Fs.chunks")
+ - db.createCollection("Users")
+
+## Data Seeding
+Two example manifest inserts are provided. Any sample data can be seeded in by copy-pasting it into db.Manifests.insert()
+
+	db.Manifests.insert(
+		{
+		"manifests": {
+			"manifest": {
+				"standardVersions": "ocdxManifest schema v.1",
+				"id": "https: //datahub.io/dataset/iDas",
+				"creator": "Ali Raza",
+				"dateCreated": "2016 - 10 - 27",
+				"comment": "First test manifest",
+				"researchObject": {
+					"title": "iDAS Manifest",
+					"abstract": "Data collected at the Interdisciplinary Data Analytics and Search lab at the University of Missouri by Computer Science researchers and Data Scientists.",
+					"dates": {
+						"date": {
+							"date": "2005 - 04 - 27",
+							"label": "start"
+						}
+					}
+				},
+				"privacyEthics": {
+					"oversight": {
+						"label": "No assertion"
+					}
+				},
+				"informedConsent": "No assertion",
+				"anonymizedData": {
+					"label": "No assertion"
+				},
+				"privacyConsiderations": "No assertion"
+			},
+			"provenance": {
+				"narrative": "The Interdisciplinary Data Analytics and Search (iDAS) lab is one of the many research labs operating out of The University of Missouri, Columbia. As the name implies, iDAS combines researcher across departments to achieve  solutions to problems in academia. Founded in 2005 by Dr. Chi-Ren Shyu, iDAS researchers are primarily Computer Scientist, but the lab also works with Medical Doctors, Biologist, and Statisticans."
+			},
+			"publications": {
+				"publication": "No assertion"
+			},
+			"locations": {
+				"location": {
+					"url": "",
+					"comment": ""
+				}
+			},
+			"files": {
+				"file": {
+					"name": "iDAS - data.csv"
+				},
+				"format": ".csv",
+				"abstract": "Metadata for 5000 records collected",
+				"size": "No assertion",
+				"url": "No assertion",
+				"checksum": "No assertion"
+			},
+			"permissions": "No assertion"
+		},
+		"dates": {
+			"date": {
+				"date": "2014 - 02 - 15"
+			},
+			"label": "Created"
+		},
+		"creators": {
+			"creator": {
+				"name": "Chi-Ren Shyu",
+				"role": {
+					"label": "Other"
+				}
+			},
+			"type": {
+				"label": "No assertion"
+			},
+			"contact": "cshyu@wikimedia.org"
+		}
+	})
+	db.Manifests.insert({
+		"manifests": {
+			"manifest": {
+				"standardVersions": "ocdxManifest schema v.1",
+				"id": "https: //datahub.io/dataset/sociallyCompute",
+				"creator": "Sean Goggins",
+				"dateCreated": "2016 - 08 - 13",
+				"comment": "Second test manifest",
+				"researchObject": {
+					"title": "Socially Compute Manifest",
+					"abstract": "Data mined from socail networks for the purpose of consumer trend analytics.",
+					"dates": {
+						"date": {
+							"date": "1992 - 03 - 11",
+							"label": "start"
+						}
+					}
+				},
+				"privacyEthics": {
+					"oversight": {
+						"label": "No assertion"
+					}
+				},
+				"informedConsent": "no assertion",
+				"anonymizedData": {
+					"label": "No assertion"
+				},
+				"privacyConsiderations": "No assertion"
+			},
+			"provenance": {
+				"narrative": "Socially Compute is an ongoing project aiming to analyze trends of everyday people to make meaningful connections."
+			},
+			"publications": {
+				"publication": "No assertion"
+			},
+			"locations": {
+				"location": {
+					"url": "",
+					"comment": ""
+				}
+			},
+			"files": {
+				"file": {
+					"name": "Socially Compute - sc.csv"
+				},
+				"format": ".csv",
+				"abstract": "Metadata for 15000 records collected over two decades",
+				"size": "No assertion",
+				"url": "No assertion",
+				"checksum": "No assertion"
+			},
+			"permissions": "No assertion"
+		},
+		"dates": {
+			"date": {
+				"date": "2016 - 10 - 28"
+			},
+			"label": "Created"
+		},
+		"creators": {
+			"creator": {
+				"name": "Sean Goggins",
+				"role": {
+					"label": "Other"
+				}
+			},
+			"type": {
+				"label": "No assertion"
+			},
+			"contact": "sg@wikimedia.org"
+		}
+	})
+
+## Information Architecture
+There exist 4 discreate information layers in the system. The first is the user facing
+web application that allows a user to specify if they want to browse or add a manifest.
+This layer is also responsible for barebones data validation (Field filled out, etc.).
+
+The next layer handles communication to the web application. It will accept user 
+decisions and process the data. This layer is responsible for in depth checks of 
+any data going into or out of the database. 
+
+There is also a layer of abstraction between the buisness logic and the database itself.
+This layer ensures that all data going into and out of the database exists, and that 
+certain database conditions are fufilled (existence of indexes, etc.)
+
+The final layer is the database itself. Document validation is a last line of defense
+to ensure that the manifests are properly formatted, and that key fields that may
+be searched on (and that are required for the standard) are present.
+
+Whenever a manifest is displayed to the user, database metadata is stripped out, but
+kept in the line of communication all the way up to the web application itself. 
+This allows a manifest, and vital information about it, to be accessable when needed.
+For example, each manifest is assigned a unique identifier within the database. 
+When a user descides to update or delete a manifest, this unique identifier allows 
+simple statements to reference that exact manifest. Rather than searching again for 
+a manifest that we want to delete, we can use this unique identifier to specify which
+manifest to delete.
 
 - Image Link
 
