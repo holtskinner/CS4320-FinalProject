@@ -197,8 +197,201 @@ _Pudotha/Skinner_
  - The User Acceptance Tests are explained based on use cases.
  - Added unit tests failure cases, the functions to be tested are clarified.
  - Explained integration testing.
+ - Database Seeding Information Update 
 
 # Database Structure
+## Use these commands in the mongo shell to initalize database collections
+
+	db.createCollection("Manifests", 
+		{validator: {$and: 
+			[
+            	{"manifests.manifest.standardVersions" : { $type: "string" } },
+            	{"manifests.manifest.id" : { $type: "string" } },
+            	{"manifests.manifest.creator" : { $type: "string" } },
+            	{"manifests.manifest.dateCreated" : { $type: "string" } },
+            	{"manifests.manifest.researchObject.title" : { $type: "string" } },
+            	{"manifests.manifest.researchObject.abstract" : { $type: "string" } },
+            	{"manifests.manifest.researchObject.dates.date.date" : { $type: "string" } },
+            	{"manifests.manifest.researchObject.dates.date.label" : { $in: ["start","end", "retrieved", "created", "No Assertion"] } },
+            	{"manifests.manifest.privacyEthics.oversight.label" : { $in: ["IRB", "REB", "REC", "Not required", "Other", "No Assertion", "No assertion"] } },
+            	{"manifests.manifest.informedConsent" : { $type: "string" } },
+            	{"manifests.manifest.anonymizedData.label" : { $in: 
+                	["names anonymized", "names excluded", "date of birth anonymized", "date of death anonymized", 
+                    	"identifying numbers anonymized", "race and ethcnitiy categories anonymized", 
+                    	"religious affiliation anonymized", "health and wellness data anonymized", 
+                    	"location or GPS coordinates anonymized", "other", "No Assertion", "No assertion"] } },
+            	{"manifests.manifest.privacyConsiderations" : { $type: "string" } },
+            	{"manifests.provenance.narrative" : { $type: "string" } },
+            	{"manifests.publications.publication" : { $type: "string" } },
+            	{"manifests.files.file.name" : { $type: "string" } },
+            	{"manifests.files.format" : { $type: "string" } },
+            	{"manifests.files.size" : { $type: "string" } },
+            	{"manifests.files.url" : { $type: "string" } },
+            	{"manifests.files.checksum" : { $type: "string" } },
+            	{"creators.creator.name" : { $type: "string" } },
+            	{"creators.type.label" : { $in: 
+                	["Educational institutions", "Government", "NGO", "Individual", 
+                    	"Private for profit entity", "No Assertion", "No assertion"] } },
+            	{"creators.contact" : { $type: "string" } }
+            
+
+        	]
+
+    	}, 
+	validationLevel: "strict"})
+ - db.createCollection("Fs.files")
+ - db.createCollection("Fs.chunks")
+ - db.createCollection("Users")
+
+## Data Seeding
+Test data is entered into the database as follows (Except with fully filled out json)
+
+	db.Manifests.insert(
+		{
+		"manifests": {
+			"manifest": {
+				"standardVersions": "ocdxManifest schema v.1",
+				"id": "https: //datahub.io/dataset/iDas",
+				"creator": "Ali Raza",
+				"dateCreated": "2016 - 10 - 27",
+				"comment": "First test manifest",
+				"researchObject": {
+					"title": "iDAS Manifest",
+					"abstract": "Data collected at the Interdisciplinary Data Analytics and Search lab at the University of Missouri by Computer Science researchers and Data Scientists.",
+					"dates": {
+						"date": {
+							"date": "2005 - 04 - 27",
+							"label": "start"
+						}
+					}
+				},
+				"privacyEthics": {
+					"oversight": {
+						"label": "No assertion"
+					}
+				},
+				"informedConsent": "No assertion",
+				"anonymizedData": {
+					"label": "No assertion"
+				},
+				"privacyConsiderations": "No assertion"
+			},
+			"provenance": {
+				"narrative": "The Interdisciplinary Data Analytics and Search (iDAS) lab is one of the many research labs operating out of The University of Missouri, Columbia. As the name implies, iDAS combines researcher across departments to achieve  solutions to problems in academia. Founded in 2005 by Dr. Chi-Ren Shyu, iDAS researchers are primarily Computer Scientist, but the lab also works with Medical Doctors, Biologist, and Statisticans."
+			},
+			"publications": {
+				"publication": "No assertion"
+			},
+			"locations": {
+				"location": {
+					"url": "",
+					"comment": ""
+				}
+			},
+			"files": {
+				"file": {
+					"name": "iDAS - data.csv"
+				},
+				"format": ".csv",
+				"abstract": "Metadata for 5000 records collected",
+				"size": "No assertion",
+				"url": "No assertion",
+				"checksum": "No assertion"
+			},
+			"permissions": "No assertion"
+		},
+		"dates": {
+			"date": {
+				"date": "2014 - 02 - 15"
+			},
+			"label": "Created"
+		},
+		"creators": {
+			"creator": {
+				"name": "Chi-Ren Shyu",
+				"role": {
+					"label": "Other"
+				}
+			},
+			"type": {
+				"label": "No assertion"
+			},
+			"contact": "cshyu@wikimedia.org"
+		}
+	})
+	db.Manifests.insert({
+		"manifests": {
+			"manifest": {
+				"standardVersions": "ocdxManifest schema v.1",
+				"id": "https: //datahub.io/dataset/sociallyCompute",
+				"creator": "Sean Goggins",
+				"dateCreated": "2016 - 08 - 13",
+				"comment": "Second test manifest",
+				"researchObject": {
+					"title": "Socially Compute Manifest",
+					"abstract": "Data mined from socail networks for the purpose of consumer trend analytics.",
+					"dates": {
+						"date": {
+							"date": "1992 - 03 - 11",
+							"label": "start"
+						}
+					}
+				},
+				"privacyEthics": {
+					"oversight": {
+						"label": "No assertion"
+					}
+				},
+				"informedConsent": "no assertion",
+				"anonymizedData": {
+					"label": "No assertion"
+				},
+				"privacyConsiderations": "No assertion"
+			},
+			"provenance": {
+				"narrative": "Socially Compute is an ongoing project aiming to analyze trends of everyday people to make meaningful connections."
+			},
+			"publications": {
+				"publication": "No assertion"
+			},
+			"locations": {
+				"location": {
+					"url": "",
+					"comment": ""
+				}
+			},
+			"files": {
+				"file": {
+					"name": "Socially Compute - sc.csv"
+				},
+				"format": ".csv",
+				"abstract": "Metadata for 15000 records collected over two decades",
+				"size": "No assertion",
+				"url": "No assertion",
+				"checksum": "No assertion"
+			},
+			"permissions": "No assertion"
+		},
+		"dates": {
+			"date": {
+				"date": "2016 - 10 - 28"
+			},
+			"label": "Created"
+		},
+		"creators": {
+			"creator": {
+				"name": "Sean Goggins",
+				"role": {
+					"label": "Other"
+				}
+			},
+			"type": {
+				"label": "No assertion"
+			},
+			"contact": "sg@wikimedia.org"
+		}
+	})
+
 
 - Image Link
 
