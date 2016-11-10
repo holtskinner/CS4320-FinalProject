@@ -3,6 +3,23 @@
 <head>
   <title>OCDX Upload</title>
 <?php include 'header.php'; ?>
+
+<script>
+function onSignIn(googleUser) {
+    var profile = googleUser.getBasicProfile();
+    var id_token = googleUser.getAuthResponse().id_token;
+    // TODO Send id_token to PHP Backend (This is in place of their user id for authentication)
+    // $.ajax({
+    //   type: "POST",
+    //   url: 'insert.php',
+    //   data:{
+    //     userID: id_token
+    //   }
+    // });
+    //Need url for insert
+    $("#author-name").value(profile.getName());
+}
+</script>
 </head>
   <body>
     <?php include "nav.php"; ?>
@@ -24,8 +41,8 @@
               </div>
               <div class="row file-field input-field">
                 <div class="btn">
-                  <span>File</span>
-                  <input type="file">
+                  <span>Manifests</span>
+                  <input multiple type="file">
                 </div>
                 <div class="file-path-wrapper">
                   <input class="file-path validate" type="text" required placeholder="Upload File">
@@ -34,7 +51,7 @@
               <div class="row file-field input-field">
                 <div class="btn">
                   <span>Scripts</span>
-                  <input type="file">
+                  <input multiple type="file">
                 </div>
                 <div class="file-path-wrapper">
                   <input class="file-path validate" type="text" optional placeholder="Upload File">
