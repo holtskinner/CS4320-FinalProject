@@ -148,7 +148,7 @@ _Pudotha/Skinner_
 - User can Search on Manifest
 
 - Browse Screen
-
+  - See Appendix
 
 
 - Dataset Information
@@ -160,7 +160,7 @@ _Pudotha/Skinner_
 - A Data Scientist can Upload Data Sets.
 
 - Upload Screen
-
+  - See Appendix
 
 ## Data
 *Zhang/Hofer*
@@ -197,21 +197,21 @@ _Pudotha/Skinner_
  - The User Acceptance Tests are explained based on use cases.
  - Added unit tests failure cases, the functions to be tested are clarified.
  - Explained integration testing.
- - Database Seeding Information Update 
+ - Database Seeding Information Update
 
 # Database Structure
 ## Use these commands in the mongo shell to initalize database collections
 
 This first collection creation implements document validation to ensure that the manifest
-is in line with the specifications provided. 
+is in line with the specifications provided.
 A more in depth check is preformed in the buisness logic, and a barebones check is
-implemented in the view. This is a last line of defense that should never error out, 
+implemented in the view. This is a last line of defense that should never error out,
 as that would mean that the buisness logic is not checking the manifests appropriately,
-or there is a data corruption in the chain. 
+or there is a data corruption in the chain.
 
 
-	db.createCollection("Manifests", 
-		{validator: {$and: 
+	db.createCollection("Manifests",
+		{validator: {$and:
 			[
             	{"manifests.manifest.standardVersions" : { $type: "string" } },
             	{"manifests.manifest.id" : { $type: "string" } },
@@ -223,10 +223,10 @@ or there is a data corruption in the chain.
             	{"manifests.manifest.researchObject.dates.date.label" : { $in: ["start","end", "retrieved", "created", "No Assertion"] } },
             	{"manifests.manifest.privacyEthics.oversight.label" : { $in: ["IRB", "REB", "REC", "Not required", "Other", "No Assertion", "No assertion"] } },
             	{"manifests.manifest.informedConsent" : { $type: "string" } },
-            	{"manifests.manifest.anonymizedData.label" : { $in: 
-                	["names anonymized", "names excluded", "date of birth anonymized", "date of death anonymized", 
-                    	"identifying numbers anonymized", "race and ethcnitiy categories anonymized", 
-                    	"religious affiliation anonymized", "health and wellness data anonymized", 
+            	{"manifests.manifest.anonymizedData.label" : { $in:
+                	["names anonymized", "names excluded", "date of birth anonymized", "date of death anonymized",
+                    	"identifying numbers anonymized", "race and ethcnitiy categories anonymized",
+                    	"religious affiliation anonymized", "health and wellness data anonymized",
                     	"location or GPS coordinates anonymized", "other", "No Assertion", "No assertion"] } },
             	{"manifests.manifest.privacyConsiderations" : { $type: "string" } },
             	{"manifests.provenance.narrative" : { $type: "string" } },
@@ -237,15 +237,15 @@ or there is a data corruption in the chain.
             	{"manifests.files.url" : { $type: "string" } },
             	{"manifests.files.checksum" : { $type: "string" } },
             	{"creators.creator.name" : { $type: "string" } },
-            	{"creators.type.label" : { $in: 
-                	["Educational institutions", "Government", "NGO", "Individual", 
+            	{"creators.type.label" : { $in:
+                	["Educational institutions", "Government", "NGO", "Individual",
                     	"Private for profit entity", "No Assertion", "No assertion"] } },
             	{"creators.contact" : { $type: "string" } }
-            
+
 
         	]
 
-    	}, 
+    	},
 	validationLevel: "strict"})
  - db.createCollection("Fs.files")
  - db.createCollection("Fs.chunks")
@@ -405,12 +405,12 @@ There exist 4 discreate information layers in the system. The first is the user 
 web application that allows a user to specify if they want to browse or add a manifest.
 This layer is also responsible for barebones data validation (Field filled out, etc.).
 
-The next layer handles communication to the web application. It will accept user 
-decisions and process the data. This layer is responsible for in depth checks of 
-any data going into or out of the database. 
+The next layer handles communication to the web application. It will accept user
+decisions and process the data. This layer is responsible for in depth checks of
+any data going into or out of the database.
 
 There is also a layer of abstraction between the buisness logic and the database itself.
-This layer ensures that all data going into and out of the database exists, and that 
+This layer ensures that all data going into and out of the database exists, and that
 certain database conditions are fufilled (existence of indexes, etc.)
 
 The final layer is the database itself. Document validation is a last line of defense
@@ -418,11 +418,11 @@ to ensure that the manifests are properly formatted, and that key fields that ma
 be searched on (and that are required for the standard) are present.
 
 Whenever a manifest is displayed to the user, database metadata is stripped out, but
-kept in the line of communication all the way up to the web application itself. 
+kept in the line of communication all the way up to the web application itself.
 This allows a manifest, and vital information about it, to be accessable when needed.
-For example, each manifest is assigned a unique identifier within the database. 
-When a user descides to update or delete a manifest, this unique identifier allows 
-simple statements to reference that exact manifest. Rather than searching again for 
+For example, each manifest is assigned a unique identifier within the database.
+When a user descides to update or delete a manifest, this unique identifier allows
+simple statements to reference that exact manifest. Rather than searching again for
 a manifest that we want to delete, we can use this unique identifier to specify which
 manifest to delete.
 
