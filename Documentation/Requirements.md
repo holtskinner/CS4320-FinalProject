@@ -17,6 +17,15 @@
 ---
 
 # Table of Contents
+
+<!-- TOC depthFrom:1 depthTo:6 withLinks:1 updateOnSave:1 orderedList:0 -->
+
+- [CS 4320 Final Project: Requirements Analysis & Software Design](#cs-4320-final-project-requirements-analysis-software-design)
+	- [OCDX Engine](#ocdx-engine)
+		- [[GitHub Repository](https://github.com/holtwashere/CS4320-FinalProject)](#github-repositoryhttpsgithubcomholtwasherecs4320-finalproject)
+		- [[Deployment Environment](http://ec2-35-161-12-137.us-west-2.compute.amazonaws.com/index.php)](#deployment-environmenthttpec2-35-161-12-137us-west-2computeamazonawscomindexphp)
+		- [Team 4 Members:](#team-4-members)
+- [Table of Contents](#table-of-contents)
 - [Requirements Analysis](#requirements-analysis)
 	- [User Descriptions](#user-descriptions)
 	- [Use Cases](#use-cases)
@@ -31,6 +40,9 @@
 - [Sprint 1](#sprint-1)
 	- [Updates](#updates)
 - [Database Structure](#database-structure)
+	- [Use these commands in the mongo shell to initalize database collections](#use-these-commands-in-the-mongo-shell-to-initalize-database-collections)
+	- [Data Seeding](#data-seeding)
+	- [Information Architecture](#information-architecture)
 - [Deployment Enviornment](#deployment-enviornment)
 - [Testing](#testing)
 - [User Acceptance Test (UAT) Scenarios](#user-acceptance-test-uat-scenarios)
@@ -63,8 +75,8 @@
 	- [User Interface](#user-interface)
 	- [User Accounts](#user-accounts)
 	- [Business logic](#business-logic)
-	- [Update](#update)
 - [Change Log](#change-log)
+- [Glossary -->](#glossary-)
 
 <!-- /TOC -->
 
@@ -550,6 +562,9 @@ manifest to delete.
 
 ## User Accounts
   - Implemented via Google's OAuth 2.0 API
+  - A Data Scientist can log in with a Google account.
+  - A Google login page appears to the user, the user logs in with Google credentials.
+  - The Google API returns a unique user_id token, which is stored in the Database.
   - [Documentation](https://developers.google.com/identity/sign-in/web/)
 
 ## Business logic
