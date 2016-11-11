@@ -14,6 +14,16 @@
   - Bradley Rogers
   - Pramod Pudotha
 
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br><br><br><br><br><br><br><br><br><br>
 ---
 
 # Table of Contents
@@ -71,9 +81,7 @@
 	- [Business logic](#business-logic)
 	- [Testing2](#testing2)
 - [Change Log](#change-log)
-- [Glossary -->](#glossary-)
 
-<!-- /TOC -->
 
 ---
 
