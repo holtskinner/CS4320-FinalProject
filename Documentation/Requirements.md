@@ -130,13 +130,13 @@ _Pudotha/Skinner_
 	- If the system crashes, the data and any manipulations/analytics must be preserved.
 - **Privacy Requirements**
 	- The data access must be limited to authorized users only.
-	- The system must enable secure data transfer over the internet
+	- The system must enable secure data transfer over the internet.
 - **Web Server**
   - Web Server must provide reliable service for the appropriate amount of traffic that will be sent and received from the system.
 - **Database Backend**
   - Database must be able to convert data into easily storable format, and return in original format.
 - **Storage Array**
-  - System must create intermediate backups and update logging to revert to earlier states if needed
+  - System must create intermediate backups and update logging to revert to earlier states if needed.
 
 ## User Requirements
 *Zhang/Rogers*
@@ -144,10 +144,10 @@ _Pudotha/Skinner_
 - Manifest can be reviewed by other data scientists.
 - Data scientists can edit or delete their Manifest.
 - Data scientists can search for Manifest they wish to view or test.
-- Data scientists will be able to include special comments or suggestions on manifest
-- Data scientists should be able to notify the changes or suggestions that improves manifest to other users
-- System admins can ban an illegal data scientist
-- System admins can delete an illegal manifest
+- Data scientists will be able to include special comments or suggestions on manifest.
+- Data scientists should be able to notify the changes or suggestions that improves manifest to other users.
+- System admins can ban an illegal data scientist.
+- System admins can delete an illegal manifest.
 
 ---
 
@@ -210,7 +210,7 @@ _Pudotha/Skinner_
  - The User Acceptance Tests are explained based on use cases.
  - Added unit tests failure cases, the functions to be tested are clarified.
  - Explained integration testing.
- - Database Seeding Information Update
+ - Database Seeding Information Update.
 
 # Database Structure
 ## Use these commands in the mongo shell to initalize database collections
@@ -457,10 +457,10 @@ manifest to delete.
 *Zhang/Hofer*
 
 1.  Build user acceptance test scenarios for documented requirements on separate Wiki page, linked to all sprints.
-2.  Build unit test scenarios
+2.  Build unit test scenarios.
 3.  Describe regression testing and your regression testing plan.
 4.  Describe how your team will perform integration testing. What needs to be integrated? When?
-5.  Describe which tests are for verification and which tests are for validation
+5.  Describe which tests are for verification and which tests are for validation.
 
 # User Acceptance Test (UAT) Scenarios
 
@@ -817,7 +817,7 @@ the system.
   - The "Login" button opens a Modal box that allows a Data Scientist to log in with a Google Account.
 
 ## User Accounts
-  - Implemented via Google's OAuth 2.0 API
+  - Implemented via Google's OAuth 2.0 API.
   - A Data Scientist can log in with a Google account.
   - A Google login page appears to the user, the user logs in with Google credentials.
   - The Google API returns a unique user_id token, which is stored in the Database.
