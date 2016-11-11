@@ -18,14 +18,6 @@
 
 # Table of Contents
 
-<!-- TOC depthFrom:1 depthTo:6 withLinks:1 updateOnSave:1 orderedList:0 -->
-
-- [CS 4320 Final Project: Requirements Analysis & Software Design](#cs-4320-final-project-requirements-analysis-software-design)
-	- [OCDX Engine](#ocdx-engine)
-		- [[GitHub Repository](https://github.com/holtwashere/CS4320-FinalProject)](#github-repositoryhttpsgithubcomholtwasherecs4320-finalproject)
-		- [[Deployment Environment](http://ec2-35-161-12-137.us-west-2.compute.amazonaws.com/index.php)](#deployment-environmenthttpec2-35-161-12-137us-west-2computeamazonawscomindexphp)
-		- [Team 4 Members:](#team-4-members)
-- [Table of Contents](#table-of-contents)
 - [Requirements Analysis](#requirements-analysis)
 	- [User Descriptions](#user-descriptions)
 	- [Use Cases](#use-cases)
@@ -40,7 +32,7 @@
 - [Sprint 1](#sprint-1)
 	- [Updates](#updates)
 - [Database Structure](#database-structure)
-	- [Use these commands in the mongo shell to initalize database collections](#use-these-commands-in-the-mongo-shell-to-initalize-database-collections)
+	- [Use these commands in the mongo shell to initialize database collections](#use-these-commands-in-the-mongo-shell-to-initialize-database-collections)
 	- [Data Seeding](#data-seeding)
 	- [Information Architecture](#information-architecture)
 - [Deployment Enviornment](#deployment-enviornment)
@@ -52,7 +44,7 @@
 	- [Data Scientists Notify Changes to Other Users](#data-scientists-notify-changes-to-other-users)
 	- [System Admin Bans an Illegal Data Scientist](#system-admin-bans-an-illegal-data-scientist)
 	- [System Admin Deletes an Illegal Manifest](#system-admin-deletes-an-illegal-manifest)
-	- [Stable and Quick](#stable-and-quick)
+	- [User Experience](#user-experience)
 - [Unit Test Scenarios](#unit-test-scenarios)
 	- [Login Function](#login-function)
 	- [Verify File Function](#verify-file-function)
@@ -71,7 +63,9 @@
 	- [Failure Case](#failure-case)
 - [Summary:](#summary)
 - [Sprint 2 Updates](#sprint-2-updates)
-	- [Database](#database)
+	- [Database (Justin Hofer)](#database-justin-hofer)
+		- [The python code for inserts, updates, searches, and deletes.](#the-python-code-for-inserts-updates-searches-and-deletes)
+		- [Unit tests for these functions](#unit-tests-for-these-functions)
 	- [User Interface](#user-interface)
 	- [User Accounts](#user-accounts)
 	- [Business logic](#business-logic)
