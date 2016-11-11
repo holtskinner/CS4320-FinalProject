@@ -75,6 +75,7 @@
 	- [User Interface](#user-interface)
 	- [User Accounts](#user-accounts)
 	- [Business logic](#business-logic)
+	- [Testing2](#testing2)
 - [Change Log](#change-log)
 - [Glossary -->](#glossary-)
 
@@ -486,7 +487,7 @@ manifest to delete.
 ## System Admin Deletes an Illegal Manifest
  - The manifest is deleted (moved to "trash" group), and a notification and reason are sent to its author.
 
-## Stable and Quick
+## User Experience 
  - The stability of the system is acceptable.
  - The reaction time is short for the server.
 
@@ -824,6 +825,8 @@ the system.
 
 ## Business logic
 
+## Testing2
+  - [Sprint1 Testing updates](#testing)
 ---
 
 # Change Log
