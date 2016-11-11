@@ -161,19 +161,14 @@ _Pudotha/Skinner_
 - User can Search on Manifest
 
 - Browse Screen
-  - See Appendix
-
-
 - Dataset Information
+- Upload Screen
 
-
+  - See Appendix Pages for Images
 
 - A Data Scientist can Generate or Upload Manifests.
 - A Data Scientist can Save Manifests.
 - A Data Scientist can Upload Data Sets.
-
-- Upload Screen
-  - See Appendix
 
 ## Data
 *Zhang/Hofer*
@@ -213,13 +208,13 @@ _Pudotha/Skinner_
  - Database Seeding Information Update.
 
 # Database Structure
-## Use these commands in the mongo shell to initalize database collections
+## Use these commands in the mongo shell to initialize database collections
 
 This first collection creation implements document validation to ensure that the manifest
 is in line with the specifications provided.
-A more in depth check is preformed in the buisness logic, and a barebones check is
+A more in depth check is preformed in the business logic, and a barebones check is
 implemented in the view. This is a last line of defense that should never error out,
-as that would mean that the buisness logic is not checking the manifests appropriately,
+as that would mean that the business logic is not checking the manifests appropriately,
 or there is a data corruption in the chain.
 
 
@@ -414,7 +409,7 @@ Two example manifest inserts are provided. Any sample data can be seeded in by c
 	})
 
 ## Information Architecture
-There exist 4 discreate information layers in the system. The first is the user facing
+There exist 4 discrete information layers in the system. The first is the user facing
 web application that allows a user to specify if they want to browse or add a manifest.
 This layer is also responsible for barebones data validation (Field filled out, etc.).
 
@@ -422,9 +417,9 @@ The next layer handles communication to the web application. It will accept user
 decisions and process the data. This layer is responsible for in depth checks of
 any data going into or out of the database.
 
-There is also a layer of abstraction between the buisness logic and the database itself.
+There is also a layer of abstraction between the business logic and the database itself.
 This layer ensures that all data going into and out of the database exists, and that
-certain database conditions are fufilled (existence of indexes, etc.)
+certain database conditions are fulfilled (existence of indexes, etc.)
 
 The final layer is the database itself. Document validation is a last line of defense
 to ensure that the manifests are properly formatted, and that key fields that may
@@ -432,14 +427,14 @@ be searched on (and that are required for the standard) are present.
 
 Whenever a manifest is displayed to the user, database metadata is stripped out, but
 kept in the line of communication all the way up to the web application itself.
-This allows a manifest, and vital information about it, to be accessable when needed.
+This allows a manifest, and vital information about it, to be accessible when needed.
 For example, each manifest is assigned a unique identifier within the database.
-When a user descides to update or delete a manifest, this unique identifier allows
+When a user decides to update or delete a manifest, this unique identifier allows
 simple statements to reference that exact manifest. Rather than searching again for
 a manifest that we want to delete, we can use this unique identifier to specify which
 manifest to delete.
 
-- Image Link
+- See Appendix for Database Diagram
 
 ---
 
@@ -487,7 +482,7 @@ manifest to delete.
 ## System Admin Deletes an Illegal Manifest
  - The manifest is deleted (moved to "trash" group), and a notification and reason are sent to its author.
 
-## User Experience 
+## User Experience
  - The stability of the system is acceptable.
  - The reaction time is short for the server.
 
@@ -554,18 +549,18 @@ manifest to delete.
 
 The database interface, written in python, allows for easy use of insert, update, search,
 and delete functionality for the database. Error checking is implemented to ensure that
-database integrity is manintained. Document Validation (Encoded by the creation statments)
+database integrity is maintained. Document Validation (Encoded by the creation statements)
 will check that all manifests are up to standard, and as such, do not need to be checked
-by the dml (Although they should be checked in the buisness layer). The Unit tests
-validate these functions, and will ensure that they are valid throughout creation of 
+by the dml (Although they should be checked in the business layer). The Unit tests
+validate these functions, and will ensure that they are valid throughout creation of
 the system.
 
-### The python code for inserts, updates, searches, and deletes. 
+### The python code for inserts, updates, searches, and deletes.
 
 	from pymongo import MongoClient #Mongodb functionality
 
 	#initialize to the collections that we want
-	client = MongoClient() 
+	client = MongoClient()
 	db = client.test
 
 	m_col = db.Manifests #the collection of manifests
@@ -573,7 +568,7 @@ the system.
 	def search_manifest(lookup):
 		''' finds all manifests that match pattern provided and returns the cursor of results
 		Returned value is a cursor that can be iterated through with a for loop '''
-		return m_col.find(lookup) 
+		return m_col.find(lookup)
 
 	def insert_manifest(manifest):
 		''' Insert given manifest if it exists. Returns True on success,
@@ -583,7 +578,7 @@ the system.
 			''' we have the object id for the new manifest, and we could return it if we like
 			We could also return a tuple containing the Boolean value and the object id
 			This way we could later do a lookup on the manifest, which would give us
-			access to its metadata. As we do not have any important metadata at the 
+			access to its metadata. As we do not have any important metadata at the
 			moment, we will just give a simple error check '''
 			if(post_id):
 				return True
@@ -596,16 +591,16 @@ the system.
 		if(oid):
 			''' Delete based on oid. Only can fail if the oid is invalid
 			In which case, wow, we are corrupting our own metadata somewhere
-			in the buisness logic or the view. At least we would know that we have
+			in the business logic or the view. At least we would know that we have
 			an error '''
-			result = m_col.delete_one({'_id': oid}) 
+			result = m_col.delete_one({'_id': oid})
 			if(result.deleted_count == 1):
 				return True
 
 		return False
-			
+
 	def update_manifest(oid, manifest):
-		''' Updates the manifest specified by the given internal object id. 
+		''' Updates the manifest specified by the given internal object id.
 		Changed to match the new manifest provided. Returns True
 		if the document was succesfuly updated, and returns False if it
 		failed. '''
@@ -805,8 +800,6 @@ the system.
 	else:
 		print("Good remove")
 
-
-
 ## User Interface
   - [Link](http://ec2-35-161-12-137.us-west-2.compute.amazonaws.com/index.php)
   - The Homepage UI is functional.
@@ -826,7 +819,8 @@ the system.
 ## Business logic
 
 ## Testing2
-  - [Sprint1 Testing updates](#testing)
+  - [Sprint1 Testing Updates](#testing)
+
 ---
 
 # Change Log
