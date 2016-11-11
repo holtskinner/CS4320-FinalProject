@@ -549,7 +549,262 @@ manifest to delete.
 
 # Sprint 2 Updates
 
-## Database
+## Database (Justin Hofer)
+
+The database interface, written in python, allows for easy use of insert, update, search,
+and delete functionality for the database. Error checking is implemented to ensure that
+database integrity is manintained. Document Validation (Encoded by the creation statments)
+will check that all manifests are up to standard, and as such, do not need to be checked
+by the dml (Although they should be checked in the buisness layer). The Unit tests
+validate these functions, and will ensure that they are valid throughout creation of 
+the system.
+
+### The python code for inserts, updates, searches, and deletes. 
+
+	from pymongo import MongoClient #Mongodb functionality
+
+	#initialize to the collections that we want
+	client = MongoClient() 
+	db = client.test
+
+	m_col = db.Manifests #the collection of manifests
+
+	def search_manifest(lookup):
+		''' finds all manifests that match pattern provided and returns the cursor of results
+		Returned value is a cursor that can be iterated through with a for loop '''
+		return m_col.find(lookup) 
+
+	def insert_manifest(manifest):
+		''' Insert given manifest if it exists. Returns True on success,
+		or False on error (Failed document validation or no manifest was passed in) '''
+		if(manifest): #basic error checking
+			post_id = m_col.insert_one(manifest)
+			''' we have the object id for the new manifest, and we could return it if we like
+			We could also return a tuple containing the Boolean value and the object id
+			This way we could later do a lookup on the manifest, which would give us
+			access to its metadata. As we do not have any important metadata at the 
+			moment, we will just give a simple error check '''
+			if(post_id):
+				return True
+		return False
+
+	def remove_manifest(oid):
+		''' Delete manifest specified by internal object id. Access this object id
+		within the manifests metadata. returns True on succesful delete,
+		or False if unable to delete (No matching oid, no oid provided) '''
+		if(oid):
+			''' Delete based on oid. Only can fail if the oid is invalid
+			In which case, wow, we are corrupting our own metadata somewhere
+			in the buisness logic or the view. At least we would know that we have
+			an error '''
+			result = m_col.delete_one({'_id': oid}) 
+			if(result.deleted_count == 1):
+				return True
+
+		return False
+			
+	def update_manifest(oid, manifest):
+		''' Updates the manifest specified by the given internal object id. 
+		Changed to match the new manifest provided. Returns True
+		if the document was succesfuly updated, and returns False if it
+		failed. '''
+		if(oid and manifest):
+			#We actually want to remove the old manifest, and replace it with a new one
+			old_doc = m_col.find_one_and_replace({"_id": oid}, manifest)
+			#the old manifest was returned, so we can store an archive of manifests down
+			#the road. For the monent, we will just check that something was there before
+			if(old_doc[0]):
+				return True
+		return False
+
+### Unit tests for these functions
+
+	from dml import insert_manifest, remove_manifest, update_manifest, search_manifest
+
+	to_insert = {
+		"manifests": {
+			"manifest": {
+				"standardVersions": "ocdxManifest schema v.1",
+				"id": "https: //datahub.io/dataset/iDas",
+				"creator": "Ali Raza",
+				"dateCreated": "2016 - 10 - 27",
+				"comment": "First test manifest",
+				"researchObject": {
+					"title": "iDAS Manifest",
+					"abstract": "Data collected at the Interdisciplinary Data Analytics and Search lab at the University of Missouri by Computer Science researchers and Data Scientists.",
+					"dates": {
+						"date": {
+							"date": "2005 - 04 - 27",
+							"label": "start"
+						}
+					}
+				},
+				"privacyEthics": {
+					"oversight": {
+						"label": "No assertion"
+					}
+				},
+				"informedConsent": "No assertion",
+				"anonymizedData": {
+					"label": "No assertion"
+				},
+				"privacyConsiderations": "No assertion"
+			},
+			"provenance": {
+				"narrative": "The Interdisciplinary Data Analytics and Search (iDAS) lab is one of the many research labs operating out of The University of Missouri, Columbia. As the name implies, iDAS combines researcher across departments to achieve  solutions to problems in academia. Founded in 2005 by Dr. Chi-Ren Shyu, iDAS researchers are primarily Computer Scientist, but the lab also works with Medical Doctors, Biologist, and Statisticans."
+			},
+			"publications": {
+				"publication": "No assertion"
+			},
+			"locations": {
+				"location": {
+					"url": "",
+					"comment": ""
+				}
+			},
+			"files": {
+				"file": {
+					"name": "iDAS - data.csv"
+				},
+				"format": ".csv",
+				"abstract": "Metadata for 5000 records collected",
+				"size": "No assertion",
+				"url": "No assertion",
+				"checksum": "No assertion"
+			},
+			"permissions": "No assertion"
+		},
+		"dates": {
+			"date": {
+				"date": "2014 - 02 - 15"
+			},
+			"label": "Created"
+		},
+		"creators": {
+			"creator": {
+				"name": "Chi-Ren Shyu",
+				"role": {
+					"label": "Other"
+				}
+			},
+			"type": {
+				"label": "No assertion"
+			},
+			"contact": "cshyu@wikimedia.org"
+		}
+	}
+
+	to_replace = {
+		"manifests": {
+			"manifest": {
+				"standardVersions": "ocdxManifest schema v.1",
+				"id": "https: //datahub.io/dataset/sociallyCompute",
+				"creator": "Sean Goggins",
+				"dateCreated": "2016 - 08 - 13",
+				"comment": "Second test manifest",
+				"researchObject": {
+					"title": "Socially Compute Manifest",
+					"abstract": "Data mined from socail networks for the purpose of consumer trend analytics.",
+					"dates": {
+						"date": {
+							"date": "1992 - 03 - 11",
+							"label": "start"
+						}
+					}
+				},
+				"privacyEthics": {
+					"oversight": {
+						"label": "No assertion"
+					}
+				},
+				"informedConsent": "no assertion",
+				"anonymizedData": {
+					"label": "No assertion"
+				},
+				"privacyConsiderations": "No assertion"
+			},
+			"provenance": {
+				"narrative": "Socially Compute is an ongoing project aiming to analyze trends of everyday people to make meaningful connections."
+			},
+			"publications": {
+				"publication": "No assertion"
+			},
+			"locations": {
+				"location": {
+					"url": "",
+					"comment": ""
+				}
+			},
+			"files": {
+				"file": {
+					"name": "Socially Compute - sc.csv"
+				},
+				"format": ".csv",
+				"abstract": "Metadata for 15000 records collected over two decades",
+				"size": "No assertion",
+				"url": "No assertion",
+				"checksum": "No assertion"
+			},
+			"permissions": "No assertion"
+		},
+		"dates": {
+			"date": {
+				"date": "2016 - 10 - 28"
+			},
+			"label": "Created"
+		},
+		"creators": {
+			"creator": {
+				"name": "Sean Goggins",
+				"role": {
+					"label": "Other"
+				}
+			},
+			"type": {
+				"label": "No assertion"
+			},
+			"contact": "sg@wikimedia.org"
+		}
+	}
+
+	#Insert the first test manifest
+	test = insert_manifest(to_insert)
+	if(not test):
+		print("Bad insert")
+	else:
+		print("Good insert")
+
+	#Ensure thata the manifest was inserted properly
+	found = search_manifest({})[0]
+	if(found['creators']['contact'] == to_insert['creators']['contact']):
+		print("Match")
+	else:
+		print("No Match")
+
+	#Update to Second manifest
+	test = update_manifest(found['_id'], to_replace)
+	if(not test):
+		print("Bad update")
+	else:
+		print("Good update")
+
+	#Ensure good manifest update
+	found = search_manifest({})[0]
+	if(found['creators']['contact'] == to_insert['creators']['contact']):
+		print("Did not replace")
+	elif(found['creators']['contact'] == to_replace['creators']['contact']):
+		print("Good Replace")
+	else:
+		printf("replace corruption")
+
+	#remove the manifest
+	test = remove_manifest(found['_id'])
+	if(not test):
+		print("Bad remove")
+	else:
+		print("Good remove")
+
+
 
 ## User Interface
   - [Link](http://ec2-35-161-12-137.us-west-2.compute.amazonaws.com/index.php)
