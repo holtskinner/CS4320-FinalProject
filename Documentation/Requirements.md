@@ -562,6 +562,11 @@ by the dml (Although they should be checked in the business layer). The Unit tes
 validate these functions, and will ensure that they are valid throughout creation of
 the system.
 
+The database also no longer has a user collection, as it is no longer required for login.
+As such, the user collection has been removed (Including from the ERD). The ERD also
+now uses Crows Feet notation to represent relationships, and required fields are marked.
+
+
 ### The python code for inserts, updates, searches, and deletes.
 
 ```
@@ -830,6 +835,7 @@ the system.
 
 ## Testing2
   - [Sprint1 Testing Updates](#testing)
+  - Unit tests for the Database insert, update, search, and delete functions are implemented as a python script.
 
 ---
 
