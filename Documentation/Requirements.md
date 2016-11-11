@@ -211,7 +211,7 @@ implemented in the view. This is a last line of defense that should never error 
 as that would mean that the business logic is not checking the manifests appropriately,
 or there is a data corruption in the chain.
 
-
+```
 	db.createCollection("Manifests",
 		{validator: {$and:
 			[
@@ -249,13 +249,17 @@ or there is a data corruption in the chain.
 
     	},
 	validationLevel: "strict"})
- - db.createCollection("Fs.files")
- - db.createCollection("Fs.chunks")
- - db.createCollection("Users")
+
+  ```
+```
+db.createCollection("Fs.files")
+db.createCollection("Fs.chunks")
+db.createCollection("Users")
+```
 
 ## Data Seeding
 Two example manifest inserts are provided. Any sample data can be seeded in by copy-pasting it into db.Manifests.insert()
-
+```
 	db.Manifests.insert(
 		{
 		"manifests": {
@@ -401,6 +405,7 @@ Two example manifest inserts are provided. Any sample data can be seeded in by c
 			"contact": "sg@wikimedia.org"
 		}
 	})
+```
 
 ## Information Architecture
 There exist 4 discrete information layers in the system. The first is the user facing
@@ -551,6 +556,7 @@ the system.
 
 ### The python code for inserts, updates, searches, and deletes.
 
+```
 	from pymongo import MongoClient #Mongodb functionality
 
 	#initialize to the collections that we want
@@ -606,9 +612,11 @@ the system.
 			if(old_doc[0]):
 				return True
 		return False
+```
 
 ### Unit tests for these functions
 
+```
 	from dml import insert_manifest, remove_manifest, update_manifest, search_manifest
 
 	to_insert = {
@@ -793,6 +801,7 @@ the system.
 		print("Bad remove")
 	else:
 		print("Good remove")
+```
 
 ## User Interface
   - [Link](http://ec2-35-161-12-137.us-west-2.compute.amazonaws.com/index.php)
@@ -810,7 +819,6 @@ the system.
   - The Google API returns a unique user_id token, which is stored in the Database.
   - [Documentation](https://developers.google.com/identity/sign-in/web/)
 
-## Business logic
 
 ## Testing2
   - [Sprint1 Testing Updates](#testing)
