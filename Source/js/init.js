@@ -16,11 +16,13 @@
         // });
         //Need url for insert
     }
-
-    $('#search').on('click', function(){
-
-      $("#table-header").animate({ opacity: 0}, 400).animate({ height: 10 }, 400);
-      $('#manifest-table').empty().load("table.html").hide().fadeIn(800);
-    })
+    if (top.location.pathname === '/index.php')
+    {
+        $('#search').on('click', function(){
+          $("#table-header").animate({ opacity: 0}, 400).animate({ height: 0 }, 400);
+          $('#manifest-table').empty().load("table.html").hide().fadeIn(800);
+        })
+    }
+    
   }); // end of document ready
 })(jQuery); // end of jQuery name space
