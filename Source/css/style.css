@@ -99,3 +99,6 @@ footer.page-footer {
   height: 54px;
   width: auto;
 }
+.img-circle {
+    border-radius: 50%;
+}
