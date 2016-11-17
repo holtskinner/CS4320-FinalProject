@@ -25,5 +25,5 @@ If you are not sure of what category you want to search through, you can click o
 #### Upload Page
 The upload page is for social scientist to upload their manifests onto the OCDX platform. 
 
-### Profile Page
+#### Profile Page
 You can login through a google account. You do not have to create an account on the OCDX platform. The profile page will display all your listed manifests.
