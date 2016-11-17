@@ -15,6 +15,7 @@ function onSignIn(googleUser) {
 </script>
 </head>
   <body>
+  <div class="complete-wrapper" style="display: none">
     <div id="includedNav"></div>
     <script>$("#includedNav").load("nav.php");</script>
     <main>
@@ -42,6 +43,10 @@ function onSignIn(googleUser) {
       </div>
     </main>
     <div id="includedFooter"></div>
+    </div>
     <script>$("#includedFooter").load("footer.php");</script>
+    <script>$(".complete-wrapper").css("display", 'block');</script>
+
   </body>
+
 </html>
