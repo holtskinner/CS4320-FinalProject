@@ -7,4 +7,23 @@ The premise behind OCDX is that onlie behavior creates an enormous amount of dig
 
 You can learn more about OCDX [here](https://docs.google.com/document/d/1m3FqTsO6SGc3qSVYfpb05dCdGl8DNeI5blCduhCR75o/edit)
 
-## Our Project.
+## Our Project
+You can find our implementation of OCDX [here](http://ec2-35-161-12-137.us-west-2.compute.amazonaws.com/)
+
+
+##### Home Page
+The initial page is a search, which is currently non-functional. When fully implemented, you will have the ability to search manifests by multiple categories:
+- Title
+- Author
+- Date
+- Description
+
+
+#### Browse Page
+If you are not sure of what category you want to search through, you can click on browse in the nav-bar. This will lead you to a page where we display all manifests by default and you have the opportunity to narrow down the displayed manifests through another search by.
+
+#### Upload Page
+The upload page is for social scientist to upload their manifests onto the OCDX platform. 
+
+### Profile Page
+You can login through a google account. You do not have to create an account on the OCDX platform. The profile page will display all your listed manifests.
