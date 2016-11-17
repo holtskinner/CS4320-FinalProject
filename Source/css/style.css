@@ -47,11 +47,30 @@ nav .brand-logo {
 nav {
   background-color: #444;
 }
-
+.wrapper {
+  width: 800px;
+  margin: 30px auto;
+  border: 1px solid #bbb;
+  border-radius: 8px;
+  padding: 30px 15px 15px;
+}
 p {line-height: 2rem;}
 td, th {padding: 2px 5px;}
 td {cursor: default;}
-
+.edit-label {
+  font-size: 1rem;
+  float: left;
+  margin-right: 4px;
+  color: #333;
+}
+.edit-span {
+  display: block;
+  overflow: hidden;
+}
+input:not([type]) {
+  height: auto;
+  margin: 0;
+}
 .searchLabel {
   margin-right: 1rem;
 }
