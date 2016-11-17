@@ -23,6 +23,17 @@
           $('#manifest-table').empty().load("table.html").hide().fadeIn(800);
         })
     }
-    
+    $('#edit-button').on('click', function() {
+        $('.edit-field').attr('readonly', false);
+        $('.edit-field').css('border-bottom', '1px solid #26a69a')
+        $(this).css('display', 'none');
+        $('#cancel-button').css('display', 'inherit');
+    });
+    $('#cancel-button').on('click', function() {
+        $('.edit-field').attr('readonly', true);
+        $('.edit-field').css('border-bottom', '')
+        $(this).css('display', 'none');
+        $('#edit-button').css('display', 'inherit');
+    });
   }); // end of document ready
 })(jQuery); // end of jQuery name space

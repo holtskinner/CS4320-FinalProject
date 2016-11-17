@@ -47,20 +47,52 @@ nav .brand-logo {
 nav {
   background-color: #444;
 }
+input:not([type])[readonly="readonly"] {
+  color: inherit;
+  border-bottom: 1px solid #9e9e9e;
+}
+.row {margin-bottom: 15px;}
+.header-row {position: relative;}
+.header-row a {
+  position: absolute;
+  top: 0;
+  right: 10px;
+}
+.header-row i {
+  margin-right: 6px;
+}
+.header-row .btn {
+  padding: 0 12px 0 8px;
+  height: 30px;
+  line-height: 30px;
+}
 .wrapper {
   width: 800px;
-  margin: 30px auto;
+  margin: 30px auto 40px;
   border: 1px solid #bbb;
   border-radius: 8px;
-  padding: 30px 15px 15px;
+  padding: 15px;
+  box-shadow: #aaa 0 0 4px 0;
 }
+.files-wrapper {margin: 20px 10px 40px}
+.files-table-wrapper {
+  border: 1px solid #bbb;
+  padding: 10px 10px 15px;
+  background-color: #fafafa;
+}
+.hidden {visibility: hidden;}
+.label-wrapper {float: left;}
+.input-wrapper {overflow: hidden;}
 p {line-height: 2rem;}
+.files-wrapper th {font-weight: 400;}
+.files-wrapper td {font-weight: 300;}
 td, th {padding: 2px 5px;}
 td {cursor: default;}
+#cancel-button {display: none;}
 .edit-label {
   font-size: 1rem;
   float: left;
-  margin-right: 4px;
+  margin-right: 10px;
   color: #333;
 }
 .edit-span {
@@ -71,6 +103,14 @@ input:not([type]) {
   height: auto;
   margin: 0;
 }
+textarea {
+  resize: none;
+  border: none;
+  border-bottom: 1px solid #9e9e9e;
+  height: 67px;
+}
+.temp {margin-bottom: 51px;}
+textarea:focus {outline: none;}
 .searchLabel {
   margin-right: 1rem;
 }

@@ -70,8 +70,8 @@ function onSignIn(googleUser) {
                     tr.append('<td>' + json.manifests[i].dateCreated + '</td>');
                     tr.append('<td>' + json.manifests[i].dateModified + '</td>');
                     tr.append('<td>' + json.manifests[i].comments + '</td>');
-                    tr.append('<td><a>edit</a></td>');
-                    tr.append('<td><a>view</a></td>');
+                    tr.append('<td><a href="edit.php">edit</a></td>');
+                    tr.append('<td><a href="edit.php">view</a></td>');
                     $('#manifest-table').append(tr);
                 }     
             }
