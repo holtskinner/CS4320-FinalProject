@@ -45,8 +45,10 @@ function onSignIn(googleUser) {
     <div id="includedFooter"></div>
     </div>
     <script>$("#includedFooter").load("footer.php");</script>
-    <script>$(".complete-wrapper").css("display", 'block');</script>
+    
 
   </body>
 
 </html>
+
+<script>$(".complete-wrapper").css("display", 'block');</script>
