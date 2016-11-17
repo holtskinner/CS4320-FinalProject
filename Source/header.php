@@ -3,7 +3,8 @@
   <script src="https://apis.google.com/js/platform.js" async defer></script>
   <link href="css/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection" />
   <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>-->
+  <script src="js/jquery-3.1.1.min.js"></script>
   <script src="js/materialize.min.js"></script>
   <script src="js/init.js"></script>
   <script src="https://use.fontawesome.com/8172e32e19.js"></script>
