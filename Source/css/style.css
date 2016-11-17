@@ -67,7 +67,7 @@ input:not([type])[readonly="readonly"] {
   line-height: 30px;
 }
 .wrapper {
-  width: 800px;
+  width: 80%;
   margin: 30px auto 40px;
   border: 1px solid #bbb;
   border-radius: 8px;
