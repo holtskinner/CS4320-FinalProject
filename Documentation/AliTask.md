@@ -1,15 +1,14 @@
 ### Ali Raza
 
-##### System Administrator
+System Administrator
 - Setup web server
 - Setup user accounts
 - Installed dependencies
 - Installed required programs
 
-##### Documentation
+Documentation
 - Began User Documentation
 - Created Temporal Logic
 
-##### Business Logic
+Business Logic
 - Begin accepting user inserted values for manifests
-
