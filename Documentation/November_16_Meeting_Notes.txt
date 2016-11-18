@@ -1,0 +1,18 @@
+Members Present:
+	- Brad
+	- Bo
+	- Ali
+	
+Work Done:
+	- Ali began user documentation for sprint
+	- Bo is working on temporal logic for sprint 3
+	- Brad is working on the viewing/editing manifests
+	
+Decisions:
+	- Email Dr. Goggins for clarification on Manifest format
+		- Email has been sent.
+		- Currently waiting for response.
+	- Test whether PHP 5.4 works w/ Mongo
+		- Ali will do this on a seperate server.
+			- If succesful, we will downgrade PHP to 5.4 on production server.
+			- If not succesful, we will convert PHP to Python/Flask
