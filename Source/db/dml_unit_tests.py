@@ -1,4 +1,10 @@
-from dml import insert_manifest, remove_manifest, update_manifest, search_manifest
+#Wildcard imports are a bad idea, so we import all individually
+from dml import insert_manifest, remove_manifest, update_manifest, search_manifest, add_file, remove_file, get_all_files, remove_all_files, get_file
+#Yes, we could do 
+#from dml import *
+#but this is bad practice, as it is very easy to accadentially rebind something, and it is hard to tell where something came from
+#honestly, we should just use import dml then go dml.insert_manifest, but as this is a testing script, we can get away with it
+#in our buisness logic, it should be import dml, then dml.insert_manifest
 
 to_insert = {
 	"manifests": {
@@ -176,9 +182,55 @@ elif(found['creators']['contact'] == to_replace['creators']['contact']):
 else:
     printf("replace corruption")
 
+#add a test file
+if(add_file(found['_id'], "This a file that is a string")):
+	print("Added string file")
+else:
+	print("Did not add string file")
+
+#reset our internal manifest
+found = search_manifest({})[0]
+
+#get the file we Added
+found_file = get_file(found["file_ids"][0])
+if(found_file):
+	print(found_file)
+else:
+	print("We did not find any files")
+
+#remove the file
+if(remove_file(found["_id"], found["file_ids"][0])):
+	print("We removed the string file")
+else:
+	print("We did not remove the string file")
+
+#add several files
+if(add_file(found['_id'], "This is the first sting file")):
+	print("Added 1st string file")
+else:
+	print("Did not add 1st string file")
+if(add_file(found['_id'], "This is the second sting file")):
+	print("Added 2nd string file")
+else:
+	print("Did not add 2nd string file")
+if(add_file(found['_id'], "This is the third sting file")):
+	print("Added 3rd string file")
+else:
+	print("Did not add 3rd string file")
+found = search_manifest({})[0]
+
+#get the files
+found_files = get_all_files(found["_id"])
+if(found_files):
+	for found_file in found_files:
+		print(found_file)
+else:
+	print("unable to get files")
+
+
 #remove the manifest
 test = remove_manifest(found['_id'])
 if(not test):
     print("Bad remove")
 else:
-    print("Good remove")
+    print("Good remove") 
