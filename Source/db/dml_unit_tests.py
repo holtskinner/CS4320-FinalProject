@@ -1,5 +1,5 @@
 #Wildcard imports are a bad idea, so we import all individually
-from dml import insert_manifest, remove_manifest, update_manifest, search_manifest, add_file, remove_file, get_all_files, remove_all_files, get_file
+from dml import search_by_all, search_by_title, search_by_author, search_by_date, insert_manifest, remove_manifest, update_manifest, search_manifest, add_file, remove_file, get_all_files, remove_all_files, get_file
 #Yes, we could do 
 #from dml import *
 #but this is bad practice, as it is very easy to accadentially rebind something, and it is hard to tell where something came from
@@ -166,7 +166,163 @@ if(found['creators']['contact'] == to_insert['creators']['contact']):
 else:
     print("No Match")
 
+#search by full title
+found = search_by_title("iDAS Manifest")[0]
+if(found['creators']['contact'] == to_insert['creators']['contact']):
+	print("Full title match")
+else:
+	print("Unable to match by full title")
+
+#partial search
+found = search_by_title("iDAS")[0]
+if(found['creators']['contact'] == to_insert['creators']['contact']):
+	print("partial title match")
+else:
+	print("Unable to match by partial title")
+
+#lower case search
+found = search_by_title("idas")[0]
+if(found['creators']['contact'] == to_insert['creators']['contact']):
+	print("lower case title match")
+else:
+	print("Unable to match by lower case title")
+
+#second part search
+found = search_by_title("Manifest")[0]
+if(found['creators']['contact'] == to_insert['creators']['contact']):
+	print("second part of title match")
+else:
+	print("Unable to match by second part of title")
+
+#bad search
+found = search_by_title("iDAS Manafest")
+if(found.count() != 0):
+	print("found a manifest that shouldn't exist")
+else:
+	print("Passed bad search test")
+
+#search by full author, interior manifest
+found = search_by_author("Ali Raza")[0]
+if(found['creators']['contact'] == to_insert['creators']['contact']):
+	print("Full author match, interior")
+else:
+	print("Unable to Full author match, interior")
+
+#search by full author, exterior creator
+found = search_by_author("Chi-Ren Shyu")[0]
+if(found['creators']['contact'] == to_insert['creators']['contact']):
+	print("Full author match, exterior")
+else:
+	print("Unable to Full author match, exterior")
+
+#partial search, interior manifest
+found = search_by_author("Raz")[0]
+if(found['creators']['contact'] == to_insert['creators']['contact']):
+	print("partial author match, interior")
+else:
+	print("Unable to partial author match, interior")
+
+#partial search, exterior manifest
+found = search_by_author("Ren")[0]
+if(found['creators']['contact'] == to_insert['creators']['contact']):
+	print("partial author match, exterior")
+else:
+	print("Unable to partial author match, exterior")
+
+#lower case search, interior manifest
+found = search_by_author("ali raza")[0]
+if(found['creators']['contact'] == to_insert['creators']['contact']):
+	print("lower case author match")
+else:
+	print("Unable to match by lower case author")
+
+#lower case search, exterior manifest
+found = search_by_author("chi-ren shyu")[0]
+if(found['creators']['contact'] == to_insert['creators']['contact']):
+	print("lower case author match")
+else:
+	print("Unable to match by lower case author")
+
+#bad search
+found = search_by_author("iDAS")
+if(found.count() != 0):
+	print("found a manifest that shouldn't exist")
+else:
+	print("Passed bad search test")
+
+#date searches
+#search by full date, interior manifest
+found = search_by_date("2005 - 04 - 27")[0]
+if(found['creators']['contact'] == to_insert['creators']['contact']):
+	print("Full date match, interior")
+else:
+	print("Unable to Full date match, interior")
+
+#search by full date, exterior date
+found = search_by_date("2014 - 02 - 15")[0]
+if(found['creators']['contact'] == to_insert['creators']['contact']):
+	print("Full date match, exterior")
+else:
+	print("Unable to Full date match, exterior")
+
+#partial search, interior manifest
+found = search_by_date("2005")[0]
+if(found['creators']['contact'] == to_insert['creators']['contact']):
+	print("partial date match, interior")
+else:
+	print("Unable to partial date match, interior")
+
+#partial search, exterior manifest
+found = search_by_date("2014")[0]
+if(found['creators']['contact'] == to_insert['creators']['contact']):
+	print("partial date match, exterior")
+else:
+	print("Unable to partial date match, exterior")
+
+#no spaces case search, interior manifest
+found = search_by_date("2005-04-27")[0]
+if(found['creators']['contact'] == to_insert['creators']['contact']):
+	print("no spaces date match")
+else:
+	print("Unable to match by no spaces date")
+
+#no spaces search, exterior manifest
+found = search_by_date("2014-02-15")[0]
+if(found['creators']['contact'] == to_insert['creators']['contact']):
+	print("no spaces date match")
+else:
+	print("Unable to match by no spaces date")
+
+#extra spaces case search, interior manifest
+found = search_by_date("2005  -  04  -  27")[0]
+if(found['creators']['contact'] == to_insert['creators']['contact']):
+	print("extra spaces date match")
+else:
+	print("Unable to match by no spaces date")
+
+#extra spaces search, exterior manifest
+found = search_by_date("2014  -  02  -  15")[0]
+if(found['creators']['contact'] == to_insert['creators']['contact']):
+	print("extra spaces date match")
+else:
+	print("Unable to match by no spaces date")
+
+#bad search
+found = search_by_date("2229")
+if(found.count() != 0):
+	print("found a manifest that shouldn't exist")
+else:
+	print("Passed bad search test")
+
+#empty search
+found = search_by_date("")
+if(found.count != 0):
+	print("Empty search returns manifests")
+else:
+	print("Empty search did not return a manifest")
+
 #Update to Second manifest
+found = search_manifest({})[0] #reset
 test = update_manifest(found['_id'], to_replace)
 if(not test):
     print("Bad update")

@@ -1,5 +1,5 @@
-from pymongo import MongoClient #Mongodb functionality
-import gridfs
+from pymongo import MongoClient, TEXT #Mongodb functionality
+import gridfs #file system functionality
 
 #initialize to the collections that we want
 client = MongoClient() 
@@ -7,11 +7,51 @@ db = client.test
 fs = gridfs.GridFS(db)
 
 m_col = db.Manifests #the collection of manifests
+m_col.create_index( [("$**", TEXT)]) #ensure existance of index 
 
 def search_manifest(lookup):
     ''' finds all manifests that match pattern provided and returns the cursor of results
     Returned value is a cursor that can be iterated through with a for loop '''
     return m_col.find(lookup) 
+
+def search_by_all(to_find):
+    ''' Finds all manifests that contain the search terms provided. '''
+    lookup = { "$text": { "$search" : "\"" + to_find + "\"" } }
+    return _col.find(lookup)
+
+def search_by_title(to_find):
+    ''' Finds all manifests that contain the title provided. Can be formatted upstream to be a
+    regex.  '''
+    lookup = { "manifests.manifest.researchObject.title" : {"$regex" : to_find , "$options": "i"}}
+    return m_col.find(lookup)
+
+def search_by_author(to_find):
+    ''' Finds all manifests that contain the author provided. Can be formatted upstream to be a
+    regex. This searches both the exterior creator field and the interior research object '''
+    lookup = { "$or": [{ "manifests.manifest.creator" : {"$regex" : to_find , "$options": "i"}},
+        {"creators.creator.name" : {"$regex" : to_find , "$options": "i"}}]
+    }
+    return m_col.find(lookup)
+
+def search_by_date(to_find):
+    ''' Finds all manifests that contain the date provided. Can be formatted upstream to be a
+    regex. This searches both the exterior date field and the interior research object dates '''
+    #we need to fix the date formatted
+    query = to_find
+    query = query.replace(" ", "")
+    tokens = query.split("-")
+    new_to_find = ""
+    for token in tokens:
+        new_to_find += "\s*" + token + "\s*-*"
+    lookup = { "$or": [{ "dates.date.date" : {"$regex" : new_to_find , "$options": "i"}},
+        {"manifests.manifest.researchObject.dates.date.date" : {"$regex" : new_to_find , "$options": "i"}}]
+    }
+    return m_col.find(lookup)
+
+def search_by_description(to_find):
+    ''' Finds all manifests that contain the description pattern provided. Can be formatted upstream to be a
+    regex.  '''
+    return [1]
 
 def insert_manifest(manifest):
     ''' Insert given manifest if it exists. Returns True on success,
