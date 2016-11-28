@@ -2,7 +2,9 @@
 <html>
 <head>
   <title>View Dataset</title>
-<?php include 'header.php'; ?>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"> </script>
+  <div id="includedHeader"></div>
+  <script>$("#includedHeader").load("header.php");</script>
 
 <script>
 function onSignIn(googleUser) {
@@ -13,7 +15,9 @@ function onSignIn(googleUser) {
 </script>
 </head>
   <body>
-    <?php include "nav.php"; ?>
+    <div class="complete-wrapper" style="display: none">
+      <div id="includedNav"></div>
+      <script>$("#includedNav").load("nav.php");</script>
     <main>
       <div class="wrapper">
         <div class="header-row">
@@ -158,6 +162,9 @@ function onSignIn(googleUser) {
         </div>
       </div>
     </main>
-    <?php include 'footer.php' ?>
+    <div id="includedFooter"></div>
+    </div>
+    <script>$("#includedFooter").load("footer.php");</script>
   </body>
 </html>
+<script>$(".complete-wrapper").css("display", 'block');</script>
