@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
-<?php include 'header.php'; ?>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"> </script>
+<div id="includedHeader"></div>
+<script>$("#includedHeader").load("header.php");</script>
 <script>
   function onSignIn(googleUser) {
       var profile = googleUser.getBasicProfile();
@@ -25,7 +27,8 @@
 </style>
 
   <body>
-    <?php include "nav.php"; ?>
+    <div id="includedNav"></div>
+    <script>$("#includedNav").load("nav.php");</script>
     <main>
       <div class="container center-align">
         <h2 class="header teal-text text-lighten-2">Profile</h2>

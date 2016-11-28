@@ -2,10 +2,13 @@
 <html lang="en">
   <head>
       <title>OCDX</title>
-  <?php require_once 'header.php'; ?>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"> </script>
+        <div id="includedHeader"></div>
+        <script>$("#includedHeader").load("header.php");</script>
   </head>
 <body>
-    <?php include "nav.php"; ?>
+    <div id="includedNav"></div>
+    <script>$("#includedNav").load("nav.php");</script>
     <main id="index-banner">
         <div class="section">
             <div class="container">
@@ -17,7 +20,8 @@
                     </div>
                 </div>
                 <div class="row center">
-                  <?php include "searchBox.php" ?>
+                    <div id="includedSearchBox"></div>
+                    <script>$("#includedSearchBox").load("searchBox.php");</script>
                     <br>
                     <br>
                     <br>
@@ -31,7 +35,8 @@
             </div>
         </div>
       </main>
-        <?php include 'footer.php'; ?>
+        <div id="includedFooter"></div>
+        <script>$("#includedFooter").load("footer.php");</script>
 </body>
 
 </html>

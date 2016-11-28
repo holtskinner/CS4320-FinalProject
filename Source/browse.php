@@ -2,7 +2,9 @@
 <html>
 <head>
   <title>OCDX Browse</title>
-<?php include 'header.php'; ?>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"> </script>
+    <div id="includedHeader"></div>
+    <script>$("#includedHeader").load("header.php");</script>
 
 <script>
 function onSignIn(googleUser) {
@@ -22,12 +24,14 @@ function onSignIn(googleUser) {
 </script>
 </head>
   <body>
-    <?php include "nav.php"; ?>
+    <div id="includedNav"></div>
+    <script>$("#includedNav").load("nav.php");</script>
     <main>
         <div class="section">
             <div class="container">                
                 <div class="row center">
-                  <?php include "searchBox.php" ?>
+                    <div id="includedSearchBox"></div>
+                    <script>$("#includedSearchBox").load("searchBox.php");</script>
                     <br>
                     <br>
                     <br>
@@ -49,7 +53,8 @@ function onSignIn(googleUser) {
             </div>
         </div>
       </main>
-      <?php include 'footer.php' ?>
+        <div id="includedFooter"></div>
+        <script>$("#includedFooter").load("footer.php");</script>
   </body>
 </html>
 <script>
@@ -70,8 +75,8 @@ function onSignIn(googleUser) {
                     tr.append('<td>' + json.manifests[i].dateCreated + '</td>');
                     tr.append('<td>' + json.manifests[i].dateModified + '</td>');
                     tr.append('<td>' + json.manifests[i].comments + '</td>');
-                    tr.append('<td><a href="edit.php">edit</a></td>');
-                    tr.append('<td><a href="edit.php">view</a></td>');
+                    tr.append('<td><a>edit</a></td>');
+                    tr.append('<td><a>view</a></td>');
                     $('#manifest-table').append(tr);
                 }     
             }
