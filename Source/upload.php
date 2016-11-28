@@ -2,7 +2,9 @@
 <html>
 <head>
   <title>OCDX Upload</title>
-<?php include 'header.php'; ?>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"> </script>
+    <div id="includedHeader"></div>
+    <script>$("#includedHeader").load("header.php");</script>
 
 <script>
 function onSignIn(googleUser) {
@@ -22,7 +24,8 @@ function onSignIn(googleUser) {
 </script>
 </head>
   <body>
-    <?php include "nav.php"; ?>
+    <div id="includedNav"></div>
+    <script>$("#includedNav").load("nav.php");</script>
     <main>
         <div class="container">
           <h2 class="center-align header teal-text text-lighten-2">Upload Manifest</h2>
@@ -60,6 +63,7 @@ function onSignIn(googleUser) {
             </form>
         </div>
       </main>
-      <?php include 'footer.php' ?>
+        <div id="includedFooter"></div>
+        <script>$("#includedFooter").load("footer.php");</script>
   </body>
 </html>
