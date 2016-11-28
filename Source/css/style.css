@@ -38,7 +38,9 @@ body {
    -webkit-font-feature-settings: 'liga';
    -webkit-font-smoothing: antialiased;
 }
-
+.clear {
+  clear: both;
+}
 nav ul a,
 nav .brand-logo {
   color: #444;
@@ -80,6 +82,31 @@ input:not([type])[readonly="readonly"] {
   padding: 10px 10px 15px;
   background-color: #fafafa;
 }
+.flex-display {display: flex;}
+textarea.materialize-textarea {
+  padding-top: .5rem;
+  padding-bottom: .5rem;
+}
+input[type=text]{
+  height: 2rem;
+}
+.divider{
+  display: none;
+  background: rgba(255,255,255,1);
+  background: -moz-linear-gradient(left, rgba(255,255,255,1) 0%, rgba(35,35,35,1) 35%, rgba(35,35,35,1) 51%, rgba(68,68,68,1) 65%, rgba(255,255,255,1) 100%);
+  background: -webkit-gradient(left top, right top, color-stop(0%, rgba(255,255,255,1)), color-stop(35%, rgba(35,35,35,1)), color-stop(51%, rgba(35,35,35,1)), color-stop(65%, rgba(68,68,68,1)), color-stop(100%, rgba(255,255,255,1)));
+  background: -webkit-linear-gradient(left, rgba(255,255,255,1) 0%, rgba(35,35,35,1) 35%, rgba(35,35,35,1) 51%, rgba(68,68,68,1) 65%, rgba(255,255,255,1) 100%);
+  background: -o-linear-gradient(left, rgba(255,255,255,1) 0%, rgba(35,35,35,1) 35%, rgba(35,35,35,1) 51%, rgba(68,68,68,1) 65%, rgba(255,255,255,1) 100%);
+  background: -ms-linear-gradient(left, rgba(255,255,255,1) 0%, rgba(35,35,35,1) 35%, rgba(35,35,35,1) 51%, rgba(68,68,68,1) 65%, rgba(255,255,255,1) 100%);
+  background: linear-gradient(to right, rgba(255,255,255,1) 0%, rgba(35,35,35,1) 35%, rgba(35,35,35,1) 51%, rgba(68,68,68,1) 65%, rgba(255,255,255,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ffffff', GradientType=1 );
+}
+/*
+.date-placeholder {
+  margin-left: -10px;
+  margin-right: -10px;
+}
+*/
 .hidden {visibility: hidden;}
 .label-wrapper {float: left;}
 .input-wrapper {overflow: hidden;}

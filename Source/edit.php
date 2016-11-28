@@ -23,61 +23,207 @@ function onSignIn(googleUser) {
         </div>
         <div class="row">
           <form class="col s12">
+            <div class="row view-section">
+              <div class="col s12 l6">
+                <div class="input-field">
+                  <input id="standardVersion" type="text">
+                  <label class="active" for="standardVersion">Standard Version</label>
+                </div>
+              </div>
+              <div class="col s12 l6">
+                <div class="input-field">
+                  <input id="id" type="text">
+                  <label class="active" for="id">ID</label>
+                </div>
+              </div>
+              <div class="col s12 l6">
+                <div class="input-field">
+                  <input id="creator" type="text">
+                  <label class="active" for="creator">Creator</label>
+                </div>
+              </div>
+              <div class="col s12 l6">
+                <div class="input-field">
+                  <input id="dateCreated" type="text">
+                  <label class="active" for="dateCreated">Date Created</label>
+                </div>
+              </div>
+              <div class="col s12">
+                <div class="input-field">
+                  <input id="comment" type="text">
+                  <label class="active" for="comment">Comment</label>
+                </div>
+              </div>
+            </div>
+            <div class="divider"></div>
+            <div class="row view-section">
+              <div class="col s12 l6">
+                <div class="input-field">
+                  <input id="title" type="text">
+                  <label class="active" for="title">Title</label>
+                </div>
+              </div>
+              <div class="col s12">
+                <div class="input-field">
+                  <textarea id="abstract" class="materialize-textarea"></textarea>
+                  <label for="abstract">Abstract</label>
+                </div>
+              </div>
+              <div class="date-placeholder">
+              </div>
+              <div class="col s12 l6 clear">
+                <div class="input-field">
+                  <input id="oversight" type="text">
+                  <label class="active" for="oversight">Privacy Ethics - Oversight</label>
+                </div>
+              </div>
+              <div class="col s12 l6">
+                <div class="input-field">
+                  <input id="informedConsent" type="text">
+                  <label class="active" for="InformedConsent">Informed Consent</label>
+                </div>
+              </div>
+              <div class="col s12 l6">
+                <div class="input-field">
+                  <input id="anonymizedData" type="text">
+                  <label class="active" for="anonymizedData">Anonymized Data</label>
+                </div>
+              </div>
+              <div class="col s12 l6">
+                <div class="input-field">
+                  <input id="privacyConsiderations" type="text">
+                  <label class="active" for="privacyConsiderations">Privacy Considerations</label>
+                </div>
+              </div>
+            </div>
+            <div class="divider"></div>
+            <div class="row view-section">
+              <div class="col s12">
+                <div class="input-field">
+                  <textarea id="narrative" class="materialize-textarea"></textarea>
+                  <label for="narrative">Narrative</label>
+                </div>
+              </div>
+              <div class="col s12 l6">
+                <div class="input-field">
+                  <input id="publication" type="text">
+                  <label class="active" for="publication">Publication</label>
+                </div>
+              </div>
+              <div class="col s12 l6">
+                <div class="input-field">
+                  <input id="locationUrl" type="text">
+                  <label class="active" for="locationUrl">Location URL</label>
+                </div>
+              </div>
+              <div class="col s12 l6">
+                <div class="input-field">
+                  <input id="locationComment" type="text">
+                  <label class="active" for="locationComment">Location Comment</label>
+                </div>
+              </div>
+            </div>
+
+<!--
+            <div class="row">
+              <div class="col s12 l6">
+                <div id="size-tester" class="input-field">
+                  <input id="standardVersion" type="text">
+                  <label class="active" for="standardVersion">Standard Version</label>
+                </div>
+                <div class="input-field">
+                  <input id="id" type="text">
+                  <label class="active" for="id">ID</label>
+                </div>
+                <div class="input-field">
+                  <input id="creator" type="text">
+                  <label class="active" for="creator">Creator</label>
+                </div>
+                <div class="input-field">
+                  <input id="dateCreated" type="text">
+                  <label class="active" for="dateCreated">Date Created</label>
+                </div>
+                <div class="input-field">
+                  <input id="comment" type="text">
+                  <label class="active" for="comment">Comment</label>
+                </div>
+                <div class="input-field">
+                  <input id="title" type="text">
+                  <label class="active" for="title">Title</label>
+                </div>
+                <div class="input-field flex-display">
+                  <textarea id="abstract" class="materialize-textarea"></textarea>
+                  <label for="abstract">Abstract</label>
+                </div>
+              </div>
+              <div class="col s12 l6">                
+                <div class="row date-placeholder">
+                </div>
+                <div class="input-field">
+                  <input id="oversight" type="text">
+                  <label class="active" for="title">Privacy Ethics - Oversight</label>
+                </div>
+                <div class="input-field">
+                  <input id="informedConsent" type="text">
+                  <label class="active" for="title">Informed Consent</label>
+                </div>
+                <div class="input-field">
+                  <input id="anonymizedData" type="text">
+                  <label class="active" for="title">Anonymized Data</label>
+                </div>
+                <div class="input-field">
+                  <input id="privacyConsiderations" type="text">
+                  <label class="active" for="title">Privacy Considerations</label>
+                </div>
+                <div class="input-field">
+                  <input id="narrative" type="text">
+                  <label class="active" for="title">Narrative</label>
+                </div>
+                <div class="input-field">
+                  <input id="publication" type="text">
+                  <label class="active" for="title">Publication</label>
+                </div>
+              </div>
+            </div>
+-->
+<!--
             <div class="label-wrapper">
-              <div class="row"><label class="edit-label">Title:</label></div>
+              <div class="row"><label class="edit-label">Standard Versions:</label></div>
+              <div class="row"><label class="edit-label">ID:</label></div>
               <div class="row"><label class="edit-label">Creator:</label></div>
               <div class="row"><label class="edit-label">Date Created:</label></div>
               <div class="row"><label class="edit-label">Comment:</label></div>
+              <div class="row"><label class="edit-label">Title:</label></div>
               <div class="row"><label class="edit-label">Abstract:</label></div>
-              <div class="row"><label class="edit-label">Start Date:</label></div>
+              <div class="date-placeholder"></div>
               <div class="row"><label class="edit-label">Oversight:</label></div>
               <div class="row"><label class="edit-label">Informed Consent:</label></div>
+              <div class="row"><label class="edit-label">Anonymized Data:</label></div>
               <div class="row"><label class="edit-label">Privacy Considerations:</label></div>
-              <div class="row"><label class="edit-label temp">Narrative:</label></div>
+              <div class="row"><label class="edit-label">Narrative:</label></div>
               <div class="row"><label class="edit-label">Publication:</label></div>
-              <div class="row"><label class="edit-label">Label:</label></div>
+              <div class="row"><label class="edit-label">Locations URL:</label></div>
+              <div class="row"><label class="edit-label">Locations Comment:</label></div>
             </div>
             <div class="input-wrapper">
-              <div class="row"><span class="edit-span"><input id="readonly-check" class="edit-input edit-field" value="Socially Computed Manifest" readonly/></span></div>
-              <div class="row"><span class="edit-span"><input class="edit-input edit-field" value="Sean Goggins" readonly/></span></div>
-              <div class="row"><span class="edit-span"><input class="edit-input edit-field" value="2016-08-13" readonly/></span></div>
-              <div class="row"><span class="edit-span"><input class="edit-input edit-field" value="Second test manifest" readonly/></span></div>
-              <div class="row"><span class="edit-span"><input class="edit-input edit-field" value="Data mined from social networks for the purpose of consumer trend analytics." readonly/></span></div>
-              <div class="row"><span class="edit-span"><input class="edit-input edit-field" value="1992-03-12" readonly/></span></div>
-              <div class="row"><span class="edit-span"><input class="edit-input edit-field" value="No assertion" readonly/></span></div>
-              <div class="row"><span class="edit-span"><input class="edit-input edit-field" value="No assertion" readonly/></span></div>
-              <div class="row"><span class="edit-span"><input class="edit-input edit-field" value="No assertion" readonly/></span></div>
-              <div class="row"><span class="edit-span"><textarea class="edit-input edit-field" rows="8" readonly>The Interdisciplinary Data Analytics and Search (iDAS) lab is one of the many research labs operating out of The University of Missouri, Columbia. As the name implies, iDAS combines researcher across departments to achieve  solutions to problems in academia. Founded in 2005 by Dr. Chi-Ren Shyu, iDAS researchers are primarily Computer Scientist, but the lab also works with Medical Doctors, Biologist, and Statisticans.</textarea></span></div>
-              <div class="row"><span class="edit-span"><input class="edit-input edit-field" value="No assertion" readonly/></span></div>
-              <div class="row"><span class="edit-span"><input class="edit-input edit-field" value="Another input field" readonly/></span></div>
-            </div>
-<!--
-            <div class="row">
-              <label class="edit-label">Title:</label>
-              <span class="edit-span"><input class="edit-input" value="Socially Compute Manifest"/></span>
-            </div>
-            <div class="row">
-              <label class="edit-label">Creator:</label>
-              <span class="edit-span"><input class="edit-input"/ value="Sean Goggins"></span>
-            </div>
-            <div class="row">
-              <label class="edit-label">Date Created:</label>
-              <span class="edit-span"><input class="edit-input" value="2016-08-13"/></span>
-            </div>
-            <div class="row">
-              <label class="edit-label">Comment:</label>
-              <span class="edit-span"><input class="edit-input" value="Second test manifest"/></span>
-            </div>
-            <div class="row">
-              <label class="edit-label">Abstract:</label>
-              <span class="edit-span"><input class="edit-input" value="Data mined from social networks for the purpose of consumer trend analytics."/></span>
-            </div>
-            <div class="row">
-              <label class="edit-label">Start Date:</label>
-              <span class="edit-span"><input class="edit-input" value="1992-03-12"/></span>
+              <div class="row"><span class="edit-span"><input id="standardVersion" class="edit-input edit-field" readonly/></span></div>
+              <div class="row"><span class="edit-span"><input id="id" class="edit-input edit-field" readonly/></span></div>
+              <div class="row"><span class="edit-span"><input id="creator" class="edit-input edit-field" readonly/></span></div>
+              <div class="row"><span class="edit-span"><input id="dateCreated" class="edit-input edit-field" readonly/></span></div>
+              <div class="row"><span class="edit-span"><input id="comment" class="edit-input edit-field" readonly/></span></div>
+              <div class="row"><span class="edit-span"><input id="title" class="edit-input edit-field" readonly/></span></div>
+              <div class="row"><span class="edit-span"><input id="abstract" class="edit-input edit-field" readonly/></span></div>
+              <div class="date-placeholder"></div>
+              <div class="row"><span class="edit-span"><input id="oversight" class="edit-input edit-field" readonly/></span></div>
+              <div class="row"><span class="edit-span"><input id="informedConsent" class="edit-input edit-field" readonly/></span></div>
+              <div class="row"><span class="edit-span"><input id="anonymizedData" class="edit-input edit-field" readonly/></span></div>
+              <div class="row"><span class="edit-span"><input id="privacyConsiderations" class="edit-input edit-field" readonly/></span></div>
+              <div class="row"><span class="edit-span"><input id="narrative" class="edit-input edit-field" readonly/></span></div>
+              <div class="row"><span class="edit-span"><input id="publication" class="edit-input edit-field" readonly/></span></div>
+              <div class="row"><span class="edit-span"><input id="locationUrl" class="edit-input edit-field" readonly/></span></div>
+              <div class="row"><span class="edit-span"><input id="locationComment" class="edit-input edit-field" readonly/></span></div>
             </div>
 -->
-
             <div class="files-wrapper">
               <label>Files</label>
               <div class="files-table-wrapper">
@@ -154,6 +300,7 @@ function onSignIn(googleUser) {
               </div>
               -->
             </div>
+            <ul class="users-list"></ul>
           </form>
         </div>
       </div>
