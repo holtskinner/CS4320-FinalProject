@@ -3,16 +3,6 @@
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"> </script>
 <div id="includedHeader"></div>
 <script>$("#includedHeader").load("header.php");</script>
-<script>
-  function onSignIn(googleUser) {
-      var profile = googleUser.getBasicProfile();
-
-      //Display Info from Google
-      $('#profile-image').attr('src', profile.getImageUrl());
-      $("#name").html(profile.getName());
-      $("#email").html(profile.getEmail());
-  }
-</script>
 
 <style media="screen">
   .img-circle {
@@ -49,3 +39,13 @@
     </main>
   </body>
 </html>
+<script>
+  function onSignIn(googleUser) {
+      var profile = googleUser.getBasicProfile();
+
+      //Display Info from Google
+      $('#profile-image').attr('src', profile.getImageUrl());
+      $("#name").html(profile.getName());
+      $("#email").html(profile.getEmail());
+  }
+</script>
