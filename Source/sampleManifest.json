@@ -42,16 +42,38 @@
 				"comment": "empty"
 			}
 		}],
-		"files": [{
-			"file": {
-				"name": "iDAS - data.csv"
+		"files": [
+			{
+				"file": {
+					"name": "iDAS - data.csv"
+				},
+				"format": ".csv",
+				"abstract": "Metadata for 5000 records collected",
+				"size": "4 KB",
+				"url": "No assertion",
+				"checksum": "No assertion"
 			},
-			"format": ".csv",
-			"abstract": "Metadata for 5000 records collected",
-			"size": "No assertion",
-			"url": "No assertion",
-			"checksum": "No assertion"
-		}],
+			{
+				"file": {
+					"name": "Socially Compute - sc.csv"
+				},
+				"format": ".csv",
+				"abstract": "Metadata for 15000 records collected over two decades",
+				"size": "624 Bytes",
+				"url": "No assertion",
+				"checksum": "No assertion"
+			},
+			{
+				"file": {
+					"name": "More - data.csv"
+				},
+				"format": ".csv",
+				"abstract": "Metadata for 10000 records",
+				"size": "6 KB",
+				"url": "No assertion",
+				"checksum": "No assertion"
+			}
+		],
 		"permissions": "No assertion"
 	},
 	"dates": {
