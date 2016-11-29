@@ -4,8 +4,14 @@ Hofer, Skinner, Raza, Zhang, Rogers, Pudotha
 
 # Deployment
 
-In a Ubuntu Server 16.04 LTS terminal, run the following command to deploy the website, allow all the installations.
+1. Sign in an Amazon Web Service Account, and launch an EC2 Ubuntu Server 16.04 LTS instance.
+2. In the Ubuntu Server terminal, clone code from repository.
+```
+git clone 'https://github.com/holtwashere/CS4320-FinalProject'
+```
+3. Run the following command to deploy the website, allow all the installations.
 
 ```
 sudo ./deployment.sh
 ```
+4. The website can be accessed through the default public DNS.
