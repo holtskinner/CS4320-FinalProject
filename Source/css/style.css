@@ -43,7 +43,9 @@ nav ul a,
 nav .brand-logo {
   color: #444;
 }
-
+.clear {
+  clear: both;
+}
 nav {
   background-color: #444;
 }
@@ -53,7 +55,7 @@ input:not([type])[readonly="readonly"] {
 }
 .row {margin-bottom: 15px;}
 .header-row {position: relative;}
-.header-row a {
+.corner-buttons {
   position: absolute;
   top: 0;
   right: 10px;
@@ -67,7 +69,7 @@ input:not([type])[readonly="readonly"] {
   line-height: 30px;
 }
 .wrapper {
-  width: 80%;
+  width: 90%;
   margin: 30px auto 40px;
   border: 1px solid #bbb;
   border-radius: 8px;
@@ -80,6 +82,45 @@ input:not([type])[readonly="readonly"] {
   padding: 10px 10px 15px;
   background-color: #fafafa;
 }
+.flex-display {display: flex;}
+textarea.materialize-textarea {
+  padding-top: .5rem;
+  padding-bottom: .5rem;
+}
+input[type=text]{
+  height: 2rem;
+}
+.divider{
+  display: none;
+  background: rgba(255,255,255,1);
+  background: -moz-linear-gradient(left, rgba(255,255,255,1) 0%, rgba(35,35,35,1) 35%, rgba(35,35,35,1) 51%, rgba(68,68,68,1) 65%, rgba(255,255,255,1) 100%);
+  background: -webkit-gradient(left top, right top, color-stop(0%, rgba(255,255,255,1)), color-stop(35%, rgba(35,35,35,1)), color-stop(51%, rgba(35,35,35,1)), color-stop(65%, rgba(68,68,68,1)), color-stop(100%, rgba(255,255,255,1)));
+  background: -webkit-linear-gradient(left, rgba(255,255,255,1) 0%, rgba(35,35,35,1) 35%, rgba(35,35,35,1) 51%, rgba(68,68,68,1) 65%, rgba(255,255,255,1) 100%);
+  background: -o-linear-gradient(left, rgba(255,255,255,1) 0%, rgba(35,35,35,1) 35%, rgba(35,35,35,1) 51%, rgba(68,68,68,1) 65%, rgba(255,255,255,1) 100%);
+  background: -ms-linear-gradient(left, rgba(255,255,255,1) 0%, rgba(35,35,35,1) 35%, rgba(35,35,35,1) 51%, rgba(68,68,68,1) 65%, rgba(255,255,255,1) 100%);
+  background: linear-gradient(to right, rgba(255,255,255,1) 0%, rgba(35,35,35,1) 35%, rgba(35,35,35,1) 51%, rgba(68,68,68,1) 65%, rgba(255,255,255,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ffffff', GradientType=1 );
+}
+legend {
+  font-variant: small-caps;
+  color: #fa6a74;
+}
+textarea.materialize-textarea,
+input[type=text] {
+  margin-bottom: 15px;
+}
+fieldset {padding-bottom: 0;}
+.inner-wrapper {
+  border: 1px solid #d9d9d9;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+/*
+.date-placeholder {
+  margin-left: -10px;
+  margin-right: -10px;
+}
+*/
 .hidden {visibility: hidden;}
 .label-wrapper {float: left;}
 .input-wrapper {overflow: hidden;}
@@ -88,7 +129,7 @@ p {line-height: 2rem;}
 .files-wrapper td {font-weight: 300;}
 td, th {padding: 2px 5px;}
 td {cursor: default;}
-#cancel-button {display: none;}
+.save-cancel {display: none;}
 .edit-label {
   font-size: 1rem;
   float: left;

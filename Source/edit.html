@@ -20,12 +20,20 @@ function onSignIn(googleUser) {
       <div class="wrapper">
         <div class="header-row">
           <h5 id="dataset-title" class="header center teal-text text-lighten-2">Manifest</h5>
-          <a id="edit-button" class="waves-effect waves-light btn-flat"><i class="material-icons left">mode_edit</i>Edit</a>
-          <a id="cancel-button" class="waves-effect waves-light btn-flat"><i class="material-icons left">delete</i>Cancel</a>
+          <div class="corner-buttons">
+            <a id="edit-button" class="waves-effect waves-light btn-flat"><i class="material-icons left">mode_edit</i>Edit</a>
+          </div>
+          <div class="corner-buttons save-cancel">
+            <a id="cancel-button" class="waves-effect waves-light btn-flat"><i class="material-icons left">delete</i>Cancel</a>
+            <a id="save-button" class="waves-effect waves-light btn-flat"><i class="material-icons left">delete</i>Save</a>
+          </div>
         </div>
         <div class="row">
           <form class="col s12">
-            <div class="row view-section">
+
+
+            <fieldset class="row view-section">
+              <legend>Manifest</legend>
               <div class="col s12 l6">
                 <div class="input-field">
                   <input id="standardVersion" type="text">
@@ -56,24 +64,24 @@ function onSignIn(googleUser) {
                   <label class="active" for="comment">Comment</label>
                 </div>
               </div>
-            </div>
-            <div class="divider"></div>
-            <div class="row view-section">
+              <fieldset class="inner-wrapper row">
+                <legend>Research Object</legend>
+                <div class="col s12 l6">
+                  <div class="input-field">
+                    <input id="title" type="text">
+                    <label class="active" for="title">Title</label>
+                  </div>
+                </div>
+                <div class="col s12">
+                  <div class="input-field">
+                    <textarea id="abstract" class="materialize-textarea"></textarea>
+                    <label for="abstract">Abstract</label>
+                  </div>
+                </div>
+                <div class="date-placeholder">
+                </div>
+              </fieldset>
               <div class="col s12 l6">
-                <div class="input-field">
-                  <input id="title" type="text">
-                  <label class="active" for="title">Title</label>
-                </div>
-              </div>
-              <div class="col s12">
-                <div class="input-field">
-                  <textarea id="abstract" class="materialize-textarea"></textarea>
-                  <label for="abstract">Abstract</label>
-                </div>
-              </div>
-              <div class="date-placeholder">
-              </div>
-              <div class="col s12 l6 clear">
                 <div class="input-field">
                   <input id="oversight" type="text">
                   <label class="active" for="oversight">Privacy Ethics - Oversight</label>
@@ -97,21 +105,27 @@ function onSignIn(googleUser) {
                   <label class="active" for="privacyConsiderations">Privacy Considerations</label>
                 </div>
               </div>
-            </div>
-            <div class="divider"></div>
-            <div class="row view-section">
+            </fieldset>
+            <fieldset class="row view-section">
+              <legend>Provenance</legend>
               <div class="col s12">
                 <div class="input-field">
                   <textarea id="narrative" class="materialize-textarea"></textarea>
                   <label for="narrative">Narrative</label>
                 </div>
               </div>
+            </fieldset>
+            <fieldset class="row view-section">
+              <legend>Publications</legend>
               <div class="col s12 l6">
                 <div class="input-field">
                   <input id="publication" type="text">
                   <label class="active" for="publication">Publication</label>
                 </div>
               </div>
+            </fieldset>
+            <fieldset class="row view-section">
+              <legend>Locations</legend>
               <div class="col s12 l6">
                 <div class="input-field">
                   <input id="locationUrl" type="text">
@@ -124,112 +138,16 @@ function onSignIn(googleUser) {
                   <label class="active" for="locationComment">Location Comment</label>
                 </div>
               </div>
-            </div>
+            </fieldset>
 
-<!--
-            <div class="row">
-              <div class="col s12 l6">
-                <div id="size-tester" class="input-field">
-                  <input id="standardVersion" type="text">
-                  <label class="active" for="standardVersion">Standard Version</label>
-                </div>
-                <div class="input-field">
-                  <input id="id" type="text">
-                  <label class="active" for="id">ID</label>
-                </div>
-                <div class="input-field">
-                  <input id="creator" type="text">
-                  <label class="active" for="creator">Creator</label>
-                </div>
-                <div class="input-field">
-                  <input id="dateCreated" type="text">
-                  <label class="active" for="dateCreated">Date Created</label>
-                </div>
-                <div class="input-field">
-                  <input id="comment" type="text">
-                  <label class="active" for="comment">Comment</label>
-                </div>
-                <div class="input-field">
-                  <input id="title" type="text">
-                  <label class="active" for="title">Title</label>
-                </div>
-                <div class="input-field flex-display">
-                  <textarea id="abstract" class="materialize-textarea"></textarea>
-                  <label for="abstract">Abstract</label>
-                </div>
-              </div>
-              <div class="col s12 l6">
-                <div class="row date-placeholder">
-                </div>
-                <div class="input-field">
-                  <input id="oversight" type="text">
-                  <label class="active" for="title">Privacy Ethics - Oversight</label>
-                </div>
-                <div class="input-field">
-                  <input id="informedConsent" type="text">
-                  <label class="active" for="title">Informed Consent</label>
-                </div>
-                <div class="input-field">
-                  <input id="anonymizedData" type="text">
-                  <label class="active" for="title">Anonymized Data</label>
-                </div>
-                <div class="input-field">
-                  <input id="privacyConsiderations" type="text">
-                  <label class="active" for="title">Privacy Considerations</label>
-                </div>
-                <div class="input-field">
-                  <input id="narrative" type="text">
-                  <label class="active" for="title">Narrative</label>
-                </div>
-                <div class="input-field">
-                  <input id="publication" type="text">
-                  <label class="active" for="title">Publication</label>
-                </div>
-              </div>
-            </div>
--->
-<!--
-            <div class="label-wrapper">
-              <div class="row"><label class="edit-label">Standard Versions:</label></div>
-              <div class="row"><label class="edit-label">ID:</label></div>
-              <div class="row"><label class="edit-label">Creator:</label></div>
-              <div class="row"><label class="edit-label">Date Created:</label></div>
-              <div class="row"><label class="edit-label">Comment:</label></div>
-              <div class="row"><label class="edit-label">Title:</label></div>
-              <div class="row"><label class="edit-label">Abstract:</label></div>
-              <div class="date-placeholder"></div>
-              <div class="row"><label class="edit-label">Oversight:</label></div>
-              <div class="row"><label class="edit-label">Informed Consent:</label></div>
-              <div class="row"><label class="edit-label">Anonymized Data:</label></div>
-              <div class="row"><label class="edit-label">Privacy Considerations:</label></div>
-              <div class="row"><label class="edit-label">Narrative:</label></div>
-              <div class="row"><label class="edit-label">Publication:</label></div>
-              <div class="row"><label class="edit-label">Locations URL:</label></div>
-              <div class="row"><label class="edit-label">Locations Comment:</label></div>
-            </div>
-            <div class="input-wrapper">
-              <div class="row"><span class="edit-span"><input id="standardVersion" class="edit-input edit-field" readonly/></span></div>
-              <div class="row"><span class="edit-span"><input id="id" class="edit-input edit-field" readonly/></span></div>
-              <div class="row"><span class="edit-span"><input id="creator" class="edit-input edit-field" readonly/></span></div>
-              <div class="row"><span class="edit-span"><input id="dateCreated" class="edit-input edit-field" readonly/></span></div>
-              <div class="row"><span class="edit-span"><input id="comment" class="edit-input edit-field" readonly/></span></div>
-              <div class="row"><span class="edit-span"><input id="title" class="edit-input edit-field" readonly/></span></div>
-              <div class="row"><span class="edit-span"><input id="abstract" class="edit-input edit-field" readonly/></span></div>
-              <div class="date-placeholder"></div>
-              <div class="row"><span class="edit-span"><input id="oversight" class="edit-input edit-field" readonly/></span></div>
-              <div class="row"><span class="edit-span"><input id="informedConsent" class="edit-input edit-field" readonly/></span></div>
-              <div class="row"><span class="edit-span"><input id="anonymizedData" class="edit-input edit-field" readonly/></span></div>
-              <div class="row"><span class="edit-span"><input id="privacyConsiderations" class="edit-input edit-field" readonly/></span></div>
-              <div class="row"><span class="edit-span"><input id="narrative" class="edit-input edit-field" readonly/></span></div>
-              <div class="row"><span class="edit-span"><input id="publication" class="edit-input edit-field" readonly/></span></div>
-              <div class="row"><span class="edit-span"><input id="locationUrl" class="edit-input edit-field" readonly/></span></div>
-              <div class="row"><span class="edit-span"><input id="locationComment" class="edit-input edit-field" readonly/></span></div>
-            </div>
--->
+
+
+
             <div class="files-wrapper">
               <label>Files</label>
               <div class="files-table-wrapper">
-                <table class="bordered">
+                <table id="files-table" class="bordered responsive-table">
+                <!--
                   <thead>
                     <tr>
                       <th data-field="file_title">Title</th>
@@ -262,6 +180,7 @@ function onSignIn(googleUser) {
                       <td>No assertion</td>
                     </tr>
                   </tbody>
+                  -->
                 </table>
               </div>
             </div>

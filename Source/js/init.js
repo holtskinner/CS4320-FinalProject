@@ -27,9 +27,10 @@
         $('.edit-field').attr('readonly', false);
         $('.edit-field').css('border-bottom', '1px solid #26a69a')
         $(this).css('display', 'none');
-        $('#cancel-button').css('display', 'inherit');
+        $('.save-cancel').css('display', 'inherit');
+        
     });
-    $('#cancel-button').on('click', function() {
+    $('.save-cancel').on('click', function() {
         $('.edit-field').attr('readonly', true);
         $('.edit-field').css('border-bottom', '')
         $(this).css('display', 'none');
@@ -75,6 +76,38 @@
         $('#publication').val(data.manifests.publications[0].publication);
         $('#locationUrl').val(data.manifests.locations[0].location.url);
         $('#locationComment').val(data.manifests.locations[0].location.comment);
+        var numFiles = $(data.manifests.files).length;
+        console.log(numFiles);
+        if(numFiles >= 1){
+            $('#files-table').append(
+                "<thead>" +
+                    "<tr>" +
+                        "<th data-field='file_title'>Title</th>" +
+                        "<th data-field='file_abstract'>Abstract</th>" +
+                        "<th data-field='format'>Format</th>" +
+                        "<th data-field='file_size'>Size</th>" +
+                        "<th data-field='file_url'>URL</th>" +
+                        "<th data-field='file_checksum'>Checksum</th>" +
+                    "</tr>" +
+                "</thead>" +
+                "<tbody id='files-body'>" +
+                "</tbody>"
+            );
+
+            for(var i = 0 ; i < numFiles ; i++){
+                $('#files-body').append(
+                    "<tr>" +
+                        "<td>"+ data.manifests.files[i].file.name +"</td>" +
+                        "<td>"+ data.manifests.files[i].format +"</td>" +
+                        "<td>"+ data.manifests.files[i].abstract +"</td>" +
+                        "<td>"+ data.manifests.files[i].size +"</td>" +
+                        "<td>"+ data.manifests.files[i].url +"</td>" +
+                        "<td>"+ data.manifests.files[i].checksum +"</td>" +
+                    "</tr>" 
+                );       
+            }
+        }
+        else {}
         Materialize.updateTextFields();
         
         
