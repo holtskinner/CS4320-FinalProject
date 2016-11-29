@@ -9,7 +9,9 @@ Hofer, Skinner, Raza, Zhang, Rogers, Pudotha
 ```
 git clone 'https://github.com/holtwashere/CS4320-FinalProject'
 ```
-    Run the following command to deploy the website, allow all the installations.
+
+Run the following command to deploy the website, allow all the installations.
+
 ```
 sudo ./deployment.sh
 ```
