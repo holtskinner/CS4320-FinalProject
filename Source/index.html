@@ -1,26 +1,17 @@
-#!/usr/bin/python
-# -*- coding: UTF-8 -*-
-
-# enable debugging
-import cgitb
-cgitb.enable()
-
-print "Content-Type: text/html;charset=utf-8"
-print
-
-# content
-content = ''' 
 <!DOCTYPE html>
 <html lang="en">
   <head>
       <title>OCDX</title>
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"> </script>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"> </script>
         <div id="includedHeader"></div>
-        <script>$("#includedHeader").load("header.php");</script>
+        <script>$("#includedHeader").load("header.html");</script>
+
+        <!-- When everything gets swicthed over to flask, we can do this line instead -->
+        <!-- {% include 'header.html' %} -->
   </head>
 <body>
-<div id="includedNav"></div>
-<script>$("#includedNav").load("nav.php");</script>
+    <div id="includedNav"></div>
+    <script>$("#includedNav").load("nav.html");</script>
     <main id="index-banner">
         <div class="section">
             <div class="container">
@@ -33,7 +24,7 @@ content = '''
                 </div>
                 <div class="row center">
                     <div id="includedSearchBox"></div>
-                    <script>$("#includedSearchBox").load("searchBox.php");</script>
+                    <script>$("#includedSearchBox").load("searchBox.html");</script>
                     <br>
                     <br>
                     <br>
@@ -48,9 +39,7 @@ content = '''
         </div>
       </main>
         <div id="includedFooter"></div>
-        <script>$("#includedFooter").load("footer.php");</script>
+        <script>$("#includedFooter").load("footer.html");</script>
 </body>
 
 </html>
-'''
-print content

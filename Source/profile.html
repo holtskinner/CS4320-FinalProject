@@ -2,7 +2,18 @@
 <html>
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"> </script>
 <div id="includedHeader"></div>
-<script>$("#includedHeader").load("header.php");</script>
+<script>$("#includedHeader").load("header.html");</script>
+<meta name="google-signin-client_id" content="975332133771-b3j764j7oo8ikir7kiocd9uoush78mv2.apps.googleusercontent.com">
+<script>
+  function onSignIn(googleUser) {
+      var profile = googleUser.getBasicProfile();
+
+      //Display Info from Google
+      $('#profile-image').attr('src', profile.getImageUrl());
+      $("#name").html(profile.getName());
+      $("#email").html(profile.getEmail());
+  }
+</script>
 
 <style media="screen">
   .img-circle {
@@ -18,7 +29,7 @@
 
   <body>
     <div id="includedNav"></div>
-    <script>$("#includedNav").load("nav.php");</script>
+    <script>$("#includedNav").load("nav.html");</script>
     <main>
       <div class="container center-align">
         <h2 class="header teal-text text-lighten-2">Profile</h2>
@@ -39,13 +50,3 @@
     </main>
   </body>
 </html>
-<script>
-  function onSignIn(googleUser) {
-      var profile = googleUser.getBasicProfile();
-
-      //Display Info from Google
-      $('#profile-image').attr('src', profile.getImageUrl());
-      $("#name").html(profile.getName());
-      $("#email").html(profile.getEmail());
-  }
-</script>

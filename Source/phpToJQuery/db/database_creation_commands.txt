@@ -1,9 +1,0 @@
-Use these commands in the mongo shell to initalize database
-(You don't really need to, mongo can handle not having these commands and will still work just fine. 
-Any operation that requires a collection where one does not exist will just create that collection.
-i.e. db.foo.insert({"name": "foo1"}) will create a collection foo if one does not already exist)
-
-db.createCollection("Manifests")
-db.createCollection("Fs.files")
-db.createCollection("Fs.chunks")
-db.createCollection("Users")

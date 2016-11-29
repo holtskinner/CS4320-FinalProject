@@ -2,8 +2,9 @@
 <html>
 <head>
   <title>View Dataset</title>
-<?php include 'header.php'; ?>
-
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"> </script>
+  <div id="includedHeader"></div>
+  <script>$("#includedHeader").load("header.html");</script>
 <script>
 function onSignIn(googleUser) {
     var profile = googleUser.getBasicProfile();
@@ -13,7 +14,8 @@ function onSignIn(googleUser) {
 </script>
 </head>
   <body>
-    <?php include "nav.php"; ?>
+    <div id="includedNav"></div>
+    <script>$("#includedNav").load("nav.html");</script>
     <main>
       <div class="wrapper">
         <div class="header-row">
@@ -156,7 +158,7 @@ function onSignIn(googleUser) {
                   <label for="abstract">Abstract</label>
                 </div>
               </div>
-              <div class="col s12 l6">                
+              <div class="col s12 l6">
                 <div class="row date-placeholder">
                 </div>
                 <div class="input-field">
@@ -305,6 +307,9 @@ function onSignIn(googleUser) {
         </div>
       </div>
     </main>
-    <?php include 'footer.php' ?>
+    <div id="includedFooter"></div>
+    </div>
+    <script>$("#includedFooter").load("footer.html");</script>
   </body>
 </html>
+<script>$(".complete-wrapper").css("display", 'block');</script>
