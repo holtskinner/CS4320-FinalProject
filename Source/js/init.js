@@ -83,8 +83,8 @@
                 "<thead>" +
                     "<tr>" +
                         "<th data-field='file_title'>Title</th>" +
-                        "<th data-field='file_abstract'>Abstract</th>" +
-                        "<th data-field='format'>Format</th>" +
+                        "<th data-field='file_format'>Format</th>" +
+                        "<th data-field='file_abstract'>Abstract</th>" +                        
                         "<th data-field='file_size'>Size</th>" +
                         "<th data-field='file_url'>URL</th>" +
                         "<th data-field='file_checksum'>Checksum</th>" +
