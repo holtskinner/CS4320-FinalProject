@@ -4,7 +4,7 @@ Hofer, Skinner, Raza, Zhang, Rogers, Pudotha
 
 # Deployment
 
-In a UNIX terminal, run the following command in the public_html directory to install the service.
+In a Ubuntu Server 16.04 LTS terminal, run the following command to deploy the website, allow all the installations.
 
 ```
 sudo ./deployment.sh

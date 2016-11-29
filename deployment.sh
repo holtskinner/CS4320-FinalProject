@@ -11,4 +11,5 @@ apt-get update
 apt-get install -y mongodb-org
 service apache2 reload
 # move website to local host 
-mv /Source/* /var/www/html/
+rm /var/www/html/index.html
+mv ./Source/* /var/www/html/
