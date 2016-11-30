@@ -140,88 +140,34 @@ function onSignIn(googleUser) {
               </div>
             </fieldset>
 
-
-
-
-            <div class="files-wrapper">
+            <div class="table-wrapper">
               <label>Files</label>
-              <div class="files-table-wrapper">
+              <div class="custom-table-wrapper">
                 <table id="files-table" class="bordered responsive-table">
-                <!--
-                  <thead>
-                    <tr>
-                      <th data-field="file_title">Title</th>
-                      <th data-field="file_abstract">Abstract</th>
-                      <th data-field="file_size">Size</th>
-                      <th data-field="file_url">URL</th>
-                      <th data-field="file_checksum">Checksum</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>iDAS - data.csv</td>
-                      <td>Metadata for 5000 records collected</td>
-                      <td>4 KB</td>
-                      <td>No assertion</td>
-                      <td>No assertion</td>
-                    </tr>
-                    <tr>
-                      <td>Socially Compute - sc.csv</td>
-                      <td>Metadata for 15000 records collected over two decades</td>
-                      <td>624 Bytes</td>
-                      <td>No assertion</td>
-                      <td>No assertion</td>
-                    </tr>
-                    <tr>
-                      <td>More - data.csv</td>
-                      <td>Metadata for 10000 records</td>
-                      <td>6 KB</td>
-                      <td>No assertion</td>
-                      <td>No assertion</td>
-                    </tr>
-                  </tbody>
-                  -->
+                  <!-- File table is created in here-->
                 </table>
               </div>
             </div>
-            <div class="contributors-wrapper">
-              <div class="label-wrapper">
-                <div class="row"><label class="edit-label">Additional Contributors:</label></div>
+            
+            <fieldset class="row view-section">
+              <legend>Dates</legend>
+              <div class="col s6 m3">
+                <div class="input-field">
+                  <input id="dates2" type="text">
+                  <label class="active" for="dates2">Date</label>
+                </div>
               </div>
-              <div class="input-wrapper">
-                <table class="bordered">
-                  <tbody>
-                    <tr>
-                      <td>Holt Skinner</td>
-                      <td>Grant funder</td>
-                      <td>Individual</td>
-                      <td>cshyu@wikimedia.org</td>
-                    </tr>
-                    <tr>
-                      <td>Justin Hofer</td>
-                      <td>Primary Investigator</td>
-                      <td>Government</td>
-                      <td>jh773@missouri.gov</td>
-                    </tr>
-                    <tr>
-                      <td>Ali Raza</td>
-                      <td>Other</td>
-                      <td>Individual</td>
-                      <td>aar456@missouri.gov</td>
-                    </tr>
-                  </tbody>
+            </fieldset>
+
+            <div class="table-wrapper">
+              <label>Creators</label>
+              <div class="custom-table-wrapper">
+                <table id="creators-table" class="bordered responsive-table">
+                  <!-- Creators table is created in here-->
                 </table>
               </div>
-              <!--
-              <div class="input-wrapper">
-                <div class="row"><span class="edit-span"><input class="edit-input edit-field" value="Holt Skinner" readonly/></span></div>
-                <div class="row"><span class="edit-span"><input class="edit-input edit-field" value="Justin Hofer" readonly/></span></div>
-                <div class="row"><span class="edit-span"><input class="edit-input edit-field" value="Ali Raza" readonly/></span></div>
-                <div class="row"><span class="edit-span"><input class="edit-input edit-field" value="Brad Rogers" readonly/></span></div>
-              </div>
-              -->
             </div>
-            <ul class="users-list"></ul>
+
           </form>
         </div>
       </div>

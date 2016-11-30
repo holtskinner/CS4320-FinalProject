@@ -76,8 +76,8 @@ input:not([type])[readonly="readonly"] {
   padding: 15px;
   box-shadow: #aaa 0 0 4px 0;
 }
-.files-wrapper {margin: 20px 10px 40px}
-.files-table-wrapper {
+.table-wrapper {margin: 20px 10px 40px}
+.custom-table-wrapper {
   border: 1px solid #bbb;
   padding: 10px 10px 15px;
   background-color: #fafafa;
@@ -125,8 +125,8 @@ fieldset {padding-bottom: 0;}
 .label-wrapper {float: left;}
 .input-wrapper {overflow: hidden;}
 p {line-height: 2rem;}
-.files-wrapper th {font-weight: 400;}
-.files-wrapper td {font-weight: 300;}
+.table-wrapper th {font-weight: 400;}
+.table-wrapper td {font-weight: 300;}
 td, th {padding: 2px 5px;}
 td {cursor: default;}
 .save-cancel {display: none;}

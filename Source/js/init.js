@@ -48,13 +48,6 @@
         $('#title').val(data.manifests.manifest.researchObject.title);
         $('#abstract').val(data.manifests.manifest.researchObject.abstract);
         $('#abstract').trigger('autoresize');
-//        var inputHeight = $('#size-tester').outerHeight(true);
-//        var textareaHeight = $('#abstract').outerHeight(true);
-//        if(textareaHeight <= (inputHeight * 2)){
-//            $('#abstract').height(15 + inputHeight);
-//       }
-//        $('#abstract-wrapper').height('100px');
-//        console.log(textareaHeight);
         $.each(data.manifests.manifest.researchObject.dates, function(key, value){
             var label;
             if(value.label == 'start'){label = 'Start';}
@@ -63,9 +56,7 @@
             else if(value.label == 'created'){label = 'Created';}
             else{label = 'No Assertion';}
             var date = value.date;
-            $('.date-placeholder').append('<div class="input-field col s6 m3"><input type="text" value="'+ date +'"><label class="active">'+ label +' Date</label></div>')
-//            $('.label-wrapper .date-placeholder').append('<div class="row"><label class="edit-label">Date - '+ label +':</label></div>');
-//            $('.input-wrapper .date-placeholder').append('<div class="row"><span class="edit-span"><input class="edit-input edit-field" value="'+ date +'" readonly/></span></div>')
+            $('.date-placeholder').append('<div class="input-field col s6 m3"><input type="text" value="'+ date +'"><label class="active">'+ label +' Date</label></div>');
         });
         $('#oversight').val(data.manifests.manifest.privacyEthics.oversight.label);
         $('#informedConsent').val(data.manifests.manifest.informedConsent);
@@ -107,7 +98,42 @@
                 );       
             }
         }
-        else {}
+        else {
+            $('#files-table').append('<p>There are no files in this manifest</p>')
+        }
+
+        $('#dates2').val(data.dates.date.date);
+
+        var numCreators = $(data.creators).length;
+        console.log(numCreators);
+        if(numCreators >= 1){
+            $('#creators-table').append(
+                "<thead>" +
+                    "<tr>" +
+                        "<th data-field='creator_name'>Name</th>" +
+                        "<th data-field='creator_role'>Role</th>" +                        
+                        "<th data-field='creator_type'>Type</th>" +
+                        "<th data-field='creator_contact'>Contact</th>" +
+                    "</tr>" +
+                "</thead>" +
+                "<tbody id='creators-body'>" +
+                "</tbody>"
+            );
+            for(var j = 0 ; j < numCreators ; j++){
+                $('#creators-body').append(
+                    "<tr>" +
+                        "<td>"+ data.creators[j].creator.name +"</td>" +
+                        "<td>"+ data.creators[j].creator.role.label +"</td>" +
+                        "<td>"+ data.creators[j].type.label +"</td>" +
+                        "<td>"+ data.creators[j].contact +"</td>" +
+                    "</tr>" 
+                );       
+            }
+        }
+        else {
+            $('#files-table').append('<p>There are no files in this manifest</p>')
+        }
+
         Materialize.updateTextFields();
         
         
