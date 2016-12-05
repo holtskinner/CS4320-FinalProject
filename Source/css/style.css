@@ -53,6 +53,9 @@ input:not([type])[readonly="readonly"] {
   color: inherit;
   border-bottom: 1px solid #9e9e9e;
 }
+.add-field {
+  display: none;  
+}
 .row {margin-bottom: 15px;}
 .header-row {position: relative;}
 .corner-buttons {
@@ -89,6 +92,17 @@ textarea.materialize-textarea {
 }
 input[type=text]{
   height: 2rem;
+}
+input[type=text][readonly="readonly"]+label,
+textarea.materialize-textarea[readonly="readonly"]+label,
+.input-field label {
+  color: #9e9e9e;
+}
+input[type=text][readonly="readonly"],
+textarea.materialize-textarea[readonly="readonly"], 
+input[type=text] {
+  color: inherit;
+  border-bottom: 1px solid #9e9e9e;
 }
 .divider{
   display: none;

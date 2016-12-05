@@ -36,31 +36,31 @@ function onSignIn(googleUser) {
               <legend>Manifest</legend>
               <div class="col s12 l6">
                 <div class="input-field">
-                  <input id="standardVersion" type="text">
+                  <input id="standardVersion" class="editable" type="text">
                   <label class="active" for="standardVersion">Standard Version</label>
                 </div>
               </div>
               <div class="col s12 l6">
                 <div class="input-field">
-                  <input id="id" type="text">
+                  <input id="id" class="editable" type="text">
                   <label class="active" for="id">ID</label>
                 </div>
               </div>
               <div class="col s12 l6">
                 <div class="input-field">
-                  <input id="creator" type="text">
+                  <input id="creator" class="editable" type="text">
                   <label class="active" for="creator">Creator</label>
                 </div>
               </div>
               <div class="col s12 l6">
                 <div class="input-field">
-                  <input id="dateCreated" type="text">
+                  <input id="dateCreated" class="editable" type="text">
                   <label class="active" for="dateCreated">Date Created</label>
                 </div>
               </div>
               <div class="col s12">
                 <div class="input-field">
-                  <input id="comment" type="text">
+                  <input id="comment" class="editable" type="text">
                   <label class="active" for="comment">Comment</label>
                 </div>
               </div>
@@ -68,13 +68,13 @@ function onSignIn(googleUser) {
                 <legend>Research Object</legend>
                 <div class="col s12 l6">
                   <div class="input-field">
-                    <input id="title" type="text">
+                    <input id="title" class="editable" type="text">
                     <label class="active" for="title">Title</label>
                   </div>
                 </div>
                 <div class="col s12">
                   <div class="input-field">
-                    <textarea id="abstract" class="materialize-textarea"></textarea>
+                    <textarea id="abstract" class="materialize-textarea editable"></textarea>
                     <label for="abstract">Abstract</label>
                   </div>
                 </div>
@@ -83,25 +83,22 @@ function onSignIn(googleUser) {
               </fieldset>
               <div class="col s12 l6">
                 <div class="input-field">
-                  <input id="oversight" type="text">
+                  <input id="oversight" class="editable" type="text">
                   <label class="active" for="oversight">Privacy Ethics - Oversight</label>
                 </div>
               </div>
               <div class="col s12 l6">
                 <div class="input-field">
-                  <input id="informedConsent" type="text">
+                  <input id="informedConsent" class="editable" type="text">
                   <label class="active" for="InformedConsent">Informed Consent</label>
                 </div>
               </div>
-              <div class="col s12 l6">
-                <div class="input-field">
-                  <input id="anonymizedData" type="text">
-                  <label class="active" for="anonymizedData">Anonymized Data</label>
-                </div>
+              <div class="anonymized-data-placeholder">
+                <!-- Anonymized Data is created in here-->
               </div>
               <div class="col s12 l6">
                 <div class="input-field">
-                  <input id="privacyConsiderations" type="text">
+                  <input id="privacyConsiderations" class="editable" type="text">
                   <label class="active" for="privacyConsiderations">Privacy Considerations</label>
                 </div>
               </div>
@@ -110,31 +107,23 @@ function onSignIn(googleUser) {
               <legend>Provenance</legend>
               <div class="col s12">
                 <div class="input-field">
-                  <textarea id="narrative" class="materialize-textarea"></textarea>
+                  <textarea id="narrative" class="materialize-textarea editable"></textarea>
                   <label for="narrative">Narrative</label>
                 </div>
               </div>
             </fieldset>
             <fieldset class="row view-section">
               <legend>Publications</legend>
-              <div class="col s12 l6">
-                <div class="input-field">
-                  <input id="publication" type="text">
-                  <label class="active" for="publication">Publication</label>
-                </div>
+              <div class="publications-placeholder">
               </div>
             </fieldset>
             <fieldset class="row view-section">
               <legend>Locations</legend>
-              <div class="col s12 l6">
-                <div class="input-field">
-                  <input id="locationUrl" type="text">
-                  <label class="active" for="locationUrl">Location URL</label>
-                </div>
+              <div class="locations-placeholder">
               </div>
               <div class="col s12 l6">
                 <div class="input-field">
-                  <input id="locationComment" type="text">
+                  <input id="locationComment" class="editable" type="text">
                   <label class="active" for="locationComment">Location Comment</label>
                 </div>
               </div>
@@ -148,6 +137,16 @@ function onSignIn(googleUser) {
                 </table>
               </div>
             </div>
+
+            <fieldset class="row view-section">
+              <legend>Permissions</legend>
+              <div class="col s12">
+                <div class="input-field">
+                  <input id="permission" class="editable" type="text" readonly>
+                  <label class="active" for="permission">Permission</label>
+                </div>
+              </div>
+            </fieldset>
             
             <fieldset class="row view-section">
               <legend>Dates</legend>
