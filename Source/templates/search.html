@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>OCDX Browse</title>
+        <script type=text/javascript src="{{ url_for('static', filename='jquery.js') }}"></script>
+      <div id="includedHeader">{% include 'header.html' %}</div>
+
+<script>
+function onSignIn(googleUser) {
+    var profile = googleUser.getBasicProfile();
+    var id_token = googleUser.getAuthResponse().id_token;
+    // TODO Send id_token to python Backend (This is in place of their user id for authentication)
+    // $.ajax({
+    //   type: "POST",
+    //   url: 'insert.php',
+    //   data:{
+    //     userID: id_token
+    //   }
+    // });
+    //Need url for insert
+    $("#author-name").value(profile.getName());
+}
+</script>
+</head>
+  <body>
+     <div id="includedNav">{% include 'nav.html' %}</div>
+    <main>
+        <div class="section">
+            <div class="container">
+                <div class="row center">
+                    <div id="includedSearchBox">{% include 'searchBox.html' %}</div>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <div id="searchResults">
+                        <table id="manifest-table" class="highlight">
+                            <thead>
+                                <tr>
+                                    <th data-field="title">Title</th>
+                                    <th data-field="author">Author</th>
+                                    <th data-field="dateCreated">Date Created</th>
+                                    <th data-field="comments">Comments</th>
+                                    <th data-field="upload">Upload Manifest</th>
+                                    <th data-field="view">View Manifest</th>
+                                </tr>
+                                </thead>
+                                    <tr>
+                                        <td>{{ result['title'] }} </td>
+                                        <td>{{ result['author'] }} </td>
+                                        <td>{{ result['date'] }}</td>
+                                        <td>{{ result['comments'] }} </td>
+                                        <td>
+                                            <form action="uploadFile.html" method=GET>
+                                                <input type=hidden name=id value= {{ result['_id'] }}>
+                                                <input type=submit class="btn" value="Upload">
+                                            </form>
+                                        </td>
+                                        <td>
+                                            <form action="uploads.html" method=POST>
+                                                <input type=hidden name=id value= {{ result['_id']}}>
+                                                <input type=submit class="btn" value="View">
+                                            </form>
+                                        </td>
+                                    </tr>
+                        
+                                </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </main>
+        <div id="includedFooter">{% include 'footer.html' %}</div>
+  </body>
+</html>

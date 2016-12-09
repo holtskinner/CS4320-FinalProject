@@ -2,9 +2,8 @@
 <html>
 <head>
   <title>View Dataset</title>
-  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"> </script>
-  <div id="includedHeader"></div>
-  <script>$("#includedHeader").load("header.html");</script>
+   <script type=text/javascript src="{{ url_for('static', filename='jquery.js') }}"></script>
+     <div id="includedHeader">{% include 'header.html' %}</div>
 <script>
 function onSignIn(googleUser) {
     var profile = googleUser.getBasicProfile();
@@ -14,8 +13,7 @@ function onSignIn(googleUser) {
 </script>
 </head>
   <body>
-    <div id="includedNav"></div>
-    <script>$("#includedNav").load("nav.html");</script>
+    <div id="includedNav">{% include 'nav.html' %}</div>
     <main>
       <div class="wrapper">
         <div class="header-row">
@@ -173,17 +171,12 @@ function onSignIn(googleUser) {
     </main>
     <div id="includedFooter"></div>
     </div>
-    <script>$("#includedFooter").load("footer.html");</script>
+    <div id="includedFooter">{% include 'footer.html' %}</div>
   </body>
 </html>
-
 <script>
-  (function($) {
-    $(function() {
-    var prevValues;
-    var prevValue;
-
-    $('#edit-button').on('click', function() {
+  $(".complete-wrapper").css("display", 'block');
+  $('#edit-button').on('click', function() {
         prevValues = getJsonValues();
         $('.add-field').css('display', 'inherit');
         $('.editable').attr('readonly', false);
@@ -231,9 +224,9 @@ function onSignIn(googleUser) {
     });
 
 
-    $.getJSON('sampleManifest.json', function(data) {
+    $.getJSON('/uploads/{{ filePath }}', function(data) {
+      console.log("hit");
         appendJsonValues(data);
-
         Materialize.updateTextFields();      
     }); 
 
@@ -241,9 +234,6 @@ function onSignIn(googleUser) {
         $('#abstract').trigger('autoresize');
         $('#narrative').trigger('autoresize');
     }
-
-  }); // end of document ready
-
 function getJsonValues() {
     var standardVersion = $('#standardVersion').val();
     var id = $('#id').val();
@@ -478,6 +468,4 @@ function appendJsonValues(data) {
 
     Materialize.updateTextFields();
 }
-})(jQuery); // end of jQuery name space
 </script>
-

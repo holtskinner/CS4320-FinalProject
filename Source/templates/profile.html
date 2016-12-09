@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html>
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"> </script>
-<div id="includedHeader"></div>
-<script>$("#includedHeader").load("header.html");</script>
+<script type=text/javascript src="{{ url_for('static', filename='jquery.js') }}"></script>
+<div id="includedHeader">{% include 'header.html' %}</div>
 <meta name="google-signin-client_id" content="975332133771-b3j764j7oo8ikir7kiocd9uoush78mv2.apps.googleusercontent.com">
 <script>
   function onSignIn(googleUser) {
@@ -28,8 +27,7 @@
 </style>
 
   <body>
-    <div id="includedNav"></div>
-    <script>$("#includedNav").load("nav.html");</script>
+    <div id="includedNav">{% include 'nav.html' %}</div>
     <main>
       <div class="container center-align">
         <h2 class="header teal-text text-lighten-2">Profile</h2>
@@ -47,6 +45,7 @@
         <div id="manifests" class="row">You have no manifests. :(</div>
 
       </div>
-    </main>
+      </main>
+      <div id="includedFooter">{% include 'footer.html' %}</div>
   </body>
 </html>

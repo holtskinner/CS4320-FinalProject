@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>OCDX Upload</title>
+     <script type=text/javascript src="{{ url_for('static', filename='jquery.js') }}"></script>
+    <div id="includedHeader">{% include 'header.html' %}</div>
+
+<script>
+function onSignIn(googleUser) {
+    var profile = googleUser.getBasicProfile();
+    var id_token = googleUser.getAuthResponse().id_token;
+    // TODO Send id_token to PHP Backend (This is in place of their user id for authentication)
+    // $.ajax({
+    //   type: "POST",
+    //   url: 'insert.php',
+    //   data:{
+    //     userID: id_token
+    //   }
+    // });
+    //Need url for insert
+    $("#author-name").value(profile.getName());
+}
+</script>
+</head>
+  <body>
+    <div id="includedNav">{% include 'nav.html' %}</div>
+    <main>
+        <div class="container">
+          <h2 class="center-align header teal-text text-lighten-2">Upload Manifest</h2>
+            <form action="#" method=POST>
+              <div class="row">
+                <div class="input-field">
+                  <input id="manifest-title" type="text" class="validate" name="title">
+                  <label for="manifest-title">Manifest Title</label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field">
+                  <input id="author-name" type="text" class="validate" name="author">
+                  <label for="author-name">Author Name</label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field">
+                  <input id="commnents" type="text" class="validate" name="comments">
+                  <label for="comments">Comments</label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field">
+                  <input id="submit" type="submit" class="btn" name="submit">
+                </div>
+              </div>
+            </form>
+        </div>
+      </main>
+       <div id="includedFooter">{% include 'footer.html' %}</div>
+</html>

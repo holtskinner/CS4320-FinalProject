@@ -2,17 +2,13 @@
 <html lang="en">
   <head>
       <title>OCDX</title>
-        <script src="js/jquery-3.1.1.min.js"></script>
-        <div id="includedHeader"></div>
-        <script>$("#includedHeader").load("header.html");</script>
-
-        <!-- When everything gets swicthed over to flask, we can do this line instead -->
-        <!-- {% include 'header.html' %} -->
+        <script type=text/javascript src="{{ url_for('static', filename='jquery.js') }}"></script>
+	<div id="includedHeader">{% include 'header.html' %}</div>
   </head>
 <body>
-    <div id="includedNav"></div>
-    <script>$("#includedNav").load("nav.html");</script>
-    <main id="index-banner">
+    <div id="includedNav">{% include 'nav.html' %}</div>
+    
+	<main id="index-banner">
         <div class="section">
             <div class="container">
                 <div id="table-header">
@@ -23,9 +19,8 @@
                     </div>
                 </div>
                 <div class="row center">
-                    <div id="includedSearchBox"></div>
-                    <script>$("#includedSearchBox").load("searchBox.html");</script>
-                    <br>
+                    <div id="includedSearchBox">{% include 'searchBox.html' %}</div>
+		    <br>
                     <br>
                     <br>
                     <br>
@@ -38,8 +33,7 @@
             </div>
         </div>
       </main>
-        <div id="includedFooter"></div>
-        <script>$("#includedFooter").load("footer.html");</script>
+        <div id="includedFooter">{% include 'footer.html' %}</div>
 </body>
 
 </html>

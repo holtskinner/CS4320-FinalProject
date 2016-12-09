@@ -1,12 +1,12 @@
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no" />
   <script src="https://apis.google.com/js/platform.js" async defer></script>
-  <link href="css/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection" />
-  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
-  <script src="js/jquery-3.1.1.min.js"></script>
-  <script src="js/materialize.min.js"></script>
-  <script src="js/init.js"></script>
-  <script src="https://use.fontawesome.com/8172e32e19.js"></script>
+<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='materialize.css') }}">  
+<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='style.css') }}"> 
+<script type="text/javascript" src="{{ url_for('static', filename='jquery.js') }}"></script> 
+<script type="text/javascript" src="{{ url_for('static', filename='materialize.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='init.js') }}"></script>  
+<script src="https://use.fontawesome.com/8172e32e19.js"></script>
   <script>
   // function onSignIn(googleUser) {
   //     var profile = googleUser.getBasicProfile();
