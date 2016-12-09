@@ -1,22 +1,24 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Upload File</title>
-        <script type=text/javascript src="{{ url_for('static', filename='jquery.js') }}"></script>
-     <div id="includedHeader">{% include 'header.html' %}</div>
-      </head>
-  <body>
-     <div id="includedNav">{% include 'nav.html' %}</div>
-    <main>
-    <div class="container">
-    <form action="handleFileUpload.html" method=POST enctype="multipart/form-data">
-    	<input type=hidden readonly value={{request.args.get('id')}} name="oid"}>
-    	<input type=file name="file">
-    	<input class="btn" type="submit" value="Submit" name="submit">
-    </form>
-    </div>
-    </main>
-     <div id="includedFooter">{% include 'footer.html' %}</div>
-  </body>
-</html>
 
+    <head>
+        <title>Upload File</title>
+        <script type=text/javascript src="{{ url_for('static', filename='jquery.js') }}"></script>
+        {% include 'header.html' %}
+    </head>
+
+    <body>
+        {% include 'nav.html' %}
+        <main>
+            <div class="container">
+                <form action="handleFileUpload.html" method=POST enctype="multipart/form-data">
+                    <input type=hidden readonly value={{request.args.get( 'id')}} name="oid" }>
+                    <input type=file name="file">
+                    <input class="btn" type="submit" value="Submit" name="submit">
+                </form>
+            </div>
+        </main>
+        {% include 'footer.html' %}
+    </body>
+
+</html>

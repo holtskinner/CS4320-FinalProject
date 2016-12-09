@@ -1,182 +1,183 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>View Dataset</title>
-   <script type=text/javascript src="{{ url_for('static', filename='jquery.js') }}"></script>
-     <div id="includedHeader">{% include 'header.html' %}</div>
-<script>
-function onSignIn(googleUser) {
-    var profile = googleUser.getBasicProfile();
-    var id_token = googleUser.getAuthResponse().id_token;
-    $("#author-name").value(profile.getName());
-}
-</script>
-</head>
-  <body>
-    <div id="includedNav">{% include 'nav.html' %}</div>
-    <main>
-      <div class="wrapper">
-        <div class="header-row">
-          <h5 id="dataset-title" class="header center teal-text text-lighten-2">Manifest</h5>
-          <div class="corner-buttons">
-            <a id="edit-button" class="waves-effect waves-light btn-flat"><i class="material-icons left">mode_edit</i>Edit</a>
-          </div>
-          <div class="corner-buttons save-cancel">
-            <a id="cancel-button" class="waves-effect waves-light btn-flat"><i class="material-icons left">delete</i>Cancel</a>
-            <a id="save-button" class="waves-effect waves-light btn-flat"><i class="material-icons left">delete</i>Save</a>
-          </div>
-        </div>
-        <div class="row">
-          <form class="col s12">
+
+    <head>
+        <title>View Dataset</title>
+        <script type=text/javascript src="{{ url_for('static', filename='jquery.js') }}"></script>
+        {% include 'header.html' %}
+        <script>
+            function onSignIn(googleUser) {
+                var profile = googleUser.getBasicProfile();
+                var id_token = googleUser.getAuthResponse().id_token;
+                $("#author-name").value(profile.getName());
+            }
+        </script>
+    </head>
+
+    <body>
+        {% include 'nav.html' %}
+        <main>
+            <div class="wrapper">
+                <div class="header-row">
+                    <h5 id="dataset-title" class="header center teal-text text-lighten-2">Manifest</h5>
+                    <div class="corner-buttons">
+                        <a id="edit-button" class="waves-effect waves-light btn-flat"><i class="material-icons left">mode_edit</i>Edit</a>
+                    </div>
+                    <div class="corner-buttons save-cancel">
+                        <a id="cancel-button" class="waves-effect waves-light btn-flat"><i class="material-icons left">delete</i>Cancel</a>
+                        <a id="save-button" class="waves-effect waves-light btn-flat"><i class="material-icons left">delete</i>Save</a>
+                    </div>
+                </div>
+                <div class="row">
+                    <form class="col s12">
 
 
-            <fieldset class="row view-section">
-              <legend>Manifest</legend>
-              <div class="col s12 l6">
-                <div class="input-field">
-                  <input id="standardVersion" class="editable" type="text">
-                  <label class="active" for="standardVersion">Standard Version</label>
-                </div>
-              </div>
-              <div class="col s12 l6">
-                <div class="input-field">
-                  <input id="id" class="editable" type="text">
-                  <label class="active" for="id">ID</label>
-                </div>
-              </div>
-              <div class="col s12 l6">
-                <div class="input-field">
-                  <input id="creator" class="editable" type="text">
-                  <label class="active" for="creator">Creator</label>
-                </div>
-              </div>
-              <div class="col s12 l6">
-                <div class="input-field">
-                  <input id="dateCreated" class="editable" type="text">
-                  <label class="active" for="dateCreated">Date Created</label>
-                </div>
-              </div>
-              <div class="col s12">
-                <div class="input-field">
-                  <input id="comment" class="editable" type="text">
-                  <label class="active" for="comment">Comment</label>
-                </div>
-              </div>
-              <fieldset class="inner-wrapper row">
-                <legend>Research Object</legend>
-                <div class="col s12 l6">
-                  <div class="input-field">
-                    <input id="title" class="editable" type="text">
-                    <label class="active" for="title">Title</label>
-                  </div>
-                </div>
-                <div class="col s12">
-                  <div class="input-field">
-                    <textarea id="abstract" class="materialize-textarea editable"></textarea>
-                    <label for="abstract">Abstract</label>
-                  </div>
-                </div>
-                <div class="date-placeholder">
-                </div>
-              </fieldset>
-              <div class="col s12 l6">
-                <div class="input-field">
-                  <input id="oversight" class="editable" type="text">
-                  <label class="active" for="oversight">Privacy Ethics - Oversight</label>
-                </div>
-              </div>
-              <div class="col s12 l6">
-                <div class="input-field">
-                  <input id="informedConsent" class="editable" type="text">
-                  <label class="active" for="InformedConsent">Informed Consent</label>
-                </div>
-              </div>
-              <div class="anonymized-data-placeholder">
-                <!-- Anonymized Data is created in here-->
-              </div>
-              <div class="col s12 l6">
-                <div class="input-field">
-                  <input id="privacyConsiderations" class="editable" type="text">
-                  <label class="active" for="privacyConsiderations">Privacy Considerations</label>
-                </div>
-              </div>
-            </fieldset>
-            <fieldset class="row view-section">
-              <legend>Provenance</legend>
-              <div class="col s12">
-                <div class="input-field">
-                  <textarea id="narrative" class="materialize-textarea editable"></textarea>
-                  <label for="narrative">Narrative</label>
-                </div>
-              </div>
-            </fieldset>
-            <fieldset class="row view-section">
-              <legend>Publications</legend>
-              <div class="publications-placeholder">
-              </div>
-            </fieldset>
-            <fieldset class="row view-section">
-              <legend>Locations</legend>
-              <div class="locations-placeholder">
-              </div>
-              <div class="col s12 l6">
-                <div class="input-field">
-                  <input id="locationComment" class="editable" type="text">
-                  <label class="active" for="locationComment">Location Comment</label>
-                </div>
-              </div>
-            </fieldset>
+                        <fieldset class="row view-section">
+                            <legend>Manifest</legend>
+                            <div class="col s12 l6">
+                                <div class="input-field">
+                                    <input id="standardVersion" class="editable" type="text">
+                                    <label class="active" for="standardVersion">Standard Version</label>
+                                </div>
+                            </div>
+                            <div class="col s12 l6">
+                                <div class="input-field">
+                                    <input id="id" class="editable" type="text">
+                                    <label class="active" for="id">ID</label>
+                                </div>
+                            </div>
+                            <div class="col s12 l6">
+                                <div class="input-field">
+                                    <input id="creator" class="editable" type="text">
+                                    <label class="active" for="creator">Creator</label>
+                                </div>
+                            </div>
+                            <div class="col s12 l6">
+                                <div class="input-field">
+                                    <input id="dateCreated" class="editable" type="text">
+                                    <label class="active" for="dateCreated">Date Created</label>
+                                </div>
+                            </div>
+                            <div class="col s12">
+                                <div class="input-field">
+                                    <input id="comment" class="editable" type="text">
+                                    <label class="active" for="comment">Comment</label>
+                                </div>
+                            </div>
+                            <fieldset class="inner-wrapper row">
+                                <legend>Research Object</legend>
+                                <div class="col s12 l6">
+                                    <div class="input-field">
+                                        <input id="title" class="editable" type="text">
+                                        <label class="active" for="title">Title</label>
+                                    </div>
+                                </div>
+                                <div class="col s12">
+                                    <div class="input-field">
+                                        <textarea id="abstract" class="materialize-textarea editable"></textarea>
+                                        <label for="abstract">Abstract</label>
+                                    </div>
+                                </div>
+                                <div class="date-placeholder">
+                                </div>
+                            </fieldset>
+                            <div class="col s12 l6">
+                                <div class="input-field">
+                                    <input id="oversight" class="editable" type="text">
+                                    <label class="active" for="oversight">Privacy Ethics - Oversight</label>
+                                </div>
+                            </div>
+                            <div class="col s12 l6">
+                                <div class="input-field">
+                                    <input id="informedConsent" class="editable" type="text">
+                                    <label class="active" for="InformedConsent">Informed Consent</label>
+                                </div>
+                            </div>
+                            <div class="anonymized-data-placeholder">
+                                <!-- Anonymized Data is created in here-->
+                            </div>
+                            <div class="col s12 l6">
+                                <div class="input-field">
+                                    <input id="privacyConsiderations" class="editable" type="text">
+                                    <label class="active" for="privacyConsiderations">Privacy Considerations</label>
+                                </div>
+                            </div>
+                        </fieldset>
+                        <fieldset class="row view-section">
+                            <legend>Provenance</legend>
+                            <div class="col s12">
+                                <div class="input-field">
+                                    <textarea id="narrative" class="materialize-textarea editable"></textarea>
+                                    <label for="narrative">Narrative</label>
+                                </div>
+                            </div>
+                        </fieldset>
+                        <fieldset class="row view-section">
+                            <legend>Publications</legend>
+                            <div class="publications-placeholder">
+                            </div>
+                        </fieldset>
+                        <fieldset class="row view-section">
+                            <legend>Locations</legend>
+                            <div class="locations-placeholder">
+                            </div>
+                            <div class="col s12 l6">
+                                <div class="input-field">
+                                    <input id="locationComment" class="editable" type="text">
+                                    <label class="active" for="locationComment">Location Comment</label>
+                                </div>
+                            </div>
+                        </fieldset>
 
-            <div class="table-wrapper">
-              <label>Files</label>
-              <div class="custom-table-wrapper">
-                <table id="files-table" class="bordered responsive-table">
-                  <!-- File table is created in here-->
-                </table>
-              </div>
+                        <div class="table-wrapper">
+                            <label>Files</label>
+                            <div class="custom-table-wrapper">
+                                <table id="files-table" class="bordered responsive-table">
+                                    <!-- File table is created in here-->
+                                </table>
+                            </div>
+                        </div>
+
+                        <fieldset class="row view-section">
+                            <legend>Permissions</legend>
+                            <div class="col s12">
+                                <div class="input-field">
+                                    <input id="permission" class="editable" type="text" readonly>
+                                    <label class="active" for="permission">Permission</label>
+                                </div>
+                            </div>
+                        </fieldset>
+
+                        <fieldset class="row view-section">
+                            <legend>Dates</legend>
+                            <div class="col s6 m3">
+                                <div class="input-field">
+                                    <input id="dates2" type="text">
+                                    <label class="active" for="dates2">Date</label>
+                                </div>
+                            </div>
+                        </fieldset>
+
+                        <div class="table-wrapper">
+                            <label>Creators</label>
+                            <div class="custom-table-wrapper">
+                                <table id="creators-table" class="bordered responsive-table">
+                                    <!-- Creators table is created in here-->
+                                </table>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
             </div>
+        </main>
+        {% include 'footer.html' %}
+    </body>
 
-            <fieldset class="row view-section">
-              <legend>Permissions</legend>
-              <div class="col s12">
-                <div class="input-field">
-                  <input id="permission" class="editable" type="text" readonly>
-                  <label class="active" for="permission">Permission</label>
-                </div>
-              </div>
-            </fieldset>
-            
-            <fieldset class="row view-section">
-              <legend>Dates</legend>
-              <div class="col s6 m3">
-                <div class="input-field">
-                  <input id="dates2" type="text">
-                  <label class="active" for="dates2">Date</label>
-                </div>
-              </div>
-            </fieldset>
-
-            <div class="table-wrapper">
-              <label>Creators</label>
-              <div class="custom-table-wrapper">
-                <table id="creators-table" class="bordered responsive-table">
-                  <!-- Creators table is created in here-->
-                </table>
-              </div>
-            </div>
-
-          </form>
-        </div>
-      </div>
-    </main>
-    <div id="includedFooter"></div>
-    </div>
-    <div id="includedFooter">{% include 'footer.html' %}</div>
-  </body>
 </html>
 <script>
-  $(".complete-wrapper").css("display", 'block');
-  $('#edit-button').on('click', function() {
+    $(".complete-wrapper").css("display", 'block');
+    $('#edit-button').on('click', function() {
         prevValues = getJsonValues();
         $('.add-field').css('display', 'inherit');
         $('.editable').attr('readonly', false);
@@ -185,35 +186,31 @@ function onSignIn(googleUser) {
         $(this).css('display', 'none');
         $('.save-cancel').css('display', 'inherit');
     });
-        
+
     $('.editable').on('focus', function() {
-        if($('.editable').is('[readonly]')){
-        }
-        else {
+        if ($('.editable').is('[readonly]')) {} else {
             prevValue = $(this).val();
             console.log("prev: " + prevValue);
         }
     });
-    $('.editable').on('focusout', function(){
-        if($('.editable').is('[readonly]')){
-        }
-        else {
+    $('.editable').on('focusout', function() {
+        if ($('.editable').is('[readonly]')) {} else {
             console.log('else');
             var curr = $(this).val();
             console.log("prev: " + prevValue);
             console.log("curr: " + curr);
-            if(curr !== prevValue){
-                
+            if (curr !== prevValue) {
+
                 $(this).css('border-bottom', '1px solid #fa6a74');
                 $(this).css('box-shadow', '0 1px 0 0 #fa6a74');
             }
         }
     });
-    
-    $('#cancel-button').on('click', function(){
+
+    $('#cancel-button').on('click', function() {
         appendJsonValues(prevValues);
     });
-    
+
     $('.save-cancel').on('click', function() {
         $('.add-field').css('display', '');
         $('.editable').attr('readonly', true);
@@ -225,247 +222,256 @@ function onSignIn(googleUser) {
 
 
     $.getJSON('/uploads/{{ filePath }}', function(data) {
-      console.log("hit");
+        console.log("hit");
         appendJsonValues(data);
-        Materialize.updateTextFields();      
-    }); 
+        Materialize.updateTextFields();
+    });
 
     window.onresize = function() {
         $('#abstract').trigger('autoresize');
         $('#narrative').trigger('autoresize');
     }
-function getJsonValues() {
-    var standardVersion = $('#standardVersion').val();
-    var id = $('#id').val();
-    var creator = $('#creator').val();
-    var dateCreated = $('#dateCreated').val();
-    var comment = $('#comment').val();
-    var title = $('#title').val();
-    var abstract = $('#abstract').val();
-    var dateArray = [];
-    $('.date-input').each(function(){
-        dateArray.push({
-            date: $(this).val(),
-            label: $('label[for=' + $(this).attr('id') + ']').data('date-label')
-        })
-    });
-    var oversight = $('#oversight').val();
-    var informedConsent = $('#informedConsent').val();
-    var anonymizedDataArray = [];
-    $('.anonymized-data-input').each(function(){
-        anonymizedDataArray.push({
-            label: $(this).val()
-        })
-    });
-    var privacyConsiderations = $('#privacyConsiderations').val();
-    var narrative = $('#narrative').val();
-    var publicationsArray = [];
-    $('.publication-input').each(function(){
-        publicationsArray.push({
-            publication: $(this).val()
-        })
-    });
-    var locationsArray = [];
-    $('.location-input').each(function(){
-        locationsArray.push({
-            location: {
-                url: $(this).val(),
-                comment: $(this).siblings('label').text()
-            }
-        })
-    });
-    var filesArray = [];
-    $('.file-input').each(function(){
-        filesArray.push({
-            file: {
-                name: $(this).children('.file-name').text()
-            },
-            format: $(this).children('.file-format').text(),
-            abstract: $(this).children('.file-abstract').text(),
-            size: $(this).children('.file-size').text(),
-            url: $(this).children('.file-url').text(),
-            checksum: $(this).children('.file-checksum').text()
-        })
-    });
-    var permission = $('#permission').val();
-    var dates2 = $('#dates2').val();
-    var dates2Label = $('#dates2Label').text();
-    var creatorsArray = [];
-    $('.creator-input').each(function(){
-        creatorsArray.push({
-            creator: {
-                name: $(this).children('.creator-name').text(),
-                role: {
-                    label: $(this).children('.creator-role').text()
-                }
-            },
-            type: {
-                label: $(this).children('.creator-type').text()
-            },
-            contact: $(this).children('.creator-contact').text()
-        })
-    });
 
-    var testObject = {
-        "manifests":{
-            "manifest": {
-                "standardVersions": standardVersion,
-                "id": id,
-                "creator": creator,
-                "dateCreated": dateCreated,
-                "comment": comment,
-                "researchObject": {
-                    "title": title,
-                    "abstract": abstract,
-                    "dates": dateArray
+    function getJsonValues() {
+        var standardVersion = $('#standardVersion').val();
+        var id = $('#id').val();
+        var creator = $('#creator').val();
+        var dateCreated = $('#dateCreated').val();
+        var comment = $('#comment').val();
+        var title = $('#title').val();
+        var abstract = $('#abstract').val();
+        var dateArray = [];
+        $('.date-input').each(function() {
+            dateArray.push({
+                date: $(this).val(),
+                label: $('label[for=' + $(this).attr('id') + ']').data('date-label')
+            })
+        });
+        var oversight = $('#oversight').val();
+        var informedConsent = $('#informedConsent').val();
+        var anonymizedDataArray = [];
+        $('.anonymized-data-input').each(function() {
+            anonymizedDataArray.push({
+                label: $(this).val()
+            })
+        });
+        var privacyConsiderations = $('#privacyConsiderations').val();
+        var narrative = $('#narrative').val();
+        var publicationsArray = [];
+        $('.publication-input').each(function() {
+            publicationsArray.push({
+                publication: $(this).val()
+            })
+        });
+        var locationsArray = [];
+        $('.location-input').each(function() {
+            locationsArray.push({
+                location: {
+                    url: $(this).val(),
+                    comment: $(this).siblings('label').text()
+                }
+            })
+        });
+        var filesArray = [];
+        $('.file-input').each(function() {
+            filesArray.push({
+                file: {
+                    name: $(this).children('.file-name').text()
                 },
-                "privacyEthics": {
-                    "oversight": {
-                        "label": oversight
+                format: $(this).children('.file-format').text(),
+                abstract: $(this).children('.file-abstract').text(),
+                size: $(this).children('.file-size').text(),
+                url: $(this).children('.file-url').text(),
+                checksum: $(this).children('.file-checksum').text()
+            })
+        });
+        var permission = $('#permission').val();
+        var dates2 = $('#dates2').val();
+        var dates2Label = $('#dates2Label').text();
+        var creatorsArray = [];
+        $('.creator-input').each(function() {
+            creatorsArray.push({
+                creator: {
+                    name: $(this).children('.creator-name').text(),
+                    role: {
+                        label: $(this).children('.creator-role').text()
                     }
                 },
-                "informedConsent": informedConsent,
-                "anonymizedData": anonymizedDataArray,
-                "privacyConsiderations": privacyConsiderations
-            },
-            "provenance": {
-                "narrative": narrative
-            },
-            "publications": publicationsArray,
-            "locations": locationsArray,
-            "files": filesArray,
-            "permissions": permission
-        },
-        "dates" : {
-            "date": {
-                "date": dates2
-            },
-            "label": dates2Label
-        },
-        "creators": creatorsArray
-    };
-    console.log(testObject);
+                type: {
+                    label: $(this).children('.creator-type').text()
+                },
+                contact: $(this).children('.creator-contact').text()
+            })
+        });
 
-    return testObject;
-}
+        var testObject = {
+            "manifests": {
+                "manifest": {
+                    "standardVersions": standardVersion,
+                    "id": id,
+                    "creator": creator,
+                    "dateCreated": dateCreated,
+                    "comment": comment,
+                    "researchObject": {
+                        "title": title,
+                        "abstract": abstract,
+                        "dates": dateArray
+                    },
+                    "privacyEthics": {
+                        "oversight": {
+                            "label": oversight
+                        }
+                    },
+                    "informedConsent": informedConsent,
+                    "anonymizedData": anonymizedDataArray,
+                    "privacyConsiderations": privacyConsiderations
+                },
+                "provenance": {
+                    "narrative": narrative
+                },
+                "publications": publicationsArray,
+                "locations": locationsArray,
+                "files": filesArray,
+                "permissions": permission
+            },
+            "dates": {
+                "date": {
+                    "date": dates2
+                },
+                "label": dates2Label
+            },
+            "creators": creatorsArray
+        };
+        console.log(testObject);
 
-function appendJsonValues(data) {
-    $('#standardVersion').val(data.manifests.manifest.standardVersions);
-    $('#id').val(data.manifests.manifest.id);
-    $('#creator').val(data.manifests.manifest.creator);
-    $('#dateCreated').val(data.manifests.manifest.dateCreated);
-    $('#comment').val(data.manifests.manifest.comment);
-    $('#title').val(data.manifests.manifest.researchObject.title);
-    $('#abstract').val(data.manifests.manifest.researchObject.abstract);
-    $('#abstract').trigger('autoresize');
-    $('.date-placeholder').empty();
-    $('.date-placeholder').append('<div id="add-date" class="col s6 m3 add-field"><a class="waves-effect waves-light btn"><i class="material-icons left">add</i>New Date</a></div>');
-    var dateCount = 0;
-    $.each(data.manifests.manifest.researchObject.dates, function(key, value){
-        var hiddenLabel = value.label;
-        var shownLabel;
-        if(value.label == 'start'){shownLabel = 'Start Date';}
-        else if(value.label == 'end'){shownLabel = 'End Date';}
-        else if(value.label == 'retrieved'){shownLabel = 'Retrieved Date';}
-        else if(value.label == 'created'){shownLabel = 'Created Date';}
-        else{shownLabel = 'No Assertion';}
-        var date = value.date;
-        $('#add-date').before('<div class="input-field col s6 m3"><input id="date-input-'+ dateCount +'" class="date-input editable" type="text" value="'+ date +'" readonly><label id="date-label-'+ dateCount +'" class="active date-label" data-date-label="'+ hiddenLabel +'" for="date-input-'+ dateCount +'">'+ shownLabel +'</label></div>');
-        dateCount++;
-    });
-    $('#oversight').val(data.manifests.manifest.privacyEthics.oversight.label);
-    $('#informedConsent').val(data.manifests.manifest.informedConsent);
-    $('.anonymized-data-placeholder').empty();
-    $.each(data.manifests.manifest.anonymizedData, function(key, value){
-        var count = 0;
-        var anonymizedData = value.label;
-        $('.anonymized-data-placeholder').append('<div class="input-field col s12 l6"><input id="anonymized-data-input-'+ count +'" class="anonymized-data-input" type="text" value="'+ anonymizedData +'" readonly><label id="anonymized-data-label-'+ count +'" class="active anonymized-data-label">Anonymized Data</label></div>');
-        count++;
-    });
-    $('#privacyConsiderations').val(data.manifests.manifest.privacyConsiderations);
-    $('#narrative').val(data.manifests.provenance.narrative);
-    $('#narrative').trigger('autoresize');
-    $('.publications-placeholder').empty();
-    $.each(data.manifests.publications, function(key, value){
-        var count = 0;
-        var publication = value.publication;
-        $('.publications-placeholder').append('<div class="input-field col s12 l6"><input id="publication-input-'+ count +'" class="publication-input" type="text" value="'+ publication +'" readonly><label id="publication-label-'+ count +'" class="active publication-label">Publication</label></div>');
-        count++;
-    });
-    $('.locations-placeholder').empty();
-    $.each(data.manifests.locations, function(key, value){
-        var count = 0;
-        var label = value.location.comment
-        var location = value.location.url;
-        $('.locations-placeholder').append('<div class="input-field col s12 m6"><input id="location-input-'+ count +'" class="location-input" type="text" value="'+ location +'" readonly><label id="location-label-'+ count +'" class="active location-label">'+ label +'</label></div>');
-        count++;
-    });
-    var numFiles = $(data.manifests.files).length;
-    if(numFiles >= 1){
-        $('#files-table').empty();
-        $('#files-table').append(
-            "<thead>" +
+        return testObject;
+    }
+
+    function appendJsonValues(data) {
+        $('#standardVersion').val(data.manifests.manifest.standardVersions);
+        $('#id').val(data.manifests.manifest.id);
+        $('#creator').val(data.manifests.manifest.creator);
+        $('#dateCreated').val(data.manifests.manifest.dateCreated);
+        $('#comment').val(data.manifests.manifest.comment);
+        $('#title').val(data.manifests.manifest.researchObject.title);
+        $('#abstract').val(data.manifests.manifest.researchObject.abstract);
+        $('#abstract').trigger('autoresize');
+        $('.date-placeholder').empty();
+        $('.date-placeholder').append('<div id="add-date" class="col s6 m3 add-field"><a class="waves-effect waves-light btn"><i class="material-icons left">add</i>New Date</a></div>');
+        var dateCount = 0;
+        $.each(data.manifests.manifest.researchObject.dates, function(key, value) {
+            var hiddenLabel = value.label;
+            var shownLabel;
+            if (value.label == 'start') {
+                shownLabel = 'Start Date';
+            } else if (value.label == 'end') {
+                shownLabel = 'End Date';
+            } else if (value.label == 'retrieved') {
+                shownLabel = 'Retrieved Date';
+            } else if (value.label == 'created') {
+                shownLabel = 'Created Date';
+            } else {
+                shownLabel = 'No Assertion';
+            }
+            var date = value.date;
+            $('#add-date').before('<div class="input-field col s6 m3"><input id="date-input-' + dateCount + '" class="date-input editable" type="text" value="' + date + '" readonly><label id="date-label-' + dateCount +
+                '" class="active date-label" data-date-label="' + hiddenLabel + '" for="date-input-' + dateCount + '">' + shownLabel + '</label></div>');
+            dateCount++;
+        });
+        $('#oversight').val(data.manifests.manifest.privacyEthics.oversight.label);
+        $('#informedConsent').val(data.manifests.manifest.informedConsent);
+        $('.anonymized-data-placeholder').empty();
+        $.each(data.manifests.manifest.anonymizedData, function(key, value) {
+            var count = 0;
+            var anonymizedData = value.label;
+            $('.anonymized-data-placeholder').append('<div class="input-field col s12 l6"><input id="anonymized-data-input-' + count + '" class="anonymized-data-input" type="text" value="' + anonymizedData +
+                '" readonly><label id="anonymized-data-label-' + count + '" class="active anonymized-data-label">Anonymized Data</label></div>');
+            count++;
+        });
+        $('#privacyConsiderations').val(data.manifests.manifest.privacyConsiderations);
+        $('#narrative').val(data.manifests.provenance.narrative);
+        $('#narrative').trigger('autoresize');
+        $('.publications-placeholder').empty();
+        $.each(data.manifests.publications, function(key, value) {
+            var count = 0;
+            var publication = value.publication;
+            $('.publications-placeholder').append('<div class="input-field col s12 l6"><input id="publication-input-' + count + '" class="publication-input" type="text" value="' + publication + '" readonly><label id="publication-label-' +
+                count + '" class="active publication-label">Publication</label></div>');
+            count++;
+        });
+        $('.locations-placeholder').empty();
+        $.each(data.manifests.locations, function(key, value) {
+            var count = 0;
+            var label = value.location.comment
+            var location = value.location.url;
+            $('.locations-placeholder').append('<div class="input-field col s12 m6"><input id="location-input-' + count + '" class="location-input" type="text" value="' + location + '" readonly><label id="location-label-' + count +
+                '" class="active location-label">' + label + '</label></div>');
+            count++;
+        });
+        var numFiles = $(data.manifests.files).length;
+        if (numFiles >= 1) {
+            $('#files-table').empty();
+            $('#files-table').append(
+                "<thead>" +
                 "<tr>" +
-                    "<th data-field='file_title'>Title</th>" +
-                    "<th data-field='file_format'>Format</th>" +                        
-                    "<th data-field='file_abstract'>Abstract</th>" +
-                    "<th data-field='file_size'>Size</th>" +
-                    "<th data-field='file_url'>URL</th>" +
-                    "<th data-field='file_checksum'>Checksum</th>" +
+                "<th data-field='file_title'>Title</th>" +
+                "<th data-field='file_format'>Format</th>" +
+                "<th data-field='file_abstract'>Abstract</th>" +
+                "<th data-field='file_size'>Size</th>" +
+                "<th data-field='file_url'>URL</th>" +
+                "<th data-field='file_checksum'>Checksum</th>" +
                 "</tr>" +
-            "</thead>" +
-            "<tbody id='files-body'>" +
-            "</tbody>"
-        );
-        for(var i = 0 ; i < numFiles ; i++){
-            $('#files-body').append(
-                "<tr class='file-input'>" +
-                    "<td class='file-name'>"+ data.manifests.files[i].file.name +"</td>" +
-                    "<td class='file-format'>"+ data.manifests.files[i].format +"</td>" +
-                    "<td class='file-abstract'>"+ data.manifests.files[i].abstract +"</td>" +
-                    "<td class='file-size'>"+ data.manifests.files[i].size +"</td>" +
-                    "<td class='file-url'>"+ data.manifests.files[i].url +"</td>" +
-                    "<td class='file-checksum'>"+ data.manifests.files[i].checksum +"</td>" +
-                "</tr>" 
-            );       
+                "</thead>" +
+                "<tbody id='files-body'>" +
+                "</tbody>"
+            );
+            for (var i = 0; i < numFiles; i++) {
+                $('#files-body').append(
+                    "<tr class='file-input'>" +
+                    "<td class='file-name'>" + data.manifests.files[i].file.name + "</td>" +
+                    "<td class='file-format'>" + data.manifests.files[i].format + "</td>" +
+                    "<td class='file-abstract'>" + data.manifests.files[i].abstract + "</td>" +
+                    "<td class='file-size'>" + data.manifests.files[i].size + "</td>" +
+                    "<td class='file-url'>" + data.manifests.files[i].url + "</td>" +
+                    "<td class='file-checksum'>" + data.manifests.files[i].checksum + "</td>" +
+                    "</tr>"
+                );
+            }
+        } else {
+            $('#files-table').append('<p>There are no files in this manifest</p>')
         }
-    }
-    else {
-        $('#files-table').append('<p>There are no files in this manifest</p>')
-    }
-    $('#permission').val(data.manifests.permissions);
-    $('#dates2').val(data.dates.date.date);
+        $('#permission').val(data.manifests.permissions);
+        $('#dates2').val(data.dates.date.date);
 
-    var numCreators = $(data.creators).length;
-    if(numCreators >= 1){
-        $('#creators-table').empty();
-        $('#creators-table').append(
-            "<thead>" +
+        var numCreators = $(data.creators).length;
+        if (numCreators >= 1) {
+            $('#creators-table').empty();
+            $('#creators-table').append(
+                "<thead>" +
                 "<tr>" +
-                    "<th data-field='creator_name'>Name</th>" +
-                    "<th data-field='creator_role'>Role</th>" +                        
-                    "<th data-field='creator_type'>Type</th>" +
-                    "<th data-field='creator_contact'>Contact</th>" +
+                "<th data-field='creator_name'>Name</th>" +
+                "<th data-field='creator_role'>Role</th>" +
+                "<th data-field='creator_type'>Type</th>" +
+                "<th data-field='creator_contact'>Contact</th>" +
                 "</tr>" +
-            "</thead>" +
-            "<tbody id='creators-body'>" +
-            "</tbody>"
-        );
-        for(var j = 0 ; j < numCreators ; j++){
-            $('#creators-body').append(
-                "<tr class='creator-input'>" +
-                    "<td class='creator-name'>"+ data.creators[j].creator.name +"</td>" +
-                    "<td class='creator-role'>"+ data.creators[j].creator.role.label +"</td>" +
-                    "<td class='creator-type'>"+ data.creators[j].type.label +"</td>" +
-                    "<td class='creator-contact'>"+ data.creators[j].contact +"</td>" +
-                "</tr>" 
-            );       
+                "</thead>" +
+                "<tbody id='creators-body'>" +
+                "</tbody>"
+            );
+            for (var j = 0; j < numCreators; j++) {
+                $('#creators-body').append(
+                    "<tr class='creator-input'>" +
+                    "<td class='creator-name'>" + data.creators[j].creator.name + "</td>" +
+                    "<td class='creator-role'>" + data.creators[j].creator.role.label + "</td>" +
+                    "<td class='creator-type'>" + data.creators[j].type.label + "</td>" +
+                    "<td class='creator-contact'>" + data.creators[j].contact + "</td>" +
+                    "</tr>"
+                );
+            }
+        } else {
+            $('#files-table').append('<p>There are no files in this manifest</p>')
         }
-    }
-    else {
-        $('#files-table').append('<p>There are no files in this manifest</p>')
-    }
 
-    Materialize.updateTextFields();
-}
+        Materialize.updateTextFields();
+    }
 </script>
