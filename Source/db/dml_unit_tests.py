@@ -243,6 +243,36 @@ if(found['creators']['contact'] == to_insert['creators']['contact']):
 else:
 	print("Unable to match by lower case author")
 
+
+#lower case search, interior manifest
+found = search_by_author("ALI RAZA")[0]
+if(found['creators']['contact'] == to_insert['creators']['contact']):
+	print("upper case author match")
+else:
+	print("Unable to match by upper case author")
+
+#lower case search, exterior manifest
+found = search_by_author("CHI-REN SHYU")[0]
+if(found['creators']['contact'] == to_insert['creators']['contact']):
+	print("upper case author match")
+else:
+	print("Unable to match by upper case author")
+
+#search by full author, interior manifest
+found = search_by_author("Ali  Raza")[0]
+if(found['creators']['contact'] == to_insert['creators']['contact']):
+	print("extra spaces author match, interior")
+else:
+	print("Unable to extra spaces author match, interior")
+
+#search by full author, exterior creator
+found = search_by_author("Chi-Ren  Shyu")[0]
+if(found['creators']['contact'] == to_insert['creators']['contact']):
+	print("extra spaces author match, exterior")
+else:
+	print("Unable to extra spaces author match, exterior")
+
+
 #bad search
 found = search_by_author("iDAS")
 if(found.count() != 0):
@@ -313,6 +343,13 @@ if(found.count() != 0):
 	print("found a manifest that shouldn't exist")
 else:
 	print("Passed bad search test")
+
+#Search by all tests
+found = search_by_all("ali")[0]
+if(found['creators']['contact'] == to_insert['creators']['contact']):
+	print("found from search by all")
+else:
+	print("did not find from a search by all")
 
 #empty search
 found = search_by_date("")

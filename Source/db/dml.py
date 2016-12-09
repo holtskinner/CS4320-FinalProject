@@ -17,19 +17,21 @@ def search_manifest(lookup):
 def search_by_all(to_find):
     ''' Finds all manifests that contain the search terms provided. '''
     lookup = { "$text": { "$search" : "\"" + to_find + "\"" } }
-    return _col.find(lookup)
+    return m_col.find(lookup)
 
 def search_by_title(to_find):
     ''' Finds all manifests that contain the title provided. Can be formatted upstream to be a
     regex.  '''
-    lookup = { "manifests.manifest.researchObject.title" : {"$regex" : to_find , "$options": "i"}}
+    query = to_find.replace(" ", "\s*")
+    lookup = { "manifests.manifest.researchObject.title" : {"$regex" : query , "$options": "i"}}
     return m_col.find(lookup)
 
 def search_by_author(to_find):
     ''' Finds all manifests that contain the author provided. Can be formatted upstream to be a
     regex. This searches both the exterior creator field and the interior research object '''
-    lookup = { "$or": [{ "manifests.manifest.creator" : {"$regex" : to_find , "$options": "i"}},
-        {"creators.creator.name" : {"$regex" : to_find , "$options": "i"}}]
+    query = to_find.replace(" ", "\s*")
+    lookup = { "$or": [{ "manifests.manifest.creator" : {"$regex" : query , "$options": "i"}},
+        {"creators.creator.name" : {"$regex" : query , "$options": "i"}}]
     }
     return m_col.find(lookup)
 
