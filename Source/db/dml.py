@@ -1,4 +1,5 @@
 from pymongo import MongoClient, TEXT #Mongodb functionality
+from bson import objectid
 import gridfs #file system functionality
 
 #initialize to the collections that we want
@@ -8,6 +9,9 @@ fs = gridfs.GridFS(db)
 
 m_col = db.Manifests #the collection of manifests
 m_col.create_index( [("$**", TEXT)]) #ensure existance of index 
+
+def oid_to_oid(oid):
+    return objectid.ObjectId(oid)
 
 def search_manifest(lookup):
     ''' finds all manifests that match pattern provided and returns the cursor of results
@@ -22,16 +26,25 @@ def search_by_all(to_find):
 def search_by_title(to_find):
     ''' Finds all manifests that contain the title provided. Can be formatted upstream to be a
     regex.  '''
-    query = to_find.replace(" ", "\s*")
-    lookup = { "manifests.manifest.researchObject.title" : {"$regex" : query , "$options": "i"}}
+    query = to_find.replace(" ", "")
+    new_query = ""
+    for current_char in query:
+        new_query += "\s*"
+        new_query += current_char
+
+    lookup = { "manifests.manifest.researchObject.title" : {"$regex" : new_query , "$options": "i"}}
     return m_col.find(lookup)
 
 def search_by_author(to_find):
     ''' Finds all manifests that contain the author provided. Can be formatted upstream to be a
     regex. This searches both the exterior creator field and the interior research object '''
-    query = to_find.replace(" ", "\s*")
-    lookup = { "$or": [{ "manifests.manifest.creator" : {"$regex" : query , "$options": "i"}},
-        {"creators.creator.name" : {"$regex" : query , "$options": "i"}}]
+    query = to_find.replace(" ", "")
+    new_query = ""
+    for current_char in query:
+        new_query += "\s*"
+        new_query += current_char
+    lookup = { "$or": [{ "manifests.manifest.creator" : {"$regex" : new_query , "$options": "i"}},
+        {"creators.creator.name" : {"$regex" : new_query , "$options": "i"}}]
     }
     return m_col.find(lookup)
 

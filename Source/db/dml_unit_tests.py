@@ -215,6 +215,20 @@ if(found['creators']['contact'] == to_insert['creators']['contact']):
 else:
 	print("Unable to Full author match, exterior")
 
+#search by full author, interior manifest
+found = search_by_author("AliRaza")[0]
+if(found['creators']['contact'] == to_insert['creators']['contact']):
+	print("Full author no spaces match, interior")
+else:
+	print("Unable to Full author no spaces match, interior")
+
+#search by full author, exterior creator
+found = search_by_author("Chi-RenShyu")[0]
+if(found['creators']['contact'] == to_insert['creators']['contact']):
+	print("Full author no spaces match, exterior")
+else:
+	print("Unable to Full author no spaces match, exterior")
+
 #partial search, interior manifest
 found = search_by_author("Raz")[0]
 if(found['creators']['contact'] == to_insert['creators']['contact']):
