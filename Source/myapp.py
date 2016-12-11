@@ -144,8 +144,8 @@ def pageNotFound(e):
 
 # If the server malfunctions, the user will be directed to a custom 500 error page
 @app.errorhandler(500)
-def internal_error(e):
-    return render_template('500.html'),  500
+def internalError(e):
+    return render_template('500.html'), 500
 
 '''
 Run the application
