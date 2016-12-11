@@ -7,11 +7,11 @@ import os
 
 
 ''' Old:
-client = MongoClient() 
+client = MongoClient()
 db = client.test
 m_col = db.File #the collection of manifests
 m_col2 = db.Manifests
-m_col.create_index( [("$**", TEXT)]) #ensure existance of index 
+m_col.create_index( [("$**", TEXT)]) #ensure existance of index
 
 UPLOAD_FOLDER = '/var/www/flask-dev/uploads/'
 ALLOWED_EXTENSIONS = set(['json'])
@@ -28,7 +28,7 @@ def renderIndex():
     return render_template('index.html')
 
 '''
-Route the browse page. 
+Route the browse page.
 Send it an array holding all manifests
 '''
 @app.route("/browse.html")
@@ -72,7 +72,7 @@ def renderProfile():
 '''
 Route the upload file page
 This page is where clicking on the upload manifest button on the browse page will take you to
-This page should only be accessed if the user clicks the upload button on the browse page or else the file getting 
+This page should only be accessed if the user clicks the upload button on the browse page or else the file getting
 uploaded will not be tied to a proper manifest id, causing all sorts of problems.
 '''
 @app.route("/uploadFile.html", methods=['GET'])
@@ -98,7 +98,7 @@ def handleUpload():
 		#	return "fail"
 		#if oid:
 		#	files = get_all_files(oid)
-		#else: 
+		#else:
 		#	return "fail"
 		#result = search_manifest({})
 		#return render_template('browse.html', result = result)
@@ -162,6 +162,16 @@ def searchManifests():
 		#return render_template('search.html', result = result)
 	else:
 		return render_template('index.html')
+
+# If the user tries to go to a non-existant page, they will be redirected to a custom 404 page
+@app.errorhandler(404)
+def pageNotFound(e):
+    return render_template('404.html'), 404
+
+# If the server malfunctions, the user will be directed to a custom 500 error page
+@app.errorhandler(500)
+def internal_error(e):
+    return render_template('500.html'),  500
 
 '''
 Run the application
