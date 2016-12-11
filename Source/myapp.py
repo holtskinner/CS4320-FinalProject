@@ -1,23 +1,7 @@
 from flask import Flask, render_template, request, jsonify, send_from_directory
 from dml import *
-from werkzeug.utils import secure_filename
-from pymongo import MongoClient, TEXT
-from bson.json_util import dumps
-import os
 
-
-''' Old:
-client = MongoClient()
-db = client.test
-m_col = db.File #the collection of manifests
-m_col2 = db.Manifests
-m_col.create_index( [("$**", TEXT)]) #ensure existance of index
-
-UPLOAD_FOLDER = '/var/www/flask-dev/uploads/'
-ALLOWED_EXTENSIONS = set(['json'])
-'''
 app = Flask(__name__)
-#app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 '''
 Route the default URL to the index page
@@ -28,7 +12,7 @@ def renderIndex():
     return render_template('index.html')
 
 '''
-Route the browse page.
+Route the browse page. 
 Send it an array holding all manifests
 '''
 @app.route("/browse.html")
@@ -54,14 +38,6 @@ def renderUpload():
 		return render_template('upload.html')
 
 '''
-Route the edit page
-Add functionality to this page
-'''
-@app.route("/edit.html")
-def renderEdit():
-	return render_template('edit.html')
-
-'''
 Route the profile page
 Add functionality to this
 '''
@@ -72,7 +48,7 @@ def renderProfile():
 '''
 Route the upload file page
 This page is where clicking on the upload manifest button on the browse page will take you to
-This page should only be accessed if the user clicks the upload button on the browse page or else the file getting
+This page should only be accessed if the user clicks the upload button on the browse page or else the file getting 
 uploaded will not be tied to a proper manifest id, causing all sorts of problems.
 '''
 @app.route("/uploadFile.html", methods=['GET'])
@@ -90,45 +66,43 @@ def handleUpload():
 		if 'file' not in request.files:
 			return "no file provided"
 		file = request.files['file']
-		oid = request.form['oid']
-		return add_file(oid, file)
-		#if add_file(oid, file):
-		#	return "success"
-		#else:
-		#	return "fail"
-		#if oid:
-		#	files = get_all_files(oid)
-		#else:
-		#	return "fail"
-		#result = search_manifest({})
-		#return render_template('browse.html', result = result)
-		'''
-		if file.filename == '':
-			return "no file provided"
-		if file:
-			filename = secure_filename(file.filename)
-			fileInfo = {}
-			fileInfo["uid"] = request.form['oid']
-		 	fileInfo['file'] = filename
-		 	oid = request.form['oid']
-		 	file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-		 	#return type(fileInfo)
-		 	post_id = m_col.insert_one(dict(fileInfo))
-		 	#return (jsonify(fileInfo))
-		 	result = search_manifest({})
-			return render_template('browse.html', result = result)'''
+		oid = oid_to_oid(request.form['oid'])
+		add_file(oid, file)
+		result = search_manifest({})
+		return render_template('browse.html', result = result)
+		#files = get_all_files(oid)
+		#return files[0]
 	else:
 		return render_template('index.html')
 
 '''
-Route each file stored on the server to a URL
-Once grid FS is functional, this will be removed
+Route the delete manaifest page.
+A post request from the browse page will submit the manifest ID.
+We will call a DML function that deletes manifest and all trails (associated files)
+After this we will return to the browse page
 '''
-@app.route("/uploads/<filename>")
-def uploaded_file(filename):
-	return send_from_directory(app.config['UPLOAD_FOLDER'], filename)
+@app.route("/delete.html", methods=['GET', 'POST'])
+def handleDelete():
+	if request.method == 'POST':
+		oid = oid_to_oid(request.form['id'])
+		if remove_manifest(oid):
+			result = search_manifest({})
+			return render_template('browse.html', result = result)
+	else:
+		return render_template('index.html')
+
+@app.route("/view.html", methods=['GET', 'POST'])
+def handleView():
+	if request.method == 'POST':
+		oid = oid_to_oid(request.form['id'])
+		files = get_all_files(oid)
+		return render_template("view.html", files=files)
+	else:
+		return render_template("index.html")
 
 '''
+Figure out what is going on in here I might be able to delete all of this now 
+this might get deleted
 Route the upload page
 Currently, a post request to this URL will lead to the edit page
 I shoud probably route the edit page to a seperate URL
