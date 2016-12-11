@@ -21,14 +21,20 @@
         <div class="g-signin2" data-onsuccess="onSignIn"></div>
     </div>
     <!-- This is what allows a user to sign out, Please link with Flask :) -->
-
-    <!-- <a href="#" onclick="signOut();">Sign out</a>
-<script>
-  function signOut() {
-    var auth2 = gapi.auth2.getAuthInstance();
-    auth2.signOut().then(function () {
-      console.log('User signed out.');
-    });
-  }
-</script> -->
+    <script>
+        //Removes login button and adds logout button when a user logs in
+        function onSignIn(googleUser) {
+            $(".g-signin2").remove();
+            $(".modal-content").append('<div id="signOut" class="btn" onclick="signOut();">Sign Out</div>');
+        }
+        //logs out the user and replaces the signin button
+        function signOut() {
+            var auth2 = gapi.auth2.getAuthInstance();
+            auth2.signOut().then(function() {
+                console.log('User signed out.');
+                $('#signOut').remove();
+                $(".modal-content").append('<div class="g-signin2" data-onsuccess="onSignIn"></div>');
+            });
+        }
+    </script>
 </div>
