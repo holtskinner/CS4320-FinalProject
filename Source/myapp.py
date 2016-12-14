@@ -70,8 +70,6 @@ def handleUpload():
 		add_file(oid, file)
 		result = search_manifest({})
 		return render_template('browse.html', result = result)
-		#files = get_all_files(oid)
-		#return files[0]
 	else:
 		return render_template('index.html')
 
@@ -91,6 +89,10 @@ def handleDelete():
 	else:
 		return render_template('index.html')
 
+'''
+Route the view manifest page. 
+This is the page that comes up when the user clicks the view button on the browse page
+'''
 @app.route("/view.html", methods=['GET', 'POST'])
 def handleView():
 	if request.method == 'POST':
@@ -127,13 +129,8 @@ def searchManifests():
 	if request.method == 'POST':
 		key = request.form['searchCategory']
 		value = request.form['search']
-		result = m_col2.find_one({key:value})
-		#res = dumps(result)
+		result = search(key, value)
 		return render_template("search.html", result=result)
-		#res  = {}
-		#res['id'] = result['_id']
-		#return (jsonify(res))
-		#return render_template('search.html', result = result)
 	else:
 		return render_template('index.html')
 
@@ -144,8 +141,8 @@ def pageNotFound(e):
 
 # If the server malfunctions, the user will be directed to a custom 500 error page
 @app.errorhandler(500)
-def internalError(e):
-    return render_template('500.html'), 500
+def internal_error(e):
+    return render_template('500.html'),  500
 
 '''
 Run the application
