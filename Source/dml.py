@@ -1,4 +1,5 @@
-from pymongo import MongoClient, TEXT #Mongodb functionality
+from pymongo import MongoClient, TEXT#Mongodb functionality
+from bson import objectid
 import gridfs #file system functionality
 
 #initialize to the collections that we want
@@ -8,6 +9,12 @@ fs = gridfs.GridFS(db)
 
 m_col = db.Manifests #the collection of manifests
 m_col.create_index( [("$**", TEXT)]) #ensure existance of index 
+
+def oid_to_oid(oid):
+    return objectid.ObjectId(oid)
+
+def search(key, value):
+    return m_col.find_one({key:value})
 
 def search_manifest(lookup):
     ''' finds all manifests that match pattern provided and returns the cursor of results
@@ -130,13 +137,16 @@ def add_file(oid, file_in):
     given an invalid oid, or if there was no file provided.'''
     if(oid and file_in):
         #make sure that the manifest exists before we write the file to the database
-        doc = m_col.find_one({"_id": oid}) 
+        newOID = objectid.ObjectId(oid)
+        doc = m_col.find_one({"_id": newOID}) 
         if(doc):
             file_id = fs.put(file_in)
             if(file_id):
-                m_col.find_one_and_update({"_id": oid}, {"$push": {"file_ids": file_id}}) #we need to add the file id to the file id list
-                return True
-    return False #we failed somewhere
+                m_col.find_one_and_update({"_id": newOID}, {"$push": {"file_ids": file_id}}) #we need to add the file id to the file id list
+                return "True"
+            return "Did not insert file"
+        return "Did not find document"
+    return "Did not get oid or file_in" #we failed somewhere
 
 def remove_file(m_oid, f_oid):
     ''' Removes from the manifest represented by m_oid the file represented by f_oid.
