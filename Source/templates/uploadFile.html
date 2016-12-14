@@ -13,7 +13,7 @@
             <div class="container">
                 <form action="handleFileUpload.html" method=POST enctype="multipart/form-data">
                     <input type=hidden readonly value={{request.args.get( 'id')}} name="oid" }>
-                    <input type=file name="file">
+                    <input type="file" name="file">
                     <input class="btn" type="submit" value="Submit" name="submit">
                 </form>
             </div>
