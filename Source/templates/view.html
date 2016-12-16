@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=UTF8">
+	<title>OCDX Browse</title>
+    <script type=text/javascript src="{{ url_for('static', filename='jquery.js') }}"></script>
+    <div id="includedHeader">{% include 'header.html' %}</div>
+</head>
+<body>
+	<div id="includedNav">{% include 'nav.html' %}</div>
+    <main>
+    	<div class="container">
+ 			<h5>These are the uploaded files tied to your manifest</h5>
+ 			<hr>
+            {% for f in files %}
+            	<form action="edit.html" id=form method=POST>
+                    <input type=hidden name=json id=json value="hello">
+                    <input type=submit class="btn" name=submit value="View File">
+                    <br>
+                </form>
+                <script>
+                    $( document ).ready(function() {
+                        console.log( "ready!" );
+                        var data = {{ f|tojson }}
+                        $('#json').val(data);
+                    });
+                </script>
+            {% endfor %}
+       	</div>
+    </main>
+</body>

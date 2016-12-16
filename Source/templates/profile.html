@@ -1,53 +1,51 @@
 <!DOCTYPE html>
 <html>
-    <script type=text/javascript src="{{ url_for('static', filename='jquery.js') }}"></script>
-    {% include 'header.html' %}
-    <meta name="google-signin-client_id" content="975332133771-b3j764j7oo8ikir7kiocd9uoush78mv2.apps.googleusercontent.com">
-    <script>
-        function onSignIn(googleUser) {
-            var profile = googleUser.getBasicProfile();
-            //Display Info from Google
-            $('#profile-image').attr('src', profile.getImageUrl());
-            $("#name").html(profile.getName());
-            $("#email").html(profile.getEmail());
-        }
-    </script>
+<script type=text/javascript src="{{ url_for('static', filename='jquery.js') }}"></script>
+<div id="includedHeader">{% include 'header.html' %}</div>
+<meta name="google-signin-client_id" content="975332133771-b3j764j7oo8ikir7kiocd9uoush78mv2.apps.googleusercontent.com">
+<script>
+  function onSignIn(googleUser) {
+      var profile = googleUser.getBasicProfile();
 
-    <style media="screen">
-        .img-circle {
-            border-radius: 50%;
-        }
+      //Display Info from Google
+      $('#profile-image').attr('src', profile.getImageUrl());
+      $("#name").html(profile.getName());
+      $("#email").html(profile.getEmail());
+  }
+</script>
 
-        .row {
-            font-size: 2rem;
-        }
+<style media="screen">
+  .img-circle {
+    border-radius: 50%;
+  }
+  .row {
+    font-size: 2rem;
+  }
+  label {
+    font-size: 3rem;
+  }
+</style>
 
-        label {
-            font-size: 3rem;
-        }
-    </style>
+  <body>
+    <div id="includedNav">{% include 'nav.html' %}</div>
+    <main>
+      <div class="container center-align">
+        <h2 class="header teal-text text-lighten-2">Profile</h2>
+        <div class="row">
+          <img id="profile-image" class="img-circle">
+        </div>
 
-    <body>
-        {% include 'nav.html' %}
-        <main>
-            <div class="container center-align">
-                <h2 class="header teal-text text-lighten-2">Profile</h2>
-                <div class="row">
-                    <img id="profile-image" class="img-circle">
-                </div>
+        <label for="name">Name</label>
+        <div id="name" class="row"></div>
 
-                <label for="name">Name</label>
-                <div id="name" class="row"></div>
+        <label for="email">Email</label>
+        <div id="email" class="row"></div>
 
-                <label for="email">Email</label>
-                <div id="email" class="row"></div>
+        <label for="manifests">My Manifests</label>
+        <div id="manifests" class="row">You have no manifests. :(</div>
 
-                <label for="manifests">My Manifests</label>
-                <div id="manifests" class="row">You have no manifests. :(</div>
-
-            </div>
-        </main>
-        {% include 'footer.html' %}
-    </body>
-
+      </div>
+      </main>
+      <div id="includedFooter">{% include 'footer.html' %}</div>
+  </body>
 </html>

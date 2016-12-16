@@ -1,20 +1,19 @@
 <nav>
     <div class="nav-wrapper">
-        <form action="browse.html" method="POST">
-            <!-- <form action="search.html" method="POST"> -->
+        <form action="search.html" method="POST">
             <div class="input-field">
                 <input id="search" type="search" required placeholder="Search Manifests" name="search">
                 <label for="search" class="active"><i class="fa fa-search" aria-hidden="true"></i></label>
             </div>
             <input name="searchCategory" type="radio" id="authorSearch" checked="checked" value="author">
             <label class="searchLabel" for="authorSearch">Author</label>
-            <input name="searchCategory" type="radio" id="titleSearch">
+            <input name="searchCategory" type="radio" id="titleSearch" value="title">
             <label class="searchLabel" for="titleSearch">Title</label>
-            <input name="searchCategory" type="radio" id="dateSearch">
-            <label class="searchLabel" for="dateSearch">Date</label>
-            <input name="searchCategory" type="radio" id="descriptionSearch">
-            <label class="searchLabel" for="descriptionSearch">Description</label>
-            <input type="submit" name="submit" class="btn" value="Search">
+            <!--<input name="searchCategory" type="radio" id="dateSearch">
+            <label class="searchLabel" for="dateSearch">Date</label>-->
+            <input name="searchCategory" type="radio" id="commentSearch" value="comments">
+            <label class="searchLabel" for="commentSearch">Comments</label>
+            <input type = "submit" name="submit" class="btn" value="Search">
         </form>
     </div>
 </nav>

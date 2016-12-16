@@ -134,6 +134,14 @@ def searchManifests():
 	else:
 		return render_template('index.html')
 
+@app.route("/edit.html", methods=['GET', 'POST'])
+def viewManifest():
+	if request.method == 'POST':
+		data = request.form['json']
+		return render_template("edit.html", data=data)
+	else:
+		return render_template("index.html")
+
 # If the user tries to go to a non-existant page, they will be redirected to a custom 404 page
 @app.errorhandler(404)
 def pageNotFound(e):

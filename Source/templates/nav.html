@@ -3,14 +3,14 @@
         <ul class="right hide-on-med-and-down">
             <li><a href="browse.html">Browse</a></li>
             <li><a href="upload.html">Upload</a></li>
-            <li><a href="edit.html">Edit</a></li>
+         <!--   <li><a href="edit.html">Edit</a></li>   -->
             <li><a href="profile.html">Profile</a></li>
             <li><a href="#loginModal">Login</a></li>
         </ul>
         <ul id="nav-mobile" class="right side-nav">
             <li><a href="browse.html">Browse</a></li>
             <li><a href="upload.html">Upload</a></li>
-            <li><a href="edit.html">Edit</a></li>
+        <!--    <li><a href="edit.html">Edit</a></li>   -->
             <li><a href="profile.html">Profile</a></li>
             <li><a href="#loginModal">Login</a></li>
         </ul> <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a> </div>
@@ -20,21 +20,4 @@
         <h3 class="teal-text text-lighten-2">Account Login</h3>
         <div class="g-signin2" data-onsuccess="onSignIn"></div>
     </div>
-    <!-- This is what allows a user to sign out, Please link with Flask :) -->
-    <script>
-        //Removes login button and adds logout button when a user logs in
-        function onSignIn(googleUser) {
-            $(".g-signin2").remove();
-            $(".modal-content").append('<div id="signOut" class="btn" onclick="signOut();">Sign Out</div>');
-        }
-        //logs out the user and replaces the signin button
-        function signOut() {
-            var auth2 = gapi.auth2.getAuthInstance();
-            auth2.signOut().then(function() {
-                console.log('User signed out.');
-                $('#signOut').remove();
-                $(".modal-content").append('<div class="g-signin2" data-onsuccess="onSignIn"></div>');
-            });
-        }
-    </script>
 </div>

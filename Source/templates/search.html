@@ -39,38 +39,31 @@ function onSignIn(googleUser) {
                                 <tr>
                                     <th data-field="title">Title</th>
                                     <th data-field="author">Author</th>
+                      <!--              <th data-field="dateCreated">Date Created</th>  -->
                                     <th data-field="comments">Comments</th>
                                     <th data-field="upload">Upload Manifest</th>
                                     <th data-field="view">View Manifest</th>
-                                    <th data-field="delete">Delete Manifest</th>
                                 </tr>
                                 </thead>
-
-                                {% for r in result %}
                                     <tr>
-                                        <td>{{ r['title'] }} </td>
-                                        <td>{{ r['author'] }} </td>
-                                        <td>{{ r['comments'] }} </td>
+                                        <td>{{ result['title'] }} </td>
+                                        <td>{{ result['author'] }} </td>
+                           <!--             <td>{{ result['date'] }}</td>   -->
+                                        <td>{{ result['comments'] }} </td>
                                         <td>
                                             <form action="uploadFile.html" method=GET>
-                                                <input type=hidden name=id value= {{ r['_id'] }}>
+                                                <input type=hidden name=id value= {{ result['_id'] }}>
                                                 <input type=submit class="btn" value="Upload">
                                             </form>
                                         </td>
                                         <td>
-                                            <form action="view.html" method=POST>
-                                                <input type=hidden name=id value= {{ r['_id']}}>
+                                            <form action="uploads.html" method=POST>
+                                                <input type=hidden name=id value= {{ result['_id']}}>
                                                 <input type=submit class="btn" value="View">
                                             </form>
                                         </td>
-                                        <td>
-                                            <form action="delete.html" method=POST>
-                                                <input type=hidden name=id value= {{ r['_id']}}>
-                                                <input type=submit class="btn" value="Delete">
-                                            </form>
-                                        </td>
                                     </tr>
-                                {% endfor %}
+                        
                                 </table>
                     </div>
                 </div>
