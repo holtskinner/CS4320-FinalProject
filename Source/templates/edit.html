@@ -15,6 +15,11 @@ function onSignIn(googleUser) {
   <body>
     <div id="includedNav">{% include 'nav.html' %}</div>
     <main>
+      <div id="edit-modal" class="modal center-align">
+        <div class="modal-content"></div>
+        <hr>
+        <div id="modal-footer"></div>
+      </div>
       <div class="wrapper">
         <div class="header-row">
           <h5 id="dataset-title" class="header center teal-text text-lighten-2">Manifest</h5>
@@ -34,31 +39,31 @@ function onSignIn(googleUser) {
               <legend>Manifest</legend>
               <div class="col s12 l6">
                 <div class="input-field">
-                  <input id="standardVersion" class="editable" type="text">
+                  <input id="standardVersion" class="editable" type="text" readonly>
                   <label class="active" for="standardVersion">Standard Version</label>
                 </div>
               </div>
               <div class="col s12 l6">
                 <div class="input-field">
-                  <input id="id" class="editable" type="text">
+                  <input id="id" class="editable" type="text" readonly>
                   <label class="active" for="id">ID</label>
                 </div>
               </div>
               <div class="col s12 l6">
                 <div class="input-field">
-                  <input id="creator" class="editable" type="text">
+                  <input id="creator" class="editable" type="text" readonly>
                   <label class="active" for="creator">Creator</label>
                 </div>
               </div>
               <div class="col s12 l6">
                 <div class="input-field">
-                  <input id="dateCreated" class="editable" type="text">
+                  <input id="dateCreated" class="editable" type="text" readonly>
                   <label class="active" for="dateCreated">Date Created</label>
                 </div>
               </div>
               <div class="col s12">
                 <div class="input-field">
-                  <input id="comment" class="editable" type="text">
+                  <input id="comment" class="editable" type="text" readonly>
                   <label class="active" for="comment">Comment</label>
                 </div>
               </div>
@@ -66,28 +71,29 @@ function onSignIn(googleUser) {
                 <legend>Research Object</legend>
                 <div class="col s12 l6">
                   <div class="input-field">
-                    <input id="title" class="editable" type="text">
+                    <input id="title" class="editable" type="text"readonly>
                     <label class="active" for="title">Title</label>
                   </div>
                 </div>
                 <div class="col s12">
                   <div class="input-field">
-                    <textarea id="abstract" class="materialize-textarea editable"></textarea>
+                    <textarea id="abstract" class="materialize-textarea editable" readonly></textarea>
                     <label for="abstract">Abstract</label>
                   </div>
                 </div>
                 <div class="date-placeholder">
+                    <div id="add-date-wrapper" class="col s6 m3 add-field"><a id="add-date" class="edit-modal-button" href="#edit-modal"><i class="small material-icons">add_circle_outline</i></a></div>
                 </div>
               </fieldset>
               <div class="col s12 l6">
                 <div class="input-field">
-                  <input id="oversight" class="editable" type="text">
+                  <input id="oversight" class="editable" type="text" readonly>
                   <label class="active" for="oversight">Privacy Ethics - Oversight</label>
                 </div>
               </div>
               <div class="col s12 l6">
                 <div class="input-field">
-                  <input id="informedConsent" class="editable" type="text">
+                  <input id="informedConsent" class="editable" type="text" readonly>
                   <label class="active" for="InformedConsent">Informed Consent</label>
                 </div>
               </div>
@@ -96,7 +102,7 @@ function onSignIn(googleUser) {
               </div>
               <div class="col s12 l6">
                 <div class="input-field">
-                  <input id="privacyConsiderations" class="editable" type="text">
+                  <input id="privacyConsiderations" class="editable" type="text" readonly>
                   <label class="active" for="privacyConsiderations">Privacy Considerations</label>
                 </div>
               </div>
@@ -105,7 +111,7 @@ function onSignIn(googleUser) {
               <legend>Provenance</legend>
               <div class="col s12">
                 <div class="input-field">
-                  <textarea id="narrative" class="materialize-textarea editable"></textarea>
+                  <textarea id="narrative" class="materialize-textarea editable" readonly></textarea>
                   <label for="narrative">Narrative</label>
                 </div>
               </div>
@@ -118,12 +124,6 @@ function onSignIn(googleUser) {
             <fieldset class="row view-section">
               <legend>Locations</legend>
               <div class="locations-placeholder">
-              </div>
-              <div class="col s12 l6">
-                <div class="input-field">
-                  <input id="locationComment" class="editable" type="text">
-                  <label class="active" for="locationComment">Location Comment</label>
-                </div>
               </div>
             </fieldset>
 
@@ -150,8 +150,8 @@ function onSignIn(googleUser) {
               <legend>Dates</legend>
               <div class="col s6 m3">
                 <div class="input-field">
-                  <input id="dates2" type="text">
-                  <label class="active" for="dates2">Date</label>
+                  <input id="dates2" class="editable" type="text" readonly>
+                  <label id="dates2-label" class="active" for="dates2">Date</label>
                 </div>
               </div>
             </fieldset>
@@ -175,8 +175,12 @@ function onSignIn(googleUser) {
   </body>
 </html>
 <script>
+  var prevValues;
+  var prevValue;
+  var dateSelected;
   $(".complete-wrapper").css("display", 'block');
   $('#edit-button').on('click', function() {
+        $('.edit-modal-button').css('display', 'inherit');
         prevValues = getJsonValues();
         $('.add-field').css('display', 'inherit');
         $('.editable').attr('readonly', false);
@@ -185,36 +189,14 @@ function onSignIn(googleUser) {
         $(this).css('display', 'none');
         $('.save-cancel').css('display', 'inherit');
     });
-        
-    $('.editable').on('focus', function() {
-        if($('.editable').is('[readonly]')){
-        }
-        else {
-            prevValue = $(this).val();
-            console.log("prev: " + prevValue);
-        }
-    });
-    $('.editable').on('focusout', function(){
-        if($('.editable').is('[readonly]')){
-        }
-        else {
-            console.log('else');
-            var curr = $(this).val();
-            console.log("prev: " + prevValue);
-            console.log("curr: " + curr);
-            if(curr !== prevValue){
-                
-                $(this).css('border-bottom', '1px solid #fa6a74');
-                $(this).css('box-shadow', '0 1px 0 0 #fa6a74');
-            }
-        }
-    });
+    
     
     $('#cancel-button').on('click', function(){
         appendJsonValues(prevValues);
     });
     
     $('.save-cancel').on('click', function() {
+        $('.edit-modal-button').css('display', 'none');
         $('.add-field').css('display', '');
         $('.editable').attr('readonly', true);
         $('.editable').css('border-bottom', '');
@@ -241,8 +223,123 @@ function onSignIn(googleUser) {
 
     window.onresize = function() {
         $('#abstract').trigger('autoresize');
+        $('#anonymized-data').trigger('autoresize');
         $('#narrative').trigger('autoresize');
     }
+    $('#add-date').on('click', function(){
+        $('#edit-modal').css('max-width', '300px');
+        clearModal();
+        $('#edit-modal .modal-content').append(
+            '<h5 class="teal-text text-lighten-2">Add Date</h5><hr>' +
+            '<div class="input-field col s12">' +
+                '<select id="modal-date-select" class="browser-default">' +
+                    '<option value="" disabled selected>Select Date Label</option>' +
+                    '<option value="Start Date" data-date-label="start">Start</option>' +
+                    '<option value="End Date" data-date-label="end">End</option>' +
+                    '<option value="Retrieved Date" data-date-label="retrieved">Retrieved</option>' +
+                    '<option value="Created Date" data-date-label="created">Created</option>' +
+                    '<option value="No Assertion" data-date-label="no-assertion">No Assertion</option>' +
+                '</select>' +
+            '</div>' +
+            '<div class="col s12">' +
+                '<div class="input-field" style="margin: 20px 5px 0;">' +
+                    '<input id="modal-date-input" class="editable datepicker" type="date">' +
+                    '<label class="active" for="modal-date-input">Date</label>' +
+                '</div>' +
+            '</div>');
+        $('#modal-footer').append(
+            '<a href="#!" id="custom-date-save" class="modal-action modal-close waves-effect waves-green btn-flat float-left">Cancel</a>' +
+            '<a href="#!" class="modal-action modal-date-add modal-close waves-effect waves-green btn-flat float-right">Add</a>');
+        $('select').material_select();
+        Materialize.updateTextFields();
+    });
+
+    $('#modal-footer').on('click', '.modal-date-add', function(){
+        var label = $('#modal-date-select').val();
+        var date = $('#modal-date-input').val();
+        var count = $('.date-placeholder .input-field').length;
+        var hiddenLabel = $('#modal-date-select option:selected').data('date-label');
+        $('#add-date-wrapper').before('<div class="input-field date-input-wrapper col s6 m3"><a class="remove-date-button edit-modal-button" style="display: inherit" href="#edit-modal">Remove</a><input id="date-input-'+ count +'" class="date-input editable" type="text" value="'+ date +'"><label id="date-label-'+ count +'" class="active date-label" data-date-label="'+ hiddenLabel +'" for="date-input-'+ count +'">'+ label +'</label></div>');
+        $('.editable').css('border-bottom', '1px solid #26a69a');
+        $('.editable').css('box-shadow', '0 1px 0 0 #26a69a');
+    });
+
+    $('.anonymized-data-placeholder').on('click', '#add-anonymized', function(){
+        $('#edit-modal').css('max-width', '800px');
+        clearModal();   
+        $('#edit-modal .modal-content').append(
+            '<h5 class="teal-text text-lighten-2">Anonymized Data</h5><hr>' +
+            '<div class="input-field col s12">' +
+                '<p><input type="checkbox" id="names-anonymized" data-anonymized="names-anonymized" value="names anonymized" class="filled-in"/><label class="checkbox-label" for="names-anonymized">Names Anonymized</label></p>' +
+                '<p><input type="checkbox" id="names-excluded" data-anonymized="names-excluded" value="names excluded" class="filled-in"/><label class="checkbox-label" for="names-excluded">Names Excluded</label></p>' +
+                '<p><input type="checkbox" id="date-of-birth" data-anonymized="date-of-birth" value="date of birth anonymized" class="filled-in"/><label class="checkbox-label" for="date-of-birth">Date of Birth Anonymized</label></p>' +
+                '<p><input type="checkbox" id="date-of-death" data-anonymized="date-of-death" value="date of death anonymized" class="filled-in"/><label class="checkbox-label" for="date-of-death">Date of Death Anonymized</label></p>' +
+                '<p><input type="checkbox" id="identifying-numbers" data-anonymized="identifying-numbers" value="identifying numbers anonymized" class="filled-in"/><label class="checkbox-label" for="identifying-numbers">Identifying Numbers Anonymized</label></p>' +
+                '<p><input type="checkbox" id="race-and-ethnicity" data-anonymized="race-and-ethnicity" value="race and ethnicity categories anonymized" class="filled-in"/><label class="checkbox-label" for="race-and-ethnicity">Race and Ethnicity Categories Anonymized</label></p>' +
+                '<p><input type="checkbox" id="religious-affiliation" data-anonymized="religious-affiliation" value="religious affiliation anonymized" class="filled-in"/><label class="checkbox-label" for="religious-affiliation">Religious Affiliation Anonymized</label></p>' +
+                '<p><input type="checkbox" id="health-and-wellness" data-anonymized="health-and-wellness" value="health and wellness data anonymized" class="filled-in"/><label class="checkbox-label" for="health-and-wellness">Health and Wellness Data Anonymized</label></p>' +
+                '<p><input type="checkbox" id="location-or-gps" data-anonymized="location-or-gps" value="location or GPS coordinates anonymized" class="filled-in"/><label class="checkbox-label" for="location-or-gps">Location or GPS Coordinates Anonymized</label></p>' +
+                '<p><input type="checkbox" id="anonymized-other" data-anonymized="other" value="other" class="filled-in"/><label class="checkbox-label" for="anonymized-other">Other</label></p>' +
+            '</div>');
+        $('select').material_select();
+        $('#modal-footer').append(
+            '<a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat float-left">Cancel</a>' +
+            '<a href="#!" id="custom-anonymized-save" class="modal-action modal-close waves-effect waves-green btn-flat float-right">Add</a>');
+        Materialize.updateTextFields();
+        var myObject = getJsonValues();
+        var noAssertionCount;
+        $.each(myObject.manifests.manifest.anonymizedData, function(){
+            if(this.label == "names anonymized"){$('#names-anonymized').attr('checked', 'checked');noAssertionCount++}
+            if(this.label == "names excluded"){$('#names-excluded').attr('checked', 'checked');noAssertionCount++}
+            if(this.label == "date of birth anonymized"){$('#date-of-birth').attr('checked', 'checked');noAssertionCount++}
+            if(this.label == "date of death anonymized"){$('#date-of-death').attr('checked', 'checked');noAssertionCount++}
+            if(this.label == "identifying numbers anonymized"){$('#identifying-numbers').attr('checked', 'checked');noAssertionCount++}
+            if(this.label == "race and ethnicity categories anonymized"){$('#race-and-ethnicity').attr('checked', 'checked');noAssertionCount++}
+            if(this.label == "religious affiliation anonymized"){$('#religious-affiliation').attr('checked', 'checked');noAssertionCount++}
+            if(this.label == "health and wellness data anonymized"){$('#health-and-wellness').attr('checked', 'checked');noAssertionCount++}
+            if(this.label == "location or GPS coordinates anonymized"){$('#location-or-gps').attr('checked', 'checked');noAssertionCount++}
+            if(this.label == "other"){$('#anonymized-other').attr('checked', 'checked');noAssertionCount++}
+        });
+    });
+
+    $('#modal-footer').on('click', '#custom-anonymized-save', function(){
+        var array = [];
+        $('.anonymized-data-placeholder').empty();
+        var noAssertionCount = 0;
+        $('input[data-anonymized]').each(function(){
+            if($(this).is(':checked')){
+                array.push($(this).val());
+                noAssertionCount++;
+            }
+        });
+        console.log('count: ' + noAssertionCount);
+        if(noAssertionCount == 0){
+            console.log('no assertion');
+            $('.anonymized-data-placeholder').append('<div class="input-field col s12"><a id="add-anonymized" class="textarea-modal-button edit-modal-button" href="#edit-modal">Add/Remove</a><textarea id="anonymized-data" class="anonymized-data-input materialize-textarea" type="text" readonly>No Assertion</textarea><label id="anonymized-data-label class="active anonymized-data-label">Anonymized Data</label></div>');
+        }
+        else {
+            $('.anonymized-data-placeholder').append('<div class="input-field col s12"><a id="add-anonymized" class="textarea-modal-button edit-modal-button" href="#edit-modal">Add/Remove</a><textarea id="anonymized-data" class="anonymized-data-input materialize-textarea" type="text" readonly>'+ array.join(', ') +'</textarea><label id="anonymized-data-label class="active anonymized-data-label">Anonymized Data</label></div>');
+        }
+        Materialize.updateTextFields();
+        $('#anonymized-data').trigger('autoresize');
+    })
+    $('.date-placeholder').on('click', '.remove-date-button', function(){
+        dateSelected = $(this).siblings('input').attr('id');
+        $('#edit-modal').css('max-width', '500px');
+        clearModal();   
+        $('#edit-modal .modal-content').append(
+            '<h5 class="teal-text text-lighten-2">Remove Date</h5><hr>' +
+            '<div class="input-field col s12">' +
+                '<p>Are you sure you wish to delete this date?</p>' +
+            '</div>');
+        $('select').material_select();
+        $('#modal-footer').append(
+            '<a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat float-left">Cancel</a>' +
+            '<a href="#!" id="permanent-date-delete" class="modal-action modal-close waves-effect waves-green btn-flat float-right">Delete</a>');
+    });
+    $('#modal-footer').on('click', '#permanent-date-delete', function(){
+        $('#'+ dateSelected +'').parent('.date-input-wrapper').remove();
+    });
 function getJsonValues() {
     var standardVersion = $('#standardVersion').val();
     var id = $('#id').val();
@@ -260,10 +357,11 @@ function getJsonValues() {
     });
     var oversight = $('#oversight').val();
     var informedConsent = $('#informedConsent').val();
+    var myArray = $('.anonymized-data-input').val().split(", ");
     var anonymizedDataArray = [];
-    $('.anonymized-data-input').each(function(){
+    $.each(myArray,function(i){
         anonymizedDataArray.push({
-            label: $(this).val()
+            label: myArray[i]
         })
     });
     var privacyConsiderations = $('#privacyConsiderations').val();
@@ -367,8 +465,7 @@ function appendJsonValues(data) {
     $('#title').val(data.manifests.manifest.researchObject.title);
     $('#abstract').val(data.manifests.manifest.researchObject.abstract);
     $('#abstract').trigger('autoresize');
-    $('.date-placeholder').empty();
-    $('.date-placeholder').append('<div id="add-date" class="col s6 m3 add-field"><a class="waves-effect waves-light btn"><i class="material-icons left">add</i>New Date</a></div>');
+    $('.date-input-wrapper').remove();
     var dateCount = 0;
     $.each(data.manifests.manifest.researchObject.dates, function(key, value){
         var hiddenLabel = value.label;
@@ -379,35 +476,37 @@ function appendJsonValues(data) {
         else if(value.label == 'created'){shownLabel = 'Created Date';}
         else{shownLabel = 'No Assertion';}
         var date = value.date;
-        $('#add-date').before('<div class="input-field col s6 m3"><input id="date-input-'+ dateCount +'" class="date-input editable" type="text" value="'+ date +'" readonly><label id="date-label-'+ dateCount +'" class="active date-label" data-date-label="'+ hiddenLabel +'" for="date-input-'+ dateCount +'">'+ shownLabel +'</label></div>');
+        $('#add-date-wrapper').before('<div class="input-field date-input-wrapper col s6 m3"><a class="remove-date-button edit-modal-button" href="#edit-modal">Remove</a><input id="date-input-'+ dateCount +'" class="date-input editable  datepicker" type="date" value="'+ date +'" readonly><label id="date-label-'+ dateCount +'" class="active date-label" data-date-label="'+ hiddenLabel +'" for="date-input-'+ dateCount +'">'+ shownLabel +'</label></div>');
         dateCount++;
     });
     $('#oversight').val(data.manifests.manifest.privacyEthics.oversight.label);
     $('#informedConsent').val(data.manifests.manifest.informedConsent);
     $('.anonymized-data-placeholder').empty();
+    var anonymizedString = [];
     $.each(data.manifests.manifest.anonymizedData, function(key, value){
-        var count = 0;
         var anonymizedData = value.label;
-        $('.anonymized-data-placeholder').append('<div class="input-field col s12 l6"><input id="anonymized-data-input-'+ count +'" class="anonymized-data-input" type="text" value="'+ anonymizedData +'" readonly><label id="anonymized-data-label-'+ count +'" class="active anonymized-data-label">Anonymized Data</label></div>');
-        count++;
+        var string = anonymizedData;
+        anonymizedString.push(string);
     });
+    $('.anonymized-data-placeholder').append('<div class="input-field col s12"><a id="add-anonymized" class="textarea-modal-button edit-modal-button" href="#edit-modal">Add/Remove</a><textarea id="anonymized-data" class="anonymized-data-input materialize-textarea" type="text" readonly>'+ anonymizedString.join(', ') +'</textarea><label id="anonymized-data-label class="active anonymized-data-label">Anonymized Data</label></div>');
+    $('#anonymized-data').trigger('autoresize');
     $('#privacyConsiderations').val(data.manifests.manifest.privacyConsiderations);
     $('#narrative').val(data.manifests.provenance.narrative);
     $('#narrative').trigger('autoresize');
     $('.publications-placeholder').empty();
+    var publicationCount = 0;
     $.each(data.manifests.publications, function(key, value){
-        var count = 0;
         var publication = value.publication;
-        $('.publications-placeholder').append('<div class="input-field col s12 l6"><input id="publication-input-'+ count +'" class="publication-input" type="text" value="'+ publication +'" readonly><label id="publication-label-'+ count +'" class="active publication-label">Publication</label></div>');
-        count++;
+        $('.publications-placeholder').append('<div class="input-field col s12 l6"><input id="publication-input-'+ publicationCount +'" class="publication-input" type="text" value="'+ publication +'" readonly><label id="publication-label-'+ publicationCount +'" class="active publication-label">Publication</label></div>');
+        publicationCount++;
     });
     $('.locations-placeholder').empty();
-    $.each(data.manifests.locations, function(key, value){
-        var count = 0;
+    var locationCount = 0;
+    $.each(data.manifests.locations, function(key, value){    
         var label = value.location.comment
         var location = value.location.url;
-        $('.locations-placeholder').append('<div class="input-field col s12 m6"><input id="location-input-'+ count +'" class="location-input" type="text" value="'+ location +'" readonly><label id="location-label-'+ count +'" class="active location-label">'+ label +'</label></div>');
-        count++;
+        $('.locations-placeholder').append('<div class="input-field col s12 m6"><input id="location-input-'+ locationCount +'" class="location-input" type="text" value="'+ location +'" readonly><label id="location-label-'+ locationCount +'" class="active location-label">'+ label +'</label></div>');
+        locationCount++;
     });
     var numFiles = $(data.manifests.files).length;
     if(numFiles >= 1){
@@ -476,5 +575,9 @@ function appendJsonValues(data) {
     }
 
     Materialize.updateTextFields();
+}
+function clearModal(){
+    $('#edit-modal .modal-content').empty();
+    $('#edit-modal #modal-footer').empty();
 }
 </script>
