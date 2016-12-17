@@ -10,4 +10,4 @@ echo "deb http://repo.mongodb.org/apt/ubuntu trusty/mongodb-org/3.2 multiverse" 
 apt-get update
 apt-get install -y mongodb-org
 service apache2 reload
-# see deployment.txt for more information on how to get flask application running
+# see deployment.md for more information on how to get flask application running

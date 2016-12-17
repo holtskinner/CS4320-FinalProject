@@ -2,23 +2,41 @@ Deploying a flask application is quite tricky.
 First make sure that you have installed apache2 and mongoDB.
 
 The next step is to install flask:
+```
 pip install Flask
+
+```
 
 Next make a directory called "flask-dev".
 The content of this directory will be populated with every file in the Source folder on the git repo.
 
 ec2-35-164-234-183.us-west-2.compute.amazonaws.com
 
-Open the host file: vim /etc/hosts
+Open the host file:
+
+```
+vim /etc/hosts
+
+```
+
 Paste this line on top:
+```
 127.0.0.1 ec2-35-164-234-183.us-west-2.compute.amazonaws.com
+
+```
+
 This will direct the url to run the application that is running on the server
 
-Navigate to: /etc/apache2/sites-available/
+Navigate to:
+```
+cd /etc/apache2/sites-available/
+
+```
+
 Make a file called "myapp.conf"
 
 The content of this file will be:
-
+```
 <virtualhost *:80>
     ServerName ec2-35-164-234-183.us-west-2.compute.amazonaws.com
 
@@ -34,8 +52,18 @@ The content of this file will be:
     </directory>
 </virtualhost>
 
+```
+
+
 Enable the virual host:
-sudo a2ensite myapp.conf
+```
+  sudo a2ensite myapp.conf
+
+```
+
 
 Restart Apache:
-sudo /etc/init.d/apache2 restart
+```
+  sudo /etc/init.d/apache2 restart
+
+```
